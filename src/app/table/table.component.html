@@ -1,0 +1,39 @@
+<div class="table-responsive">
+<table class="table table-hover  ">
+    <thead class="bg-dark text-white ">
+      <tr>
+        <th>Company</th>
+        <th>Category</th>
+        <th>Views</th>
+        <th>Revenue</th>
+        <th>Status</th>
+        <th>Sales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of companies">
+        <td>
+          <div>{{ company.name }}</div>
+          <div class="subtitle">{{ company.email }}</div>
+        </td>
+        <td>{{ company.category }}</td>
+        <td>
+          <div>{{ company.views }}</div>
+          <div class="subtitle">{{ company.ViewsTime }}</div>
+        </td>
+        <td>{{ company.revenue }}</td>
+        <td class="status-cell">
+          <span [ngClass]="{'status-green flash': company.status === 'In Progress', 'status-red': company.status === 'Done'}">{{ company.status }}</span>
+        </td>
+        <td >
+            <div class="sales-cell">
+                <span style="margin-right: 10px;">{{ company.sales }}</span>
+                <i [ngClass]="{'fa-solid fa-arrow-trend-up ': company.sales > '50'}" style="color:#00ff33; "></i>
+                <i [ngClass]="{'fa-solid fa-arrow-trend-down': company.sales < '50'}" style="color: #ff0000; "></i>
+                
+            </div>      
+       </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

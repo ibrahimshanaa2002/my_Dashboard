@@ -1,0 +1,143 @@
+.card-body{
+  display: flex;
+  width: max-content;
+  height: 30.9rem;
+}
+
+.left{
+   text-align: center;
+}
+
+.card-title {
+  margin-left: 2rem;
+  margin-top: 0.3rem;
+  position: absolute
+}
+
+.right {
+  border-right: 1px solid silver;
+  padding-right: 1rem;
+}
+
+#button{
+  padding-top: 5em;
+  padding-bottom: 0;
+}
+
+.left h4{
+  padding-top: 2em;
+  padding-bottom: 0;
+  font-weight: bold;
+}
+
+/*@media (min-width: 576px) {*/
+/*  #container {*/
+/*    max-width: fit-content;*/
+/*  }*/
+/*}*/
+
+/*@media (max-device-width: 480px) {*/
+
+/*  .card-body {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    padding: 0;*/
+/*  }*/
+
+/*  #container {*/
+/*    width: 19rem;*/
+/*    display: flex;*/
+/*    height: 16rem;*/
+/*    padding: 0;*/
+/*  }*/
+
+/*  .right {*/
+/*    border: none;*/
+/*    height: 16rem;*/
+/*    padding: 0 0.8rem;*/
+/*  }*/
+
+/*  #button {*/
+/*    padding-top: 0;*/
+/*  }*/
+
+/*  .left {*/
+/*    padding: 1rem 0;*/
+/*    width: 19rem;*/
+/*  }*/
+
+/*  .left-container {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    border: 1px solid lightgrey;*/
+/*    border-radius: 5px;*/
+/*    padding: 1rem;*/
+/*    width: 19rem;*/
+/*  }*/
+
+/*  .chart {*/
+/*    margin-left: 1rem;*/
+/*    padding-top: 1rem;*/
+/*  }*/
+
+/*  .card-title {*/
+/*    font-size: 16px;*/
+/*    margin-top: 0.4rem;*/
+/*    position: absolute;*/
+/*    margin-left: 0;*/
+/*  }*/
+
+/*}*/
+
+@media (max-device-width: 768px) {
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #container {
+    width: 25rem;
+    display: flex;
+    height: 15rem;
+    padding: 0;
+  }
+
+  .right {
+    border: none;
+    height: 15rem;
+    padding: 0 0.8rem;
+  }
+
+  #button {
+    padding-top: 0;
+  }
+
+  .left {
+    padding: 1rem 0;
+  }
+
+  .left-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 1rem;
+    height: 13rem;
+    width: 25rem;
+  }
+
+  .chart {
+    margin-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .card-title {
+    font-size: 20px;
+    margin-top: 0.4rem;
+    position: absolute;
+    margin-left: 0;
+  }
+
+}

@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.card {
+  width: 12rem;
+  height: 15rem
+}
+
+#comp-container {
+  padding-left: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card-body{
+  padding: 1em 0;
+}
+
+h4,h5 {
+  margin-left: 2rem;
+  margin-top: 0.3rem;
+}
+
+/*@media (max-device-width: 480px) {*/
+
+/*  .card {*/
+/*    width: 9rem;*/
+/*    height: 11rem;*/
+/*  }*/
+
+/*  .card-body >h5,h4 {*/
+/*    font-size: inherit;*/
+/*    margin-left: 1rem;*/
+/*  }*/
+
+/*  #comp-container {*/
+/*    padding-left: 0.7rem;*/
+/*    margin-top: 0.5rem;*/
+/*    width: 8rem;*/
+/*  }*/
+/*}*/

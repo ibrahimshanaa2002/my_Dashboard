@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between">
+      <h2 class="card-title">Statistics</h2>
+      <h2 class="card-title Updated">Updated 2 min ago</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6 col-lg-3 mb-3" *ngFor="let kpi of kpis">
+          <div class="card">
+            <div id="kpi-cont" class="card-body d-flex align-items-center">
+              <div class="kpi-image">
+                <img [src]="kpi.icon" alt="{{ kpi.value }} icon">
+              </div>
+              <div class="kpi-text flex-grow-1">
+                <h3>{{ kpi.value }}</h3>
+                <p class="card-subtitle">{{ kpi.subtitle }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-6">
+          <!-- add any additional content here, such as a summary of the KPIs -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

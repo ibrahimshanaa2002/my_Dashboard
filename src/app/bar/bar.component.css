@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.chart-container {
+  width: 32rem;
+  position: relative;
+}
+
+/*@media (max-device-width: 480px){*/
+/*  .chart-container {*/
+/*    width: 16rem;*/
+/*    height: 20rem;*/
+/*  }*/
+
+/*}*/
+
+@media (max-device-width: 768px) {
+  .chart-container {
+    width: 24rem;
+    height: 15rem;
+  }
+
+  #bar-chart {
+    width: 24rem !important;
+
+  }
+}

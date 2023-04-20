@@ -1,0 +1,46 @@
+.cont {
+  display: flex;
+  padding: 1rem;
+  margin: 0;
+}
+
+.minCards-container {
+  display: flex;
+  justify-content: center;
+}
+
+app-sm-card {
+  padding: 0 0.5rem;
+}
+
+.chart-container {
+  margin-left: 0.5rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+
+.dough-container {
+  padding-top: 1rem;
+}
+
+.left-container {
+  padding-top: 1rem;
+}
+
+@media (max-device-width: 480px) {
+  .cont {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    height: 62rem;
+  }
+
+  /*.left-container {*/
+  /*  max-width: fit-content;*/
+  /*}*/
+
+  .chart-container {
+    margin-left: 1rem;
+  }
+
+}
