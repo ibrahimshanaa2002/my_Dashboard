@@ -1,0 +1,85 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.browser-state.card{
+    height: 335px;
+}
+.browser-state.card > div:nth-child(2){
+    overflow: auto;
+}
+/* .browser-state > div, */
+div.browser-state.card{
+    display: flex;
+}
+.browser-state >div:first-child{
+    padding: 20px 20px 0px;
+}
+.browser-state >div:last-child{
+    padding: 0px 20px 0px;
+}
+.browser-state > div{
+    flex-direction: column;
+}
+.browser-state.card div h3~span{
+    color: gray;
+}
+.bs-row {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bs-row div:nth-child(2){
+    display: inline-flex;
+}
+.bs-row > div span{
+    margin: 0px 7px;
+    align-self: center;
+}
+.bs-row div{
+    display: inline-block;
+}
+.bs-row circle-progress{
+    width: auto !important;
+}
+.bs-row-chart{
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+
+}
+.bs-row-chart canvas{
+    height: 34px !important; 
+    width: 34px !important;
+}
+@media  (max-width: 505px)  {
+    .browser-state{
+        width: 100%;
+    }
+    .browser-state.card > div{
+        text-align: center;
+    }
+}
+@media  (min-width: 506px) and (max-width: 768px)  {
+    .browser-state.card > div{
+        text-align: center;
+    }
+}

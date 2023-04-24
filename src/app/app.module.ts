@@ -20,6 +20,9 @@ import {TableComponent} from "./table/table.component";
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {BrowserStatesComponent} from "./browser-states/browser-states.component";
+import {GoalOverviewComponent} from "./goal-overview/goal-overview.component";
+import {TransactionsComponent} from "./transactions/transactions.component";
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     TableComponent,
     HeaderComponent,
     SidebarComponent,
+    BrowserStatesComponent,
+    GoalOverviewComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

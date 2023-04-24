@@ -1,0 +1,68 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.transactions.card{
+    height: 335px;
+}
+.transactions >div{
+    overflow: auto;
+    padding: 0px 20px 0px;
+}
+.transactions h3{
+    padding: 20px 20px 0px;
+}
+.tras-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+}
+.tras-row div{
+    display: inline-flex;
+}
+.tras-row div:nth-child(2){
+    flex-direction: column;
+}
+.tras-row i{
+    align-self: center;
+    margin-right: 20px;
+}
+.tras-row div:nth-child(2) span:nth-child(1),
+.tras-row .number{
+    font-weight: bold;
+}
+.tras-row i{
+    width: 40px;
+    text-align: center;
+}
+.tras-row div:nth-child(2) span:nth-child(2){
+    font-size: smaller;
+    color: gray;
+}
+@media  (max-width: 505px)  {
+    .transactions.card{
+        width: 100%;
+        gap: 20px;
+    }  
+}
+@media  (min-width: 506px) and (max-width: 768px)  {
+    .transactions.card{
+        gap: 8px;
+    }
+}

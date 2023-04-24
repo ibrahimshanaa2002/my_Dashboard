@@ -1,0 +1,24 @@
+<div class="goal-overview card">
+  <div>
+    <h3>Goal Overview</h3>
+    <div class="goal-overview-chart" style="height:6.5rem; width:6.5rem">
+      <canvas  
+      id="DoughChart-goalOverview" 
+      width="400" 
+      height="100" 
+      aria-label="Hello ARIA World" 
+      role="img"
+      >{{ chart }} </canvas>
+    </div>
+  </div>
+  <div class="goal-overview-footer">
+    <div>
+      <span>Completed</span>
+      <span>{{ goalOverviewCompleted | number}}</span>
+    </div>
+    <div>
+      <span>In progress</span>
+      <span>{{ goalOverviewInprogress | number}}</span>
+    </div>
+  </div>
+</div>

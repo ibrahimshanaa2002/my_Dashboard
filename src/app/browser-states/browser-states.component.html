@@ -1,0 +1,28 @@
+<div class="browser-state card">
+  <div>
+    <h3>Browser States</h3>
+    <span>Counter Augest 2022</span>
+  </div>
+  <div>
+    <div class="bs-row" *ngFor="let x of browserStatesList">
+      <div>
+        <i *ngIf="x.name=='Google Chrome'" class="fa-brands fa-chrome fa-2xl"></i>
+        <i *ngIf="x.name=='Mozila Firefox'" class="fa-brands fa-firefox fa-2xl"></i>
+        <i *ngIf="x.name=='Apple Safari'" class="fa-brands fa-safari fa-2xl"></i>
+        <i *ngIf="x.name=='Opera'" class="fa-brands fa-opera fa-2xl"></i>
+        <i *ngIf="x.name=='MS Edge' " class="fa-brands fa-edge fa-2xl"></i>
+        <span>{{ x.name }}</span>
+      </div>
+      <div>
+        <span>{{ x.percent }}%</span>
+        <div class="chart-container bs-row-chart" style="position: relative;">
+          <canvas
+          id="DoughChart{{ (x.id) }}"
+          aria-label="Hello ARIA World"
+          role="img"
+          >{{ createChart(x.id, x.percent) }} </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

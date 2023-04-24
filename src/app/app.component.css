@@ -6,3 +6,53 @@
 #cont {
   flex: auto;
 }
+
+/* mohammad */
+.bgt{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  flex-wrap: nowrap;
+  padding: 0 1.3rem;
+}
+
+@media  (max-width: 505px)  {
+  .bgt{
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media  (min-width: 506px) and (max-width: 768px)  {
+  app-browser-states{
+    flex: 1 100%;
+  }
+  app-transactions{
+    flex: 1 calc(50% - 8px);
+  }
+  app-goal-overview{
+    flex: 1 50%;
+  }
+  .bgt{
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
+
+@media  (min-width: 769px){
+  app-browser-states,
+  app-transactions,
+  app-goal-overview{
+    flex-grow: 1;
+    width: calc(100% / 3);
+  }
+}
+/* mohammad */
+
+app-browser-states {
+  padding-right: 1rem;
+}
+
+app-transactions {
+  padding-left: 1rem;
+}
