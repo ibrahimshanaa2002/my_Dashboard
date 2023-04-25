@@ -9,7 +9,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   animations: [
     trigger('slideInOut', [
       state('in', style({
-        transform: 'translate3d(-69%,0,0)'
+        transform: 'translate3d(-65%,0,0)'
       })),
       state('out', style({
         transform: 'translate3d(0, 0, 100%)'
@@ -19,23 +19,22 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     ]),
   ]
 })
-export class SidebarComponent{
+export class SidebarComponent implements OnInit{
+  ngOnInit(): void {
+      this.toggleMenu();
+  }
 
-  @Output('toggle') eventEmitter = new EventEmitter<string>();
+  @Output('toggle') eventEmitter = new EventEmitter<boolean>();
   menuState:string = 'out';
+  state: boolean = false;
 
   gauge = faGauge;
   faHome = faHome;
 
-  // toggleMenu(){
-  //   this.eventEmitter.emit(true);
-  // }
-
   toggleMenu(){
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
-    // @ts-ignore
-    document.getElementById('sidebar').style.position = 'fixed';
-    this.eventEmitter.emit(this.menuState);
+    this.state = !this.state;
+    this.eventEmitter.emit(this.state);
   }
 
 }

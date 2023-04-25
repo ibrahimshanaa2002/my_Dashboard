@@ -1,17 +1,25 @@
 #show {
   display: flex;
-  flex-grow: initial;
+  gap: 8px;
+  position: relative;
+  top: 3.5rem;
 }
 
 #cont {
   flex: auto;
+  position: relative;
+}
+
+#sidebar {
+  transition: ease-in-out;
+  transition-duration: 0.4s;
 }
 
 /* mohammad */
 .bgt{
   display: flex;
   justify-content: space-between;
-  gap: 5px;
+  gap: 16px;
   flex-wrap: nowrap;
   padding: 0 1.3rem;
 }
@@ -49,10 +57,4 @@
 }
 /* mohammad */
 
-app-browser-states {
-  padding-right: 1rem;
-}
 
-app-transactions {
-  padding-left: 1rem;
-}

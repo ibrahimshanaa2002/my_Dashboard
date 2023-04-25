@@ -1,9 +1,12 @@
+/* Sidebar Styles */
+
 #sidebar {
-  /*overflow-x: hidden;*/
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  /*height: 100%;*/
-  position: relative;
+  position: fixed;
+  height: 100vh;
+  background: #37474F;
+  z-index: 1;
 }
 
 /* Toggle Styles */
@@ -18,15 +21,6 @@
 }
 
 
-/* Sidebar Styles */
-
-#sidebar {
-  /*width: 157px;*/
-  height: 1500px;
-  background: #37474F;
-}
-
-
 #sidebar header {
   background-color: #263238;
   font-size: 20px;
@@ -34,6 +28,7 @@
   text-align: center;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 #sidebar header a {

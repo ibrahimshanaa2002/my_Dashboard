@@ -1,12 +1,14 @@
 .header {
-  background-color: #727272;
+  background-color: #37474F;
   color: #000;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
-
 
 .logo {
   font-size: 24px;
@@ -18,7 +20,7 @@
   display: flex;
   width: 600px;
   margin: 0 10px;
-
+  justify-content: center;
 }
 
 .searchbar input[type="text"] {

@@ -5,17 +5,17 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
 }
 .browser-state.card{
     height: 335px;
@@ -53,7 +53,7 @@ div.browser-state.card{
     align-self: center;
 }
 .bs-row div{
-    display: inline-block;
+    display: flex;
 }
 .bs-row circle-progress{
     width: auto !important;
@@ -67,7 +67,7 @@ div.browser-state.card{
 
 }
 .bs-row-chart canvas{
-    height: 34px !important; 
+    height: 34px !important;
     width: 34px !important;
 }
 @media  (max-width: 505px)  {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-root',
@@ -9,15 +8,15 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 export class AppComponent {
   title = 'sprinters';
 
-  changeWidth(state: string){
-    // if (state == "in"){
-      // @ts-ignore
-      // document.getElementById('cont').style.marginLeft = "10px";
-    // }
-    // else {
-      // @ts-ignore
-      // document.getElementById('cont').style.marginLeft = "10px";
-    // }
 
+  changeWidth(state: boolean){
+    if (state == true){
+       const x = document.getElementById('sidebar') as HTMLElement;
+       x.style.width = "40px";
+    }
+    else {
+      const x = document.getElementById('sidebar') as HTMLElement;
+      x.style.width = "144.5px";
+    }
   }
 }

@@ -23,6 +23,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {BrowserStatesComponent} from "./browser-states/browser-states.component";
 import {GoalOverviewComponent} from "./goal-overview/goal-overview.component";
 import {TransactionsComponent} from "./transactions/transactions.component";
+import {FooterComponent} from "./footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {TransactionsComponent} from "./transactions/transactions.component";
     SidebarComponent,
     BrowserStatesComponent,
     GoalOverviewComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
