@@ -12,11 +12,11 @@ export class AppComponent {
   changeWidth(state: boolean){
     if (state == true){
        const x = document.getElementById('sidebar') as HTMLElement;
-       x.style.width = "40px";
+       x.style.width = "100px";
     }
     else {
       const x = document.getElementById('sidebar') as HTMLElement;
-      x.style.width = "144.5px";
+      x.style.width = "290px";
     }
   }
 }

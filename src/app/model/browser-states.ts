@@ -25,5 +25,5 @@ export const browserStatesList: Array<IBrowserStates> = [
         id: 5,
         name: "MS Edge",
         percent: 60
-    },
+    }
 ];

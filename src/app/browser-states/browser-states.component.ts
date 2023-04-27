@@ -7,7 +7,7 @@ import { browserStatesList } from "../model/browser-states";
   templateUrl: './browser-states.component.html',
   styleUrls: ['./browser-states.component.css']
 })
-export class BrowserStatesComponent {
+export class BrowserStatesComponent implements OnInit{
   browserStatesList = browserStatesList;
 
   public newChart: any;
@@ -45,7 +45,11 @@ export class BrowserStatesComponent {
       },
     });
 
-    return this.newChart;
+    // return this.newChart;
+  }
+
+  ngOnInit(): void {
+    // this.createChart(id, number);
   }
 }
 
