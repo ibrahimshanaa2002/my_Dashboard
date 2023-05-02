@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {faGauge, faHome} from "@fortawesome/free-solid-svg-icons";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 

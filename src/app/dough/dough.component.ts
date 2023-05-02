@@ -30,18 +30,26 @@ export class DoughComponent  implements  OnInit{
     this.chart = new Chart(this.chart_ID, {
       type: 'doughnut',
       data: {
-        labels: ['Jan', 'Feb', 'Mar'],
+        // labels: ['Jan', 'Feb', 'Mar'],
         datasets: [
           {
-            data: [54, 44, 22],
-            backgroundColor: ['limegreen', 'lightgreen', 'lightgrey'],
+            data: [54, 44, 22,25,32,12,36,54,92,54],
+            // backgroundColor: ['limegreen', 'lightgreen', 'lightgrey'],
             hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
-            borderWidth: 0,
+            // borderWidth: 0,
+            // spacing: 2
+          },
+          {
+            data: [54, 44, 22,12,54,65,32,52,36,54,25],
+            // backgroundColor: ['yellow', 'orange', 'red'],
+            hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
+            // borderWidth: 0,
+            // spacing: 2
           }
         ]
       },
       options: {
-        cutout: 35,
+        // cutout: 35,
         aspectRatio:1,
         responsive: true,
         layout: {autoPadding: true},

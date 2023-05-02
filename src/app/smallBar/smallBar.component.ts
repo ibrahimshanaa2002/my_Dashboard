@@ -14,16 +14,16 @@ export class SmallBarComponent implements OnInit{
     this.chart = new Chart(this.chart_ID, {
       type: 'bar',
       data: {
-        labels: ['1','2', '3','4'],
+        labels: ['1','2', '3','4', '5', '6'],
         datasets: [
           {
-            data: [200, 300, 150, 220],
-            backgroundColor: 'red',
+            data: [400, 300, 200, 20,  10 , 5],
+            backgroundColor: ['green', 'green', 'green', 'red', 'red', 'red'],
             hoverBackgroundColor: 'darkred',
             barThickness: 10,
           },
           {
-            data: [400, 400, 400, 400],
+            data: [400, 400, 400, 400, 400, 400],
             backgroundColor: 'lightgrey',
             barThickness: 10,
           }

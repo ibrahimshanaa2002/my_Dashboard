@@ -73,32 +73,22 @@ footer{
   .footer-support a:hover {
     text-decoration: underline;
   }
-  .social-media {
+
+  .social {
+    display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: left;
-  }
-
-  .social-media li {
-    margin-right: 20px;
-  }
-
-  .social-media a {
-    color: #333;
-    text-decoration: none;
-  }
-
-  .social-media a:hover {
-    text-decoration: underline;
   }
 
   .fa-facebook,
   .fa-twitter,
-  .fa-instagram {
-    font-size: 24px;
+  .fa-instagram,
+  .fa-linkedin{
+    font-size: 36px;
+    color: white;
+    padding: 0.5rem;
   }
+
   .footer-bottom {
     font-size: 12px;
     color: #666;
@@ -113,4 +103,8 @@ footer{
     background-color: #333333;
     border-radius: 0.375rem;
     color: white;
+  }
+
+  .col-md-4 h4 {
+    padding-left: 1.7rem;
   }

@@ -1,6 +1,6 @@
 .cont {
   display: flex;
-  padding: 1rem;
+  padding-bottom: 1rem;
   margin: 0;
   justify-content: center;
 }
@@ -8,6 +8,10 @@
 .minCards-container {
   display: flex;
   justify-content: center;
+}
+
+.minCards-container > app-smallBar {
+
 }
 
 app-sm-card {
@@ -26,6 +30,18 @@ app-sm-card {
 
 .left-container {
   padding-top: 1rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+}
+
+.filterbyuser > button,
+.filterbycategory > button{
+  display: block;
+  width: 160px;
+  margin: 1rem;
 }
 
 @media (max-device-width: 480px) {
