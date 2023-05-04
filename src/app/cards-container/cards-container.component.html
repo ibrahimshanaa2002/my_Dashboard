@@ -1,24 +1,15 @@
-<div class="filters">
-  <div class="filterbyuser">
-    <button type="button">User</button>
-    <button type="button">MPRUser</button>
-  </div>
-  <div class="filterbycategory">
-    <button type="button">Filter by Name</button>
-    <button type="button">Filter by Department</button>
-  </div>
-</div>
 <div class="cont">
-  <div class="left-container">
-    <div class="minCards-container">
-      <app-sm-card><app-smallBar></app-smallBar></app-sm-card>
-      <app-sm-card><app-line></app-line></app-sm-card>
+    <div class="dough-containers">
+      <app-md-card [ID]="chartID1">
+        <div title>Immediate Payments (IP)</div>
+        <div total>$8,055.56</div>
+      </app-md-card>
+      <app-md-card [ID]="chartID2">
+        <div title>APP Payments (APP)</div>
+        <div total>$4,055.56</div>
+      </app-md-card>
     </div>
-    <div class="dough-container">
-      <app-md-card></app-md-card>
-    </div>
-  </div>
     <div class="chart-container">
-      <app-bg-card></app-bg-card>
+      <app-bg-card [userData]="userData" [MPRUserData]="MPRUserData"></app-bg-card>
     </div>
 </div>

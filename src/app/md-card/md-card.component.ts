@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-md-card',
@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MdCardComponent {
 
+  @Input() ID: string;
+
+  constructor() {
+  }
 }

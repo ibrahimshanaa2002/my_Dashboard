@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Chart} from "chart.js";
 import {UserData} from "../model/userData.interface";
 import {Data} from "../model/data.interface";
@@ -28,81 +28,72 @@ export class BarComponent implements  OnInit {
   ipOnAppDataSet: Array<Data>;
   appSecuredDataSet: Array<Data>;
   executedAppDataSet: Array<Data>;
-  userData: Array<UserData>;
+  usersData: Array<UserData>;
+  start: number = 0;
+  end: number = 10;
+  @Input() userData: Array<UserData>;
+  @Input() MPRUserData: Array<UserData>;
 
   constructor() {
-    this.prepareData();
   }
 
   prepareData() {
-    this.userData = [{
-      name: "xrdjdhs sthrdt",
-      department: "dfddf",
-      ipOnAccount: 34,
-      ipOnApp: 34,
-      appSecured: 34,
-      appExecuted: 36
-    },
-      {
-        name: "xrdjdhs sthrdtf",
-        department: "fgjgasgbth",
-        ipOnAccount: 34,
-        ipOnApp: 34,
-        appSecured: 34,
-        appExecuted: 36
-      },
-      {name: "xrdjdhs sthrdtkj", department: "afgklkl", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36},
-      {name: "xrdjdhs sthrdtdfh", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36},
-      {name: "xrdjdhs sthrdtfg", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36},
-      {name: "xrdjdhs sthrdtkik", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36},
-      // {name:"f", department: "dfddf", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"d", department: "dfddf", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"s", department: "dfddf", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"a", department: "dfddf", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"o", department: "dfddf", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"i", department: "dfddf", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"u", department: "u", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"rtr", department: "y", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      // {name:"t", department: "dfddf", ipOnAccount:34,ipOnApp:34, appSecured:34, appExecuted:36},
-      {name: "xrdjdhs sthrdtsdh", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36},
-      {name: "xrdjdhs sthrdtqwr", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36}
-      , {name: "e", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36},
-      {name: "w", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36},
-      {name: "q", department: "dfddf", ipOnAccount: 34, ipOnApp: 34, appSecured: 34, appExecuted: 36}]
     this.ipOnAccountDataSet = new Array<Data>();
     this.ipOnAppDataSet = new Array<Data>();
     this.appSecuredDataSet = new Array<Data>();
     this.executedAppDataSet = new Array<Data>();
-    this.userData.forEach(data => {
-      this.ipOnAccountDataSet.push(new Data(data.name, data.ipOnAccount));
-      this.ipOnAppDataSet.push(new Data(data.name, data.ipOnApp));
-      this.appSecuredDataSet.push(new Data(data.name, data.appSecured));
-      this.executedAppDataSet.push(new Data(data.name, data.appExecuted));
-    });
+      this.userData.forEach(data => {
+        if (data.IPonAccountSecured !=0 || data.IPonAppSecured !=0 || data.AppSecured !=0 || data.ExecutedAPPPayments !=0){
+        this.ipOnAccountDataSet.push(new Data(data.name, data.IPonAccountSecured));
+        this.ipOnAppDataSet.push(new Data(data.name, data.IPonAppSecured));
+        this.appSecuredDataSet.push(new Data(data.name, data.AppSecured));
+        this.executedAppDataSet.push(new Data(data.name, data.ExecutedAPPPayments));
+        }
+      });
   }
 
-
-  name: string = "asd";
-
-  dgdfg() {
-    this.name = "sdfsdf";
+  nextGroup() {
+    if (this.userData.length <= (this.end + 10)){
+      this.start = this.userData.length - 10;
+      this.end = this.userData.length;
+      this.chart.destroy();
+      this.createChart(this.start, this.end);
+    }else {
+    this.start+=10;
+    this.end+=10;
     this.chart.destroy();
-    this.createChart();
+    this.createChart(this.start, this.end);
+    }
+  }
+
+  prevGroup() {
+    if ((this.start - 10) <= 0){
+      this.start = 0;
+      this.end = 10;
+      this.chart.destroy();
+      this.createChart(this.start, this.end);
+    }else {
+      this.start-=10;
+      this.end-=10;
+      this.chart.destroy();
+      this.createChart(this.start, this.end);
+    }
   }
 
   ngOnInit(): void {
-    this.createChart();
+    this.prepareData();
+    this.createChart(this.start, this.end);
   }
 
 
-  createChart() {
+  createChart(start: number, end: number) {
     this.chart = new Chart(this.chart_ID, {
       type: 'bar',
       data: {
         datasets: [
           {
             label: "IP on Account Secured ($)",
-            data: this.ipOnAccountDataSet,
+            data: this.ipOnAccountDataSet.slice(start, end),
             backgroundColor: 'limegreen',
             hoverBackgroundColor: 'darkgreen',
             barThickness: 13,
@@ -113,7 +104,7 @@ export class BarComponent implements  OnInit {
           },
           {
             label: "IP on APP Secured ($)",
-            data: this.ipOnAccountDataSet,
+            data: this.ipOnAppDataSet.slice(start, end),
             backgroundColor: 'blue',
             hoverBackgroundColor: 'darkblue',
             barThickness: 13,
@@ -124,7 +115,7 @@ export class BarComponent implements  OnInit {
           },
           {
             label: "APP Secured ($)",
-            data: this.ipOnAccountDataSet,
+            data: this.appSecuredDataSet.slice(start, end),
             backgroundColor: 'orange',
             hoverBackgroundColor: 'darkorange',
             barThickness: 13,
@@ -135,7 +126,7 @@ export class BarComponent implements  OnInit {
           },
           {
             label: "Executed App Payments ($)",
-            data: this.ipOnAccountDataSet,
+            data: this.executedAppDataSet.slice(start, end),
             backgroundColor: 'red',
             hoverBackgroundColor: 'darkred',
             barThickness: 13,
@@ -172,8 +163,5 @@ export class BarComponent implements  OnInit {
       plugins: [this.legendMargin]
     });
   }
-
-
-
 }
 

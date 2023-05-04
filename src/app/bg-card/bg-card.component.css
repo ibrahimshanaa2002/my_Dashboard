@@ -1,6 +1,7 @@
 .card-body{
-  width: max-content;
+  width: 62rem;
   height: 30.9rem;
+  display: flex;
 }
 
 .left{

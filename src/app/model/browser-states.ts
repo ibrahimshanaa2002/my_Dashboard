@@ -2,12 +2,12 @@ import { IBrowserStates } from "./browser-states.interface";
 
 export const browserStatesList: Array<IBrowserStates> = [
     {
-        id: 1,
+        id: 7,
         name: "Google Chrome",
         percent: 20
     },
     {
-        id: 2,
+        id: 45,
         name: "Mozila Firefox",
         percent: 30
     },

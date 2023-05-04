@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {UserData} from "../model/userData.interface";
 
 @Component({
   selector: 'app-cards-container',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class CardsContainerComponent {
 
+  chartID1: string = "dough-chart1";
+  chartID2: string = "dough-chart2";
+  @Input() userData: Array<UserData>;
+  @Input() MPRUserData: Array<UserData>;
+  constructor() {
+  }
 }

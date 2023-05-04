@@ -1,5 +1,5 @@
 #container{
-  display: flex;
+  display: block;
   flex-direction: row;
   width: 25rem;
   height: 15rem;
@@ -7,20 +7,33 @@
 
 #comp-container {
   width: fit-content;
-  padding-right: 2rem;
-  padding-top: 2.5rem;
+  padding-top: 0.5rem;
+  display: block;
 }
 
 .card-title {
   margin-left: 0.5rem;
   margin-top: 0.3rem;
+  width: fit-content;
+}
+
+.card-body {
+  padding-right: 0;
+}
+
+.clock{
+  display: flex;
 }
 
 p {
-  margin-left: 0.5rem;
-  margin-top: 1.8rem;
   color: gray;
-  font-size: 1.3rem
+  font-size: 12px;
+  align-self: end;
+  margin-bottom: 4px;
+}
+
+.header {
+  display: flex;
 }
 
 
