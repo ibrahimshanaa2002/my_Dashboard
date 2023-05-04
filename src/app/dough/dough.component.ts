@@ -1,6 +1,7 @@
 import {AfterViewChecked, Component, Input, OnInit} from '@angular/core';
 import {Chart, ChartMeta, elements} from "chart.js";
 import {bottom, right} from "@popperjs/core";
+import {UUID} from "uuid-generator-ts";
 
 @Component({
   selector: 'app-dough',
