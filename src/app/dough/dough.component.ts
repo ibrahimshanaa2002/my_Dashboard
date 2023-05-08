@@ -34,11 +34,11 @@ export class DoughComponent  implements  AfterViewChecked{
     this.chart = new Chart(this.chart_ID, {
       type: 'doughnut',
       data: {
-        labels: ['Feb', 'Jan', 'Mar'],
+        labels: ['Accounts', 'Jan', 'Mar'],
         datasets: [
           {
-            label: "dfdf",
-            data: [{date: "Jan", data:10}, {date: "Feb", data:20}, {date: "Mar", data: 30}],
+            label: "IP on Account",
+            data: [{date: "Jan", data:-10}, {date: "Feb", data:20}, {date: "Mar", data: 30}],
             // backgroundColor: ['limegreen', 'lightgreen', 'lightgrey'],
             hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
             // borderWidth: 0,

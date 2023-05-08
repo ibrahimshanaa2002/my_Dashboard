@@ -8,7 +8,7 @@ import {UserData} from "../model/userData.interface";
   styleUrls: ['./bg-card.component.css']
 })
 export class BgCardComponent {
-  @Input() userData: Array<UserData>;
+  @Input() userData: UserData;
   @Input() MPRUserData: Array<UserData>;
 
 }

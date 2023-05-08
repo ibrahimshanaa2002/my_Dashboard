@@ -1,9 +1,11 @@
 export class Data {
-  x: string;
-  y: number;
-
-  constructor(x:string, y:number) {
-    this.x = x;
-    this.y = y;
+  constructor(label: string, value: number) {
+    this.label = label;
+    this.value = value;
   }
-}
+  label: string;
+  value: number;
+
+};
+
+
