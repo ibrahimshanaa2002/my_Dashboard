@@ -1,26 +1,14 @@
+import {Data} from "./data.interface";
+import {barChartAxisData} from "./barChartAxisData.interface";
+
 export interface UserData {
-  name: string;
-  department: string;
-  IPonAccountSecured: number;
-  IPonAppSecured: number;
-  AppSecured: number;
-  ExecutedAPPPayments: number;
-  PIFEnrolledTOS: number;
-  PIFSecured: number;
-  PIFSecuredRefund: number;
-  PIFtoAPP: number;
-  DfPSecured: number;
-  ExecutedDeferredPayments: number;
-  IPRefund: number;
-  FailedACHIP: number;
-  APPEnrollment: number;
-  APPCanceledBy: number;
-  APPCanceledFrom: number;
-  APPSecuredPlus: number;
-  APPSecuredMinus: number;
-  APPPaymentRefunds: number;
-  FailedACHAPP: number;
-  TotalPFRSecured: number;
-  TotalRefunds: number;
-  AdjustedPFRSecured: number;
+  // key: string;
+  // data: Map<string, number>;
+
+  // data [ipOnAccount ->json  Array[ x, y] ]
+  // map [x, map [label, y]
+
+  //
+
+  data: Map<string, barChartAxisData[]>;
 }
