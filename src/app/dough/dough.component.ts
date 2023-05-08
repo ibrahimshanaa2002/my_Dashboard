@@ -1,8 +1,6 @@
-import {AfterViewChecked, AfterViewInit, Component, Input} from '@angular/core';
-import {Chart, ChartMeta} from "chart.js";
+import {AfterViewChecked, Component, Input, OnInit} from '@angular/core';
+import {Chart, ChartMeta, elements} from "chart.js";
 import {bottom, right} from "@popperjs/core";
-import {UserData} from "../model/userData.interface";
-import {DoughnutDataSets} from "../model/doughnutDataSets.interface";
 import {UUID} from "uuid-generator-ts";
 
 @Component({
@@ -10,24 +8,11 @@ import {UUID} from "uuid-generator-ts";
   templateUrl: './dough.component.html',
   styleUrls: ['./dough.component.css']
 })
-export class DoughComponent  implements  AfterViewInit{
+export class DoughComponent  implements  AfterViewChecked{
   protected chart: any;
-  @Input() depUserData: UserData;
-  @Input() depMPRUserData: UserData;
-  dataSets: DoughnutDataSets[] = new Array<DoughnutDataSets>();
-  chart_ID: string = new UUID().toString();
+  @Input() chart_ID: string = "";
   constructor() {
-  }
-
-  prepareData(){
-    let counter = 0;
-    this.depUserData.data.forEach(element =>{
-      counter++;
-      this.dataSets.push(new DoughnutDataSets(element.label, element.value));
-      if (counter == 2){
-        return;
-      }
-    });
+  console.log(this.chart);
   }
 
    doughnutText = {
@@ -45,12 +30,29 @@ export class DoughComponent  implements  AfterViewInit{
   }
 
 
-  createChart(id: string){
-    this.chart = new Chart(id, {
+  createChart(){
+    this.chart = new Chart(this.chart_ID, {
       type: 'doughnut',
       data: {
-        labels: this.depUserData.names,
-        datasets: this.dataSets
+        labels: ['Accounts', 'Jan', 'Mar'],
+        datasets: [
+          {
+            label: "IP on Account",
+            data: [{date: "Jan", data:-10}, {date: "Feb", data:20}, {date: "Mar", data: 30}],
+            // backgroundColor: ['limegreen', 'lightgreen', 'lightgrey'],
+            hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
+            // borderWidth: 0,
+            // spacing: 2
+          },
+          // {
+          // label: "dfdf",
+          //   data: [54, 44, 22,12,54,65,32,52,36,54,25],
+          //   // backgroundColor: ['yellow', 'orange', 'red'],
+          //   hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
+          //   // borderWidth: 0,
+          //   // spacing: 2
+          // }
+        ]
       },
       options: {
         parsing: { key: 'data' },
@@ -73,9 +75,13 @@ export class DoughComponent  implements  AfterViewInit{
 
   }
 
-  ngAfterViewInit(): void {
-    this.prepareData();
-    this.createChart(this.chart_ID);
+  // ngOnInit(): void {
+  //    console.log(this.chart_ID);
+  //    this.createChart();
+  // }
+
+  ngAfterViewChecked(): void {
+    this.createChart();
   }
 
 }

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {DataSet} from "../model/dataSet.interface";
 import {UserData} from "../model/userData.interface";
-import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-bg-card',
@@ -9,7 +9,6 @@ import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
 })
 export class BgCardComponent {
   @Input() userData: UserData;
-  @Input() MPRUserData: UserData;
-  faEllipsisH = faEllipsisH;
+  @Input() MPRUserData: Array<UserData>;
 
 }
