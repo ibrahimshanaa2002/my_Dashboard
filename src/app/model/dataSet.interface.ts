@@ -1,12 +1,12 @@
 import {barChartAxisData} from "./barChartAxisData.interface";
 
 export class DataSet {
-  constructor(label: string, data: Array<barChartAxisData>) {
+  constructor(label: string, data: Array<number>) {
     this.label = label;
     this.data = data;
   }
   label: string;
-  data: Array<barChartAxisData>;
+  data: Array<number>;
   backgroundColor: string;
   hoverBackgroundColor: string;
   barThickness: number;

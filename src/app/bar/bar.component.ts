@@ -28,6 +28,7 @@ export class BarComponent implements  OnInit {
   protected chart_ID: string = 'bar-chart';
   data: Array<Data>;
   barChartAxisData: Map<number, DataSet[]> = new Map<number, DataSet[]>();
+  datas: DataSet[] = new Array<DataSet>();
   page: number = 1;
   @Input() userData: UserData;
   @Input() MPRUserData: Array<UserData>;
@@ -38,6 +39,7 @@ export class BarComponent implements  OnInit {
 
   prepareDataSets() {
       this.userData.data.forEach( (value, key) => {
+        this.datas.push(new DataSet(key, value));
         let size = Math.ceil(value.length/10);
         let start = 0;
         let end = 10;
@@ -90,6 +92,7 @@ export class BarComponent implements  OnInit {
 
   ngOnInit(): void {
     this.prepareDataSets();
+    console.log(this.datas);
     this.createChart(this.page);
   }
 
@@ -98,7 +101,8 @@ export class BarComponent implements  OnInit {
     this.chart = new Chart(this.chart_ID, {
       type: 'bar',
       data: {
-        datasets: this.barChartAxisData.get(page)!
+        labels: ,
+        datasets: this.datas
       },
       options: {
         aspectRatio: 2,
