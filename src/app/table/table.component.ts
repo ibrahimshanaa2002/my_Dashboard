@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Company} from "../model/TableModel";
+import {UserData} from "../model/userData.interface";
 
 @Component({
   selector: 'app-table',
@@ -7,6 +8,7 @@ import {Company} from "../model/TableModel";
   styleUrls: ['./table.component.css']
 })
   export class TableComponent implements OnInit {
+  @Input() userData: UserData[];
 
     companies: Company[] = [
       {
