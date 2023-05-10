@@ -34,7 +34,7 @@ export class DoughComponent  implements  AfterViewChecked{
     this.chart = new Chart(this.chart_ID, {
       type: 'doughnut',
       data: {
-        labels: ['Accounts', 'Jan', 'Mar'],
+        labels: ['Accounts', 'dghdfgfdgdfgdfgdfgdfgdfgdfhgfhfghfgjhgj', 'Mar'],
         datasets: [
           {
             label: "IP on Account",
