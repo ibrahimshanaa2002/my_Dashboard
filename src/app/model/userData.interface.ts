@@ -1,7 +1,5 @@
 import {Data} from "./data.interface";
 
 export interface UserData {
-  key: string; //Name or department
-  data: Data[]; //<Coloumn name, value>
-
-}
+  data: Map<string, Data[]>; // the key is the name in the Xaxis
+}                            // Data {label: coloumn, value: value}

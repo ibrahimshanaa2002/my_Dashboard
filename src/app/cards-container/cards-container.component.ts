@@ -10,7 +10,7 @@ export class CardsContainerComponent {
 
   chartID1: string = "dough-chart1";
   chartID2: string = "dough-chart2";
-  @Input() userData: UserData[];
+  @Input() userData: UserData;
   @Input() MPRUserData: Array<UserData>;
   constructor() {
   }

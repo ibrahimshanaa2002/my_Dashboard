@@ -4,6 +4,7 @@ import {UserData} from "../model/userData.interface";
 import {Data} from "../model/data.interface";
 import {DataSet} from "../model/dataSet.interface";
 import {barChartAxisData} from "../model/barChartAxisData.interface";
+import {isNull} from "@angular/compiler";
 
 
 
@@ -26,10 +27,12 @@ export class BarComponent implements  OnInit {
   };
   protected chart: any;
   protected chart_ID: string = 'bar-chart';
-  data: Array<Data>;
-  barChartAxisData: Map<number, DataSet[]> = new Map<number, DataSet[]>();
-  datas: DataSet[] = new Array<DataSet>();
-  page: number = 1;
+  dataSets: DataSet[] = new Array<DataSet>();
+  initialDatasets: DataSet[] =new Array<DataSet>();
+  XaxisData: string[] = new Array<string>();
+  start: number = 0;
+  end: number= 10;
+
   @Input() userData: UserData;
   @Input() MPRUserData: Array<UserData>;
 
@@ -38,71 +41,72 @@ export class BarComponent implements  OnInit {
   }
 
   prepareDataSets() {
-      this.userData.data.forEach( (value, key) => {
-        this.datas.push(new DataSet(key, value));
-        let size = Math.ceil(value.length/10);
-        let start = 0;
-        let end = 10;
-        for (let i = 1; i <= size; i++) {
-          if(i == size){
-            start = value.length-10;
-            end = value.length;
-          }
-          let dataset = new DataSet(key, value.slice(start,end));
-          if( this.barChartAxisData.has(i)){
-            this.barChartAxisData.get(i)!.push(dataset);
-          } else{
-            let array = new Array<DataSet>();
-            array.push(dataset);
-            // if (i > 1){
-            // dataset = this.barChartAxisData.get(i-1)!.at(0)!;
-            // array.push(dataset);
-            // }
-            this.barChartAxisData.set(i,array);
-          }
-            start+=10;
-            end+=10;
-        }
+    let x: Data[] = this.userData.data.values().next().value;
+      x.forEach(coloumn => {
+        let arr = new Array<number>();
+        this.dataSets.push(new DataSet(coloumn.label, arr));
+      });
+      this.userData.data.forEach((value, key) => {
+        this.XaxisData.push(key);
+        value.forEach(colomn => {
+          this.dataSets.forEach(dataset => {
+            if(dataset.label === colomn.label) {
+              dataset.data.push(colomn.value);
+            }
+          });
         });
+      });
+    this.dataSets.forEach(dataset => {
+      this.initialDatasets.push(new DataSet(dataset.label, dataset.data.slice(this.start, this.end)));
+    });
   }
 
   nextGroup() {
-    if(this.page === this.barChartAxisData.size)
-      return;
-    this.page++;
-    if(this.barChartAxisData.get(this.page) === undefined){
-      this.page--;
-      return;
-    }
-    this.chart.destroy();
-    this.createChart(this.page);
+    let nextDataSets: DataSet[] =new Array<DataSet>();
+      this.start += 10;
+      this.end += 10;
+      this.dataSets.forEach(dataset => {
+        if(this.end > dataset.data.length)
+          nextDataSets.push(new DataSet(dataset.label, dataset.data.slice(dataset.data.length -10, dataset.data.length)));
+        else
+        nextDataSets.push(new DataSet(dataset.label, dataset.data.slice(this.start, this.end)));
+      });
+      this.chart.destroy();
+      this.createChart(nextDataSets);
   }
 
   prevGroup() {
-    if(this.page === 1)
-        return;
-    this.page--;
-    if(this.barChartAxisData.get(this.page) === undefined){
-      this.page++;
-      return;
+    let prevDataSets: DataSet[] =new Array<DataSet>();
+    if(this.start-10 <= 0){
+      this.start = 0;
+      this.end = 10;
+      this.chart.destroy();
+      this.createChart(this.initialDatasets);
     }
-    this.chart.destroy();
-    this.createChart(this.page);
+    else {
+      this.start-=10;
+      this.end-=10;
+      console.log(this.start)
+      this.dataSets.forEach(dataset => {
+        prevDataSets.push(new DataSet(dataset.label, dataset.data.slice(this.start, this.end)));
+      });
+      this.chart.destroy();
+      this.createChart(prevDataSets);
+    }
   }
 
   ngOnInit(): void {
     this.prepareDataSets();
-    console.log(this.datas);
-    this.createChart(this.page);
+    this.createChart(this.initialDatasets);
   }
 
 
-  createChart(page: number) {
+  createChart(dataSets: DataSet[]) {
     this.chart = new Chart(this.chart_ID, {
       type: 'bar',
       data: {
-        labels: ,
-        datasets: this.datas
+        labels: this.XaxisData,
+        datasets: dataSets
       },
       options: {
         aspectRatio: 2,
