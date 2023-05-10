@@ -27,6 +27,18 @@ export class AppComponent {
     y.push(new Data("appexecuted", 20));
     data.set("ahmad",x);
     data.set("sami",y);
+    data.set("dgfdg",y);
+    data.set("hfgfg",y);
+    data.set("sasdfsmi",y);
+    data.set("sasmi",y);
+    data.set("thtjh",y);
+    data.set("sgsgfg",y);
+    data.set("asdcvc",y);
+    data.set("hjhkjk",y);
+    data.set("rtrtj",y);
+    data.set("scscs",y);
+    data.set("bnbnbn",y);
+    data.set("dsdsfsd",y);
     this.userData = {data}
 
   }

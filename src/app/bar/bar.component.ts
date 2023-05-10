@@ -1,10 +1,9 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
 import {UserData} from "../model/userData.interface";
 import {Data} from "../model/data.interface";
 import {DataSet} from "../model/dataSet.interface";
-import {barChartAxisData} from "../model/barChartAxisData.interface";
-import {isNull} from "@angular/compiler";
+
 
 
 
@@ -105,7 +104,7 @@ export class BarComponent implements  OnInit {
     this.chart = new Chart(this.chart_ID, {
       type: 'bar',
       data: {
-        labels: this.XaxisData,
+        labels: this.XaxisData.slice(),
         datasets: dataSets
       },
       options: {
