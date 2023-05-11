@@ -1,7 +1,8 @@
-import {AfterViewChecked, Component, Input, OnInit} from '@angular/core';
-import {Chart, ChartMeta, elements} from "chart.js";
+import {AfterViewChecked, Component, Input} from '@angular/core';
+import {Chart, ChartMeta} from "chart.js";
 import {bottom, right} from "@popperjs/core";
-import {UUID} from "uuid-generator-ts";
+import {UserData} from "../model/userData.interface";
+import {DoughnutDataSets} from "../model/doughnutDataSets.interface";
 
 @Component({
   selector: 'app-dough',
@@ -11,8 +12,16 @@ import {UUID} from "uuid-generator-ts";
 export class DoughComponent  implements  AfterViewChecked{
   protected chart: any;
   @Input() chart_ID: string = "";
+  @Input() userData: UserData;
+  dataSets: DoughnutDataSets[] = new Array<DoughnutDataSets>();
   constructor() {
-  console.log(this.chart);
+
+  }
+
+  prepareData(){
+    this.userData.data.forEach(element =>{
+      this.dataSets.push(new DoughnutDataSets(element.label, element.value));
+    });
   }
 
    doughnutText = {
@@ -34,25 +43,8 @@ export class DoughComponent  implements  AfterViewChecked{
     this.chart = new Chart(this.chart_ID, {
       type: 'doughnut',
       data: {
-        labels: ['Accounts', 'dghdfgfdgdfgdfgdfgdfgdfgdfhgfhfghfgjhgj', 'Mar'],
-        datasets: [
-          {
-            label: "IP on Account",
-            data: [{date: "Jan", data:-10}, {date: "Feb", data:20}, {date: "Mar", data: 30}],
-            // backgroundColor: ['limegreen', 'lightgreen', 'lightgrey'],
-            hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
-            // borderWidth: 0,
-            // spacing: 2
-          },
-          // {
-          // label: "dfdf",
-          //   data: [54, 44, 22,12,54,65,32,52,36,54,25],
-          //   // backgroundColor: ['yellow', 'orange', 'red'],
-          //   hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
-          //   // borderWidth: 0,
-          //   // spacing: 2
-          // }
-        ]
+        labels: this.userData.names,
+        datasets: this.dataSets
       },
       options: {
         parsing: { key: 'data' },
@@ -76,11 +68,12 @@ export class DoughComponent  implements  AfterViewChecked{
   }
 
   // ngOnInit(): void {
-  //    console.log(this.chart_ID);
+  //    this.prepareData();
   //    this.createChart();
   // }
 
   ngAfterViewChecked(): void {
+    this.prepareData();
     this.createChart();
   }
 

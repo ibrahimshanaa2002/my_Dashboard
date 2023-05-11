@@ -25,15 +25,17 @@
   display: flex;
 }
 
-p {
-  color: gray;
-  font-size: 12px;
-  align-self: end;
-  margin-bottom: 4px;
-}
-
 .header {
   display: flex;
+}
+
+#menuButton{
+  position: absolute;
+  padding: 0 5px;
+  background-color: transparent;
+  border: none;
+  justify-content: center;
+  right: 6px;
 }
 
 

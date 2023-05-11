@@ -14,33 +14,19 @@ export class AppComponent {
   MPRUserData: Array<UserData>;
 
   constructor() {
-    let data = new Map<string, Data[]>();
-    let x : Data[] = new Array<Data>();
-    x.push(new Data("iponaccount", 25));
-    x.push(new Data("iponapp", 25));
-    x.push(new Data("appsecured", 25));
-    x.push(new Data("appexecuted", 25));
-    let y : Data[] = new Array<Data>();
-    y.push(new Data("iponaccount", 20));
-    y.push(new Data("iponapp", 20));
-    y.push(new Data("appsecured", 20));
-    y.push(new Data("appexecuted", 20));
-    data.set("ahmad",x);
-    data.set("sami",y);
-    data.set("dgfdg",y);
-    data.set("hfgfg",y);
-    data.set("sasdfsmi",y);
-    data.set("sasmi",y);
-    data.set("thtjh",y);
-    data.set("sgsgfg",y);
-    data.set("asdcvc",y);
-    data.set("hjhkjk",y);
-    data.set("rtrtj",y);
-    data.set("scscs",y);
-    data.set("bnbnbn",y);
-    data.set("dsdsfsd",y);
-    this.userData = {data}
-
+    let names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "17", "18"];
+    let data = new Array<Data>();
+    let arr = new Array<number>();
+    arr= [1,2,3,4,5,6,7,8,9,10,11,2,13,14,15,16,17,18];
+    data.push(new Data("ip on account", arr));
+    data.push(new Data("ip on App", arr));
+    data.push(new Data("ip on Secured", arr));
+    data.push(new Data("ip on rifle", arr));
+    this.userData = {
+      title: "Users Data Chart",
+      names: names,
+      data: data
+    }
   }
 
   changeWidth(state: boolean){
