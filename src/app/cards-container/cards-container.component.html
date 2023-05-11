@@ -1,12 +1,13 @@
 <div class="cont">
     <div class="dough-containers">
-      <app-md-card [ID]="chartID1" [userData]="userData">
+      <app-md-card [ID]="chartID1" [MPRUserData]="MPRUserData">
         <div title>Immediate Payments (IP)</div>
-        <div bestDepartment>name: <br>value: </div>
+        <div *ngFor="let element of total" bestDepartment style="padding-right: 1rem">{{element.label}}<br><br>total: ${{element.value/total.length}}<br>average: ${{element.value}} <br>Best Dep.: <hr></div>
+
       </app-md-card>
-      <app-md-card [ID]="chartID2" [userData]="userData">
+      <app-md-card [ID]="chartID2" [MPRUserData]="MPRUserData">
         <div title>APP Payments (APP)</div>
-        <div bestDepartment>name: <br>value: </div>
+        <div bestDepartment>name: <br>value: <br>Best Dep.: </div>
       </app-md-card>
     </div>
     <div class="chart-container">

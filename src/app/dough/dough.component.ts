@@ -12,14 +12,14 @@ import {DoughnutDataSets} from "../model/doughnutDataSets.interface";
 export class DoughComponent  implements  AfterViewChecked{
   protected chart: any;
   @Input() chart_ID: string = "";
-  @Input() userData: UserData;
+  @Input() MPRUserData: UserData;
   dataSets: DoughnutDataSets[] = new Array<DoughnutDataSets>();
   constructor() {
 
   }
 
   prepareData(){
-    this.userData.data.forEach(element =>{
+    this.MPRUserData.data.forEach(element =>{
       this.dataSets.push(new DoughnutDataSets(element.label, element.value));
     });
   }
@@ -43,7 +43,7 @@ export class DoughComponent  implements  AfterViewChecked{
     this.chart = new Chart(this.chart_ID, {
       type: 'doughnut',
       data: {
-        labels: this.userData.names,
+        labels: this.MPRUserData.names,
         datasets: this.dataSets
       },
       options: {

@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {UserData} from "../model/userData.interface";
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
+import positioners from "chart.js/dist/plugins/plugin.tooltip";
 
 @Component({
   selector: 'app-md-card',
@@ -10,9 +11,12 @@ import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
 export class MdCardComponent {
 
   @Input() ID: string;
-  @Input() userData: UserData;
+  @Input() MPRUserData: UserData;
   faEllipsisH = faEllipsisH;
 
   constructor() {
+
   }
+
+
 }
