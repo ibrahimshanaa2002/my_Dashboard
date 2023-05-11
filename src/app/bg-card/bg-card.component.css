@@ -19,9 +19,13 @@
 /*  padding-right: 1rem;*/
 /*}*/
 
-#button{
-  padding-top: 5em;
-  padding-bottom: 0;
+#menuButton{
+  position: absolute;
+  padding: 0 5px;
+  background-color: transparent;
+  border: none;
+  justify-content: center;
+  right: 6px;
 }
 
 .left h4{

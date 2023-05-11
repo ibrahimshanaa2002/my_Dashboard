@@ -1,14 +1,19 @@
 <div id="container" class="card container">
+  <div class="dropdown" id="button">
+    <button id="menuButton" type="button" data-bs-toggle="dropdown"> <fa-icon [icon]="faEllipsisH" size="2x"></fa-icon></button>
+    <ul class="dropdown-menu">
+      <li><button type="button" class="dropdown-item">Show Data</button></li>
+    </ul>
+  </div>
   <div class="header">
     <h4 class="card-title"><ng-content select="[title]"></ng-content></h4>
-    <p>By Department</p>
   </div>
   <div class="clock">
   <div class="card-body">
-      <h5 style="margin-left: 0.9rem;margin-top: 0.1rem; font-weight: bold"><ng-content select="[total]"></ng-content></h5>
+      <h5 style="margin-left: 0.9rem;margin-top: 0.1rem; font-weight: bold"><ng-content select="[bestDepartment]"></ng-content></h5>
   </div>
     <div id="comp-container">
-      <app-dough [chart_ID]="ID"></app-dough>
+      <app-dough [chart_ID]="ID" [userData]="userData"></app-dough>
     </div>
   </div>
 </div>

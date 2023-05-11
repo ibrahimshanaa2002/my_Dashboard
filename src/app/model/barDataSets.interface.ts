@@ -1,6 +1,4 @@
-import {barChartAxisData} from "./barChartAxisData.interface";
-
-export class DataSet {
+export class BarDataSets {
   constructor(label: string, data: Array<number>) {
     this.label = label;
     this.data = data;
