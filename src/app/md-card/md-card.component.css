@@ -1,9 +1,8 @@
 #container{
   display: block;
   flex-direction: row;
-  width: 22rem;
+  width: 25rem;
   height: 15rem;
-  padding-right: 0;
 }
 
 #comp-container {
@@ -19,7 +18,7 @@
 }
 
 .card-body {
-  padding: 0;
+  padding-right: 0;
 }
 
 .clock{
@@ -30,24 +29,13 @@
   display: flex;
 }
 
-h5{
-  font-size: 14px;
-  font-weight: lighter;
-  /*display: flex;*/
-
-}
-
 #menuButton{
   position: absolute;
-  /*padding: 0 5px;*/
+  padding: 0 5px;
   background-color: transparent;
-  border: 1px solid silver;
+  border: none;
   justify-content: center;
-  right: 0;
-  /*top: 16px;*/
-  border-right: none;
-  border-top: none;
-  border-bottom-left-radius: 5px;
+  right: 6px;
 }
 
 
