@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Company} from "../model/TableModel";
 import {UserData} from "../model/userData.interface";
+import {Data} from "../model/data.interface";
 
 @Component({
   selector: 'app-table',
@@ -8,8 +9,10 @@ import {UserData} from "../model/userData.interface";
   styleUrls: ['./table.component.css']
 })
   export class TableComponent implements OnInit {
-  @Input() userData: UserData[];
+  @Input() userData: UserData;
 
+  data: Data[];
+  i: number = 1;
     companies: Company[] = [
       {
         name: 'Company A',
@@ -47,8 +50,11 @@ import {UserData} from "../model/userData.interface";
     ];
 salesImage: any;
 
-    constructor() { }
+    constructor() {
+
+    }
 
     ngOnInit() {
+      this.data = this.userData.data;
     }
 }

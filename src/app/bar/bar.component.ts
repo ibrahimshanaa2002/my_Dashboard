@@ -33,7 +33,7 @@ export class BarComponent implements  OnInit {
   end: number= 10;
 
   @Input() userData: UserData;
-  @Input() MPRUserData: Array<UserData>;
+  @Input() MPRUserData: UserData;
 
   constructor() {
 
