@@ -25,7 +25,8 @@
   background-color: transparent;
   border: none;
   justify-content: center;
-  right: 6px;
+  right: 0;
+  top: 16px;
 }
 
 .left h4{

@@ -1,12 +1,8 @@
 export class DoughnutInfo{
-  constructor(label: string, value: number, average: number, topDep: string) {
+  constructor(label: string, value: number) {
     this.label = label;
     this.value = value;
-    this.average = average;
-    this.topDep = topDep;
   }
   label: string;
   value: number;
-  average: number;
-  topDep: string;
 }

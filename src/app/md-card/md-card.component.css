@@ -18,7 +18,7 @@
 }
 
 .card-body {
-  padding-right: 0;
+  padding: 0;
 }
 
 .clock{
@@ -27,6 +27,12 @@
 
 .header {
   display: flex;
+}
+
+h5{
+  font-size: 14px;
+  font-weight: lighter;
+  /*display: flex;*/
 }
 
 #menuButton{
