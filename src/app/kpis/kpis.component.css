@@ -20,6 +20,7 @@
 .card-body {
   padding: 15px;
   justify-content: space-evenly;
+  width: 205%;
 }
 
 .kpi-image img {
@@ -69,4 +70,93 @@
     width: 11rem;
   }
 
+}
+.kpi-image{
+  position: relative;
+  
+}
+.popup {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+  z-index: 1;
+  display: flex;
+width: max-content;
+}
+
+/* .popup p {
+  margin: 0;
+} */
+
+.kpi-image:hover .popup {
+  visibility: visible;
+  opacity: 1;
+}
+.vline {
+  border-left: 1px solid #1321c3;
+  height: 100%;
+  position: absolute;
+  left: 93%;
+  transform: translateX(-50%);
+}
+.horizontal-line {
+  border: none; /* remove the default border */
+  border-top: 1px solid black; /* add a solid black line on the top */
+  margin-top: 10px; /* adjust the distance between the word "user" and the line as needed */
+}
+/* .vertical-line {
+  height: 20px; 
+  border-left: 1px solid black; 
+  margin-left: 10px; 
+} */
+.vertical-line1{
+  height: 50px; /* adjust the height of the line as needed */
+  border-left: 1px solid transparent; /* adjust the color and style of the line as needed */
+  margin-left: 10px; /* adjust the distance between the word "user" and the line as needed */
+padding: 5px;
+position: absolute;
+
+}
+.popup table {
+  font-size: 14px;
+  position: relative;
+}
+.popup .table::after{
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  top: 0;
+  left: 50%;
+}
+.kpi-image .popup::after{
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 40%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.value{
+  font-weight: bolder;
+  text-align: center;
+}
+.vertical-line2{
+  height: 50px; /* adjust the height of the line as needed */
+  border-left: 1px solid black; /* adjust the color and style of the line as needed */
+  margin-left: 10px; /* adjust the distance between the word "user" and the line as needed */
+padding: 5px;
+}
+.padding{
+padding: 6px;
 }
