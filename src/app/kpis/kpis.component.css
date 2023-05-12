@@ -42,8 +42,9 @@
   font-weight: 500;
 }
 
-.card-header.d-flex.justify-content-between {
-  background: linear-gradient(to bottom, #6A5ACD, #BA55D3);;
+.card-header {
+  background-image: linear-gradient(to bottom, #4E516A, #74798C);
+
 }
 
 .col-sm-6:nth-child(odd) .card-body {

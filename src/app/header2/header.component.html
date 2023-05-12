@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand px-2" *ngFor="let header of Headers">
+    <div class="side-nav-button p-2 me-3 text-light offcanvas-collapse " data-bs-toggle="collapse"
+        data-bs-target="#side-nav-content">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div>
+        <a class="navbar-brand" href="#" style="color: white;">{{header.companyname}}</a>
+    </div>
+    <div class=" search-box mx-auto d-flex">
+        <input class=" search form-control me-2" type="search" placeholder="search">
+        <button type="submit"><i class="fa-solid fa-search fa-xl"></i></button>
+    </div>
+    <div class="right-side">
+        <div class="user-profile d-flex">
+            <img [src]="header.userprofile" alt="User Profile Picture">
+            <div class="user-info">
+                <div class="username" style="color: white;">{{header.username}}</div>
+                <div class="job-title">{{header.usercareer}}</div>
+            </div>
+        </div>
+        <div class="icons" style="color: white;">
+            <i class="fa-solid fa-bell fa-lg"></i>
+            <i class="fa-solid fa-gear fa-lg"></i>
+            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <i class="fa-solid fa-bolt fa-lg"></i>
+        </div>
+    </div>
+</nav>
