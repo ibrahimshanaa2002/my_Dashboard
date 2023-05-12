@@ -14,7 +14,20 @@
         <div class="user-profile d-flex">
             <img [src]="header.userprofile" alt="User Profile Picture">
             <div class="user-info">
-                <div class="username" style="color: white;">{{header.username}}</div>
+
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle username btn-sm" style="color: white;" href="#"
+                        role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{header.username}}
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">LogIn</a></li>
+                        <li><a class="dropdown-item" href="#">LogOut</a></li>
+                        <li><a class="dropdown-item" href="#">SignUp</a></li>
+                    </ul>
+                </div>
                 <div class="job-title">{{header.usercareer}}</div>
             </div>
         </div>

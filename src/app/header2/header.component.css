@@ -24,6 +24,10 @@ nav {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 30%;
 }
+a#dropdownMenuLink{
+    border: none;
+    background:none;
+}
 
 .user-profile {
     align-items: center;
@@ -53,6 +57,7 @@ nav {
 .job-title {
     font-size: 14px;
     color: #ccc;
+    margin-left: 9px;
 }
 
 .icons {
