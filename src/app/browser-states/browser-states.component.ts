@@ -9,7 +9,6 @@ import {patientOutreached} from "../model/patients-outreached";
 })
 export class BrowserStatesComponent implements OnInit{
   patientOutreachedList= patientOutreached[0];
-  browserStatesList = browserStatesList;
 
   patientOutreachedValue() {
     let total= 0;
