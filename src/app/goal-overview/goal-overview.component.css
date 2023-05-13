@@ -85,7 +85,7 @@
     border: 6px solid transparent;
     border-bottom-color: rgba(0, 0, 0, 0.7);
     }
-/* tooltip */
+/* tooltip */ 
 @media  (max-width: 505px)  {
     .goal-overview{
         width: 100%;

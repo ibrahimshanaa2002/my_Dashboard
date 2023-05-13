@@ -28,10 +28,8 @@ export class GoalOverviewComponent{
   }
   patientSkippedValue() {
     var element: number[] = [] ;
-    for (let i = 0; i < this.patientSkippedsList.Patient_section.length-2; i++) {
+    for (let i = 0; i < this.patientSkippedsList.Patient_section.length-2; i++)
       element.push(this.patientSkippedsList.Patient_section[i].value);
-    }
-    // console.log(element);
     return element;
   }
   public chart: any;

@@ -1,6 +1,7 @@
 export interface IPERCSGold {
     date: string;
     Patient_section: Patient[];
+    
 }
 
 export interface Patient {

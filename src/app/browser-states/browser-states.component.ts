@@ -17,7 +17,6 @@ export class BrowserStatesComponent implements OnInit{
       if (temp > total) 
         total=  temp;
     }
-    // console.log(total);
     return total;
   }
 

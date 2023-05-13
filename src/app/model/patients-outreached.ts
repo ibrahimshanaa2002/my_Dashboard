@@ -65,7 +65,7 @@ const patientOutreachedList: Array<percs_gold.Patient> = [
 ];
 export const patientOutreached: Array<percs_gold.IPERCSGold> = [
     {
-        date: "01-12-0000",
+        date: "01-11-0000",
         Patient_section: patientOutreachedList
     }
 ];
