@@ -1,9 +1,9 @@
 <div class="goal-overview card">
   <div>
-    <h3>Goal Overview</h3>
-    <div class="goal-overview-chart" style="height:6.5rem; width:6.5rem">
+    <h3>Patient Skipped</h3>
+    <div class="goal-overview-chart" style="height:8.5rem; width:8.5rem">
       <canvas  
-      id="DoughChart-goalOverview" 
+      id="DoughChart_EncountersBalanceSkipped" 
       width="400" 
       height="100" 
       aria-label="Hello ARIA World" 
@@ -11,14 +11,15 @@
       >{{ chart }} </canvas>
     </div>
   </div>
+  <h6 style="text-align: center;">Encounters Balance skipped</h6>
   <div class="goal-overview-footer">
     <div>
-      <span>Completed</span>
-      <span>{{ goalOverviewCompleted | number}}</span>
+      <span>Other</span>
+      <span>{{  Encounters_Balance_skipped_Other | number}}</span>
     </div>
     <div>
-      <span>In progress</span>
-      <span>{{ goalOverviewInprogress | number}}</span>
+      <span>Bad Debt</span>
+      <span>{{ Encounters_Balance_skipped_Bad_Debt | number}}</span>
     </div>
   </div>
 </div>
