@@ -34,26 +34,26 @@ export class BarComponent implements  AfterViewInit {
   end: number= 10;
 
   @Input() userData: UserData;
-  @Input() MPRUserData: UserData;
 
   constructor() {
 
   }
 
-  prepareDataSets(category: UserData) {
-    this.pageArr = new Map<number, BarDataSets[]>();
-    this.dataSets = new Array<BarDataSets>();
-    category.data.forEach(element =>{
+  prepareDataSets() {
+    // this.pageArr = new Map<number, BarDataSets[]>();
+    // this.dataSets = new Array<BarDataSets>();
+    this.userData.data.forEach(element =>{
       this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
     });
     this.pageArr.set(this.page, this.dataSets);
+    console.log(this.userData)
   }
 
-  nextGroup(category: UserData) {
+  nextGroup() {
     this.start+=10;
     this.end+=10;
     this.page++;
-    let size = category.data.at(0)!.value.length;
+    let size = this.userData.data.at(0)!.value.length;
     let numOfPages = Math.ceil(size/10);
     if(this.page > numOfPages){
       this.start-=10;
@@ -66,7 +66,7 @@ export class BarComponent implements  AfterViewInit {
       this.end = size;
       if(!this.pageArr.has(this.page)){
         this.dataSets = new Array<BarDataSets>();
-        category.data.forEach(element =>{
+        this.userData.data.forEach(element =>{
           this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
         });
         this.pageArr.set(this.page, this.dataSets);
@@ -81,7 +81,7 @@ export class BarComponent implements  AfterViewInit {
     else{
     if(!this.pageArr.has(this.page)){
     this.dataSets = new Array<BarDataSets>();
-      category.data.forEach(element =>{
+      this.userData.data.forEach(element =>{
       this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
     });
     this.pageArr.set(this.page, this.dataSets);
@@ -116,8 +116,8 @@ export class BarComponent implements  AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.prepareDataSets(this.userData);
-    this.prepareDataSets(this.MPRUserData);
+    this.prepareDataSets();
+    // this.prepareDataSets(this.MPRUserData);
     this.createChart(this.chart_ID, this.start, this.end, this.page);
   }
 

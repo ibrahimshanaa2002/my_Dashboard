@@ -10,11 +10,8 @@ import {DoughnutInfo} from "../model/doughnutInfo.interface";
 })
 export class CardsContainerComponent implements OnInit{
   @Input() userData: UserData;
-  @Input() MPRUserData: UserData;
   @Input() depUserData1: UserData;
   @Input() depUserData2: UserData;
-  @Input() depMPRUserData1: UserData;
-  @Input() depMPRUserData2: UserData;
   @Input() reverseDirection: boolean;
   chartInfo: DoughnutInfo[] = new Array<DoughnutInfo>();
   chartsInfo: Array<DoughnutInfo[]> = new Array<DoughnutInfo[]>();
@@ -55,8 +52,5 @@ export class CardsContainerComponent implements OnInit{
     }
     this.prepareChartInfo(this.depUserData1);
     this.prepareChartInfo(this.depUserData2);
-    this.prepareChartInfo(this.depMPRUserData1);
-    this.prepareChartInfo(this.depMPRUserData2);
-
   }
 }

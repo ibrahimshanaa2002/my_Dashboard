@@ -9,7 +9,6 @@ import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
 })
 export class BgCardComponent {
   @Input() userData: UserData;
-  @Input() MPRUserData: UserData;
   faEllipsisH = faEllipsisH;
 
 }

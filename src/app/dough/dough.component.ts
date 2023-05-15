@@ -13,7 +13,6 @@ import {UUID} from "uuid-generator-ts";
 export class DoughComponent  implements  AfterViewInit{
   protected chart: any;
   @Input() depUserData: UserData;
-  @Input() depMPRUserData: UserData;
   dataSets: DoughnutDataSets[] = new Array<DoughnutDataSets>();
   chart_ID: string = new UUID().toString();
   constructor() {
