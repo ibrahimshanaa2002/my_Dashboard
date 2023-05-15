@@ -7,15 +7,16 @@
   </div>
   <div id="cont">
     <app-kpis></app-kpis>
-    <app-cards-container [userData]="userData" [MPRUserData]="MPRUserData"></app-cards-container>
-    <app-table [userData]="userData"></app-table>
+    <app-cards-container [userData]="userData" [depUserData1]="depUserData1" [depUserData2]="depUserData2"></app-cards-container>
+    <app-cards-container [reverseDirection]="reverseDirection" [MPRUserData]="MPRUserData" [depMPRUserData1]="depMPRUserData1" [depMPRUserData2]="depMPRUserData2"></app-cards-container>
+<!--    <app-table [userData]="userData"></app-table>-->
     <div id="sdsd">
     <div class="bgt">
       <app-browser-states></app-browser-states>
       <app-goal-overview></app-goal-overview>
       <app-transactions></app-transactions>
     </div>
-<!--      <app-footer  class="card"></app-footer>-->
+      <app-footer></app-footer>
     </div>
   </div>
 </div>

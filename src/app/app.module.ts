@@ -22,7 +22,8 @@ import { BrowserStatesComponent } from "./browser-states/browser-states.componen
 import { GoalOverviewComponent } from "./goal-overview/goal-overview.component";
 import { TransactionsComponent } from "./transactions/transactions.component";
 import { FooterComponent } from "./footer/footer.component";
-import { HeaderComponent } from './header/header.component';
+import {HeaderComponent} from "./header2/header.component";
+
 
 @NgModule({
   declarations: [
