@@ -64,7 +64,7 @@ export class AppComponent implements  OnInit{
     }
     this.MPRUserData = {
       title: "MPRUsers Data Chart",
-      names: departments,
+      names: names,
       data: userData
     }
     this.depMPRUserData1 = {

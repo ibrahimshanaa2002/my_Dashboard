@@ -7,9 +7,8 @@
         </div>
   <div class="card-body">
     <div class="right">
-    <h4 class="card-title" *ngIf="userData != undefined">{{ userData.title }}</h4>
-      <h4 class="card-title" *ngIf="MPRUserData != undefined">{{ MPRUserData.title }}</h4>
-    <app-bar [userData]="userData" [MPRUserData]="MPRUserData"></app-bar>
+    <h4 class="card-title">{{ userData.title }}</h4>
+    <app-bar [userData]="userData" ></app-bar>
     </div>
 <!--    <div class="left">-->
 <!--      <div class="left-container">-->
