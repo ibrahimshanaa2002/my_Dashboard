@@ -1,3 +1,7 @@
+.container {
+  padding: 0;
+}
+
 .card-body{
   width: 62rem;
   height: 30.9rem;
@@ -21,12 +25,15 @@
 
 #menuButton{
   position: absolute;
-  padding: 0 5px;
+  /*padding: 0 5px;*/
   background-color: transparent;
-  border: none;
+  border: 1px solid silver;
   justify-content: center;
   right: 0;
-  top: 16px;
+  /*top: 16px;*/
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 5px;
 }
 
 .left h4{
@@ -34,6 +41,7 @@
   padding-bottom: 0;
   font-weight: bold;
 }
+
 
 /*@media (min-width: 576px) {*/
 /*  #container {*/

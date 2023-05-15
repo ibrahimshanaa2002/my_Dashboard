@@ -1,13 +1,14 @@
 <div id="container" class="card container">
   <div class="dropdown" id="button">
-    <button id="menuButton" type="button" data-bs-toggle="dropdown"> <fa-icon [icon]="faEllipsisH" size="2x"></fa-icon></button>
+    <button id="menuButton" type="button" data-bs-toggle="dropdown"> <fa-icon [icon]="faEllipsisH" size="1x" ></fa-icon></button>
             <ul class="dropdown-menu">
               <li><button type="button" class="dropdown-item">Show Data</button></li>
             </ul>
         </div>
   <div class="card-body">
     <div class="right">
-    <h4 class="card-title">{{ userData.title }}</h4>
+    <h4 class="card-title" *ngIf="userData != undefined">{{ userData.title }}</h4>
+      <h4 class="card-title" *ngIf="MPRUserData != undefined">{{ MPRUserData.title }}</h4>
     <app-bar [userData]="userData" [MPRUserData]="MPRUserData"></app-bar>
     </div>
 <!--    <div class="left">-->
