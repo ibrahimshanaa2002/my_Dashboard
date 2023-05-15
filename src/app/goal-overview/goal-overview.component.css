@@ -51,10 +51,41 @@
     font-weight: bold;
 }
 .goal-overview-chart{
-    position: absolute;
+    /* position: absolute;
     top: calc(50% - 32px);
-    left: calc(50% - 50px);
+    left: calc(50% - 50px); */
+    margin: 30px auto;
 }
+/* tooltip */
+.customeTooltip{
+    position: absolute;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 7px;
+    border-radius: 4px;
+    opacity: 1;
+    pointer-events: none;
+    font-size: 10px;
+    transform: translate(-50%, 0);
+}
+.customeTooltip p{
+    margin-bottom: 5px;
+}
+.customeTooltip span{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+.customeTooltip::after {
+    content: " ";
+    position: absolute;
+    left: calc(50% - 3px);
+    bottom: 100%;
+    border: 6px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.7);
+    }
+/* tooltip */ 
 @media  (max-width: 505px)  {
     .goal-overview{
         width: 100%;
