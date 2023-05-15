@@ -11,18 +11,18 @@
             <div class="vline"></div>
             <div id="kpi-cont" class="card-body d-flex align-items-center">
               <div class="kpi-image">
-                <img [src]="kpis[0].icon" alt="{{ kpis[0].value }} icon">
+                <img [src]="kpis[0].icon" alt="{{ kpis[0].value }} icon" >
                 <div class="popup">
-                  
+
                  <table class="table">
                   <tr>
                     <th>User</th>
                     <div class="padding"></div>
                     <th>MPR User</th>
                   </tr>
-                  
+
                   <tr>
-                    <td>IP on Account 
+                    <td>IP on Account
                       <p class="value"> {{ kpis[0].useracc}}</p>
                     </td>
                     <div class=""></div>
@@ -51,7 +51,7 @@
 
               <div class="kpi-image">
                 <img [src]="kpis[1].icon" alt="{{ kpis[1].value }} icon">
-              
+
               <div class="popup">
                 <table class="table">
                   <tr>
@@ -59,7 +59,7 @@
                     <div class="padding"></div>
                     <th>MPR User</th>
                   </tr>
-                  
+
                   <tr>
                     <td>App secured
                       <p class="value"> {{ kpis[1].useracc}}</p>
@@ -90,24 +90,24 @@
                 <img [src]="kpis[2].icon" alt="{{ kpis[2].value }} icon">
                 <div class="popup">
                   <table >
-                   
-                    
+
+
                     <tr>
                       <td>% Total Secured / Encounters Balance
                         <p class="value"> {{kpis[2].total1}}</p>
                       </td>
                       <!-- <div class="1"></div> -->
-                     
+
                     </tr>
                     <tr>
                       <td>% Total Cash/Encounters Balance
                         <p class="value"> {{kpis[2].total2}}
                       </td>
-                     
+
                     </tr>
                    </table>
                   </div>
-             
+
               </div>
               <div class="kpi-text flex-grow-1 mx-3">
                 <h3>{{ kpis[2].value }}</h3>
@@ -119,7 +119,7 @@
               <div class="kpi-text flex-grow-1 mx-3">
                 <h3>{{ kpis[3].value }}</h3>
                 <p class="card-subtitle">{{ kpis[3].subtitle }}</p>
-                
+
               </div>
             </div>
           </div>

@@ -22,6 +22,10 @@ button:nth-child(1) {
   right: 0.7rem;
 }
 
+i {
+  color: #463e46;
+}
+
 /*@media (max-device-width: 480px){*/
 /*  .chart-container {*/
 /*    width: 16rem;*/

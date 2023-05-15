@@ -14,6 +14,7 @@
 .dough-containers {
   padding-top: 1rem;
   padding-right: 0.5rem;
+  padding-left: 0.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -25,6 +26,44 @@ app-md-card:nth-child(1)  {
 #info{
   display: flex;
   flex-direction: row;
+}
+
+.card-body-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  text-align: center;
+  padding: 0.25rem 0;
+  margin: 0.25rem 0;
+  background-color: #0c0c0c;
+  border-radius: 15px;
+  min-width: 9rem;
+  align-self: center;
+  color: #fff;
+}
+
+.topDep, .average{
+  padding: 0.25rem 0;
+  font-size: 10px;
+  width: fit-content;
+}
+
+.topDep{
+  background-color: limegreen;
+  border-radius: 15px;
+  margin-bottom: 0.2rem;
+}
+
+.average{
+  background-color: gold;
+  border-radius: 15px;
+}
+
+.topDep > div, .average > div{
+  margin-left: 0.5rem;
+  margin-right: 0.25rem;
 }
 
 @media (max-device-width: 480px) {

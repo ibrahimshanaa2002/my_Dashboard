@@ -1,26 +1,32 @@
-import {AfterViewChecked, Component, Input} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, Input} from '@angular/core';
 import {Chart, ChartMeta} from "chart.js";
 import {bottom, right} from "@popperjs/core";
 import {UserData} from "../model/userData.interface";
 import {DoughnutDataSets} from "../model/doughnutDataSets.interface";
+import {UUID} from "uuid-generator-ts";
 
 @Component({
   selector: 'app-dough',
   templateUrl: './dough.component.html',
   styleUrls: ['./dough.component.css']
 })
-export class DoughComponent  implements  AfterViewChecked{
+export class DoughComponent  implements  AfterViewInit{
   protected chart: any;
-  @Input() chart_ID: string = "";
-  @Input() MPRUserData: UserData;
+  @Input() depUserData: UserData;
+  @Input() depMPRUserData: UserData;
   dataSets: DoughnutDataSets[] = new Array<DoughnutDataSets>();
+  chart_ID: string = new UUID().toString();
   constructor() {
-
   }
 
   prepareData(){
-    this.MPRUserData.data.forEach(element =>{
+    let counter = 0;
+    this.depUserData.data.forEach(element =>{
+      counter++;
       this.dataSets.push(new DoughnutDataSets(element.label, element.value));
+      if (counter == 2){
+        return;
+      }
     });
   }
 
@@ -39,11 +45,11 @@ export class DoughComponent  implements  AfterViewChecked{
   }
 
 
-  createChart(){
-    this.chart = new Chart(this.chart_ID, {
+  createChart(id: string){
+    this.chart = new Chart(id, {
       type: 'doughnut',
       data: {
-        labels: this.MPRUserData.names,
+        labels: this.depUserData.names,
         datasets: this.dataSets
       },
       options: {
@@ -67,14 +73,9 @@ export class DoughComponent  implements  AfterViewChecked{
 
   }
 
-  // ngOnInit(): void {
-  //    this.prepareData();
-  //    this.createChart();
-  // }
-
-  ngAfterViewChecked(): void {
+  ngAfterViewInit(): void {
     this.prepareData();
-    this.createChart();
+    this.createChart(this.chart_ID);
   }
 
 }

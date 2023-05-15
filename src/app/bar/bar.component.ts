@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
 import {UserData} from "../model/userData.interface";
 import {Data} from "../model/data.interface";
 import {BarDataSets} from "../model/barDataSets.interface";
+import {UUID} from "uuid-generator-ts";
 
 
 
@@ -12,7 +13,7 @@ import {BarDataSets} from "../model/barDataSets.interface";
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.css']
 })
-export class BarComponent implements  OnInit {
+export class BarComponent implements  AfterViewInit {
 
   private legendMargin: any = {
     id: 'legendMargin',
@@ -25,9 +26,9 @@ export class BarComponent implements  OnInit {
     }
   };
   protected chart: any;
-  protected chart_ID: string = 'bar-chart';
   dataSets: BarDataSets[] = new Array<BarDataSets>();
   pageArr: Map<number, BarDataSets[]> = new Map<number, BarDataSets[]>();
+  chart_ID: string = new UUID().toString();
   page: number = 1;
   start: number = 0;
   end: number= 10;
@@ -39,18 +40,20 @@ export class BarComponent implements  OnInit {
 
   }
 
-  prepareDataSets() {
-    this.userData.data.forEach(element =>{
+  prepareDataSets(category: UserData) {
+    this.pageArr = new Map<number, BarDataSets[]>();
+    this.dataSets = new Array<BarDataSets>();
+    category.data.forEach(element =>{
       this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
     });
     this.pageArr.set(this.page, this.dataSets);
   }
 
-  nextGroup() {
+  nextGroup(category: UserData) {
     this.start+=10;
     this.end+=10;
     this.page++;
-    let size = this.userData.data.at(0)!.value.length;
+    let size = category.data.at(0)!.value.length;
     let numOfPages = Math.ceil(size/10);
     if(this.page > numOfPages){
       this.start-=10;
@@ -63,31 +66,31 @@ export class BarComponent implements  OnInit {
       this.end = size;
       if(!this.pageArr.has(this.page)){
         this.dataSets = new Array<BarDataSets>();
-        this.userData.data.forEach(element =>{
+        category.data.forEach(element =>{
           this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
         });
         this.pageArr.set(this.page, this.dataSets);
         this.chart.destroy();
-        this.createChart(this.start, this.end, this.page);
+        this.createChart(this.chart_ID, this.start, this.end, this.page);
       }
       else{
         this.chart.destroy();
-        this.createChart(this.start, this.end, this.page);
+        this.createChart(this.chart_ID, this.start, this.end, this.page);
       }
     }
     else{
     if(!this.pageArr.has(this.page)){
     this.dataSets = new Array<BarDataSets>();
-    this.userData.data.forEach(element =>{
+      category.data.forEach(element =>{
       this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
     });
     this.pageArr.set(this.page, this.dataSets);
       this.chart.destroy();
-      this.createChart(this.start, this.end, this.page);
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
     }
     else{
       this.chart.destroy();
-      this.createChart(this.start, this.end, this.page);
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
     }
     }
   }
@@ -103,23 +106,24 @@ export class BarComponent implements  OnInit {
       this.end = 10;
       this.page = 1;
       this.chart.destroy();
-      this.createChart(this.start, this.end, this.page);
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
       return;
     }
       this.page--;
       this.chart.destroy();
-      this.createChart(this.start, this.end, this.page);
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
 
   }
 
-  ngOnInit(): void {
-    this.prepareDataSets();
-    this.createChart(this.start, this.end, this.page);
+  ngAfterViewInit(): void {
+    this.prepareDataSets(this.userData);
+    this.prepareDataSets(this.MPRUserData);
+    this.createChart(this.chart_ID, this.start, this.end, this.page);
   }
 
 
-  createChart(start: number, end: number,page: number) {
-    this.chart = new Chart(this.chart_ID, {
+  createChart(ID:string, start: number, end: number,page: number) {
+    this.chart = new Chart(ID, {
       type: 'bar',
       data: {
         labels: this.userData.names.slice(start,end),
