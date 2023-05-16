@@ -4,12 +4,11 @@ table {
 }
 
 .table-responsive {
-  margin: 0 1.4rem !important;
+  margin-left: 1.4rem;
 }
 
 th {
   background-image: linear-gradient(to bottom, black, #333);
-
 }
 
 .subtitle {
@@ -21,8 +20,9 @@ th {
   background-color: transparent;
 }
 
-table.table.table-hover {
-  width: max-content;
+thead {
+  position: sticky;
+  top: 0;
 }
 
 .status-cell span {
@@ -74,13 +74,12 @@ span.flash {
 
 .table-responsive {
   margin: 5px;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
 }
 
 .table-responsive {
-  width: 91rem;
-  overflow-x: scroll;
-  height: 24rem;
+  position: relative;
+  height: 75%;
 }
 
 ::-webkit-scrollbar {

@@ -10,6 +10,7 @@ import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
 export class MdCardComponent {
   @Input() depUserData: UserData;
   faEllipsisH = faEllipsisH;
+  show: boolean = false;
 
   constructor() {
   }
