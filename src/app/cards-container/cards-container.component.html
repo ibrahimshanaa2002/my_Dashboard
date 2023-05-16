@@ -1,15 +1,24 @@
-<div class="cont">
+<div id="cards-cont" class="cont">
     <div class="dough-containers">
-      <app-md-card [ID]="chartID1">
+      <app-md-card [depUserData]="depUserData1">
         <div title>Immediate Payments (IP)</div>
-        <div total>$8,055.56</div>
+        <div class="card-body-info" *ngFor="let element of chartsInfo.at(0)" label>
+          <div class="label">&nbsp;&nbsp;{{element.label}}&nbsp;&nbsp;</div>
+          <div class="topDep"><div>Top Dep.: {{element.topDep}}</div></div>
+          <div class="average"><div>Average: ${{element.average}}</div></div>
+        </div>
+
       </app-md-card>
-      <app-md-card [ID]="chartID2">
+      <app-md-card [depUserData]="depUserData2">
         <div title>APP Payments (APP)</div>
-        <div total>$4,055.56</div>
+        <div class="card-body-info" *ngFor="let element of chartsInfo.at(1)" label>
+          <div class="label">&nbsp;&nbsp;{{element.label}}&nbsp;&nbsp;</div>
+          <div class="topDep"><div>Top Dep.: {{element.topDep}}</div></div>
+          <div class="average"><div>Average: ${{element.average}}</div></div>
+        </div>
       </app-md-card>
     </div>
     <div class="chart-container">
-      <app-bg-card [userData]="userData" [MPRUserData]="MPRUserData"></app-bg-card>
+      <app-bg-card [userData]="userData"></app-bg-card>
     </div>
 </div>

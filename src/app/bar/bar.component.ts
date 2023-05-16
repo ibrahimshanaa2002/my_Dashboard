@@ -1,7 +1,10 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
 import {UserData} from "../model/userData.interface";
 import {Data} from "../model/data.interface";
+import {BarDataSets} from "../model/barDataSets.interface";
+import {UUID} from "uuid-generator-ts";
+
 
 
 
@@ -10,7 +13,7 @@ import {Data} from "../model/data.interface";
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.css']
 })
-export class BarComponent implements  OnInit {
+export class BarComponent implements  AfterViewInit {
 
   private legendMargin: any = {
     id: 'legendMargin',
@@ -23,119 +26,108 @@ export class BarComponent implements  OnInit {
     }
   };
   protected chart: any;
-  protected chart_ID: string = 'bar-chart';
-  ipOnAccountDataSet: Array<Data>;
-  ipOnAppDataSet: Array<Data>;
-  appSecuredDataSet: Array<Data>;
-  executedAppDataSet: Array<Data>;
-  usersData: Array<UserData>;
+  dataSets: BarDataSets[] = new Array<BarDataSets>();
+  pageArr: Map<number, BarDataSets[]> = new Map<number, BarDataSets[]>();
+  chart_ID: string = new UUID().toString();
+  page: number = 1;
   start: number = 0;
-  end: number = 10;
-  @Input() userData: Array<UserData>;
-  @Input() MPRUserData: Array<UserData>;
+  end: number= 10;
+
+  @Input() userData: UserData;
 
   constructor() {
+
   }
 
-  prepareData() {
-    this.ipOnAccountDataSet = new Array<Data>();
-    this.ipOnAppDataSet = new Array<Data>();
-    this.appSecuredDataSet = new Array<Data>();
-    this.executedAppDataSet = new Array<Data>();
-      this.userData.forEach(data => {
-        if (data.IPonAccountSecured !=0 || data.IPonAppSecured !=0 || data.AppSecured !=0 || data.ExecutedAPPPayments !=0){
-        this.ipOnAccountDataSet.push(new Data(data.name, data.IPonAccountSecured));
-        this.ipOnAppDataSet.push(new Data(data.name, data.IPonAppSecured));
-        this.appSecuredDataSet.push(new Data(data.name, data.AppSecured));
-        this.executedAppDataSet.push(new Data(data.name, data.ExecutedAPPPayments));
-        }
-      });
+  prepareDataSets() {
+    // this.pageArr = new Map<number, BarDataSets[]>();
+    // this.dataSets = new Array<BarDataSets>();
+    this.userData.data.forEach(element =>{
+      this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
+    });
+    this.pageArr.set(this.page, this.dataSets);
+    console.log(this.userData)
   }
 
   nextGroup() {
-    if (this.userData.length <= (this.end + 10)){
-      this.start = this.userData.length - 10;
-      this.end = this.userData.length;
-      this.chart.destroy();
-      this.createChart(this.start, this.end);
-    }else {
     this.start+=10;
     this.end+=10;
-    this.chart.destroy();
-    this.createChart(this.start, this.end);
+    this.page++;
+    let size = this.userData.data.at(0)!.value.length;
+    let numOfPages = Math.ceil(size/10);
+    if(this.page > numOfPages){
+      this.start-=10;
+      this.end-= 10;
+      this.page--;
+      return;
+    }
+    else if(this.page == numOfPages) {
+      this.start = size -10;
+      this.end = size;
+      if(!this.pageArr.has(this.page)){
+        this.dataSets = new Array<BarDataSets>();
+        this.userData.data.forEach(element =>{
+          this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
+        });
+        this.pageArr.set(this.page, this.dataSets);
+        this.chart.destroy();
+        this.createChart(this.chart_ID, this.start, this.end, this.page);
+      }
+      else{
+        this.chart.destroy();
+        this.createChart(this.chart_ID, this.start, this.end, this.page);
+      }
+    }
+    else{
+    if(!this.pageArr.has(this.page)){
+    this.dataSets = new Array<BarDataSets>();
+      this.userData.data.forEach(element =>{
+      this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
+    });
+    this.pageArr.set(this.page, this.dataSets);
+      this.chart.destroy();
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
+    }
+    else{
+      this.chart.destroy();
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
+    }
     }
   }
 
   prevGroup() {
-    if ((this.start - 10) <= 0){
+    this.start-=10;
+    this.end-=10;
+    if(this.page == 1){
+      return;
+    }
+    if(this.start < 0){
       this.start = 0;
       this.end = 10;
+      this.page = 1;
       this.chart.destroy();
-      this.createChart(this.start, this.end);
-    }else {
-      this.start-=10;
-      this.end-=10;
-      this.chart.destroy();
-      this.createChart(this.start, this.end);
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
+      return;
     }
+      this.page--;
+      this.chart.destroy();
+      this.createChart(this.chart_ID, this.start, this.end, this.page);
+
   }
 
-  ngOnInit(): void {
-    this.prepareData();
-    this.createChart(this.start, this.end);
+  ngAfterViewInit(): void {
+    this.prepareDataSets();
+    // this.prepareDataSets(this.MPRUserData);
+    this.createChart(this.chart_ID, this.start, this.end, this.page);
   }
 
 
-  createChart(start: number, end: number) {
-    this.chart = new Chart(this.chart_ID, {
+  createChart(ID:string, start: number, end: number,page: number) {
+    this.chart = new Chart(ID, {
       type: 'bar',
       data: {
-        datasets: [
-          {
-            label: "IP on Account Secured ($)",
-            data: this.ipOnAccountDataSet.slice(start, end),
-            backgroundColor: 'limegreen',
-            hoverBackgroundColor: 'darkgreen',
-            barThickness: 13,
-            borderColor: 'white',
-            borderWidth: 3,
-            borderRadius: 20,
-            borderSkipped: false,
-          },
-          {
-            label: "IP on APP Secured ($)",
-            data: this.ipOnAppDataSet.slice(start, end),
-            backgroundColor: 'blue',
-            hoverBackgroundColor: 'darkblue',
-            barThickness: 13,
-            borderColor: 'white',
-            borderWidth: 3,
-            borderRadius: 20,
-            borderSkipped: false,
-          },
-          {
-            label: "APP Secured ($)",
-            data: this.appSecuredDataSet.slice(start, end),
-            backgroundColor: 'orange',
-            hoverBackgroundColor: 'darkorange',
-            barThickness: 13,
-            borderColor: 'white',
-            borderWidth: 3,
-            borderRadius: 20,
-            borderSkipped: false,
-          },
-          {
-            label: "Executed App Payments ($)",
-            data: this.executedAppDataSet.slice(start, end),
-            backgroundColor: 'red',
-            hoverBackgroundColor: 'darkred',
-            barThickness: 13,
-            borderColor: 'white',
-            borderWidth: 3,
-            borderRadius: 20,
-            borderSkipped: false,
-          }
-        ]
+        labels: this.userData.names.slice(start,end),
+        datasets: this.pageArr.get(page)!
       },
       options: {
         aspectRatio: 2,
@@ -145,6 +137,7 @@ export class BarComponent implements  OnInit {
         scales: {
           x: {grid: {display: false}},
           y: {grid: {display: false}},
+          y1: {grid: {display: false}, position: 'right'},
         },
         plugins: {
           legend: {

@@ -2,6 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {Chart, ChartMeta, elements} from "chart.js";
 import { browserStatesList } from "../model/browser-states";
 import {patientOutreached} from "../model/patients-outreached";
+import {UUID} from "uuid-generator-ts";
 @Component({
   selector: 'app-browser-states',
   templateUrl: './browser-states.component.html',
@@ -14,7 +15,7 @@ export class BrowserStatesComponent implements OnInit{
     let total= 0;
     for (let i = 0; i < this.patientOutreachedList.Patient_section.length-1; i++) {
       let temp= this.patientOutreachedList.Patient_section[i].value;
-      if (temp > total) 
+      if (temp > total)
         total=  temp;
     }
     return total;
@@ -22,6 +23,7 @@ export class BrowserStatesComponent implements OnInit{
 
   public newChart: any;
   createChart(id:number, perecnt:number){
+    let chart_ID: string = new UUID().toString();
     this.newChart = new Chart(`PatientOutreachedChart${id}`, {
       type: 'doughnut',
       data: {

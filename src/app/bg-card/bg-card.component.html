@@ -1,9 +1,16 @@
 <div id="container" class="card container">
+  <div class="dropdown" id="button">
+    <button id="menuButton" type="button" data-bs-toggle="dropdown"> <fa-icon [icon]="faEllipsisH" size="1x" ></fa-icon></button>
+            <ul class="dropdown-menu">
+              <li><button type="button" class="dropdown-item" (click)="show = !show">Show Data</button></li>
+            </ul>
+        </div>
   <div class="card-body">
-    <div class="right">
-    <h4 class="card-title">Title</h4>
-    <app-bar [userData]="userData" [MPRUserData]="MPRUserData"></app-bar>
-    </div>
+<!--    <div class="right">-->
+    <h4 class="card-title">{{ userData.title }}</h4>
+        <app-bar [userData]="userData" [hidden]="!show"></app-bar>
+        <app-table [userData]="userData" [hidden]="show"></app-table>
+<!--    </div>-->
 <!--    <div class="left">-->
 <!--      <div class="left-container">-->
 <!--      <div class="desc">-->

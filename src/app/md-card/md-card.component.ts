@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {UserData} from "../model/userData.interface";
+import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-md-card',
@@ -6,9 +8,12 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./md-card.component.css']
 })
 export class MdCardComponent {
-
-  @Input() ID: string;
+  @Input() depUserData: UserData;
+  faEllipsisH = faEllipsisH;
+  show: boolean = false;
 
   constructor() {
   }
+
+
 }
