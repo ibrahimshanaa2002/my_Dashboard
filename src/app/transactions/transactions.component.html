@@ -1,20 +1,23 @@
 <div class="transactions card">
-  <h3>Transactions</h3>
+  <h3>Patient Balance</h3>
   <div>
-    <div class="tras-row" *ngFor="let x of transactionsList">
-      <div>
-        <i *ngIf="x.trans_title=='Wallet'"><fa-icon [icon]="faWallet"></fa-icon></i>
+    <div class="tras-row" *ngFor="let x of patientBalanceList; let i= index;">
+      <div style="width: 72%;">
+        <!-- <i *ngIf="x.trans_title=='Wallet'"><fa-icon [icon]="faWallet"></fa-icon></i>
         <i *ngIf="x.trans_title=='Bank Transfer'"><fa-icon [icon]="faBank"></fa-icon></i>
         <i *ngIf="x.trans_title=='Paypal'" class="fa fa-brands fa-paypal fa-2xl"></i>
         <i *ngIf="x.trans_title=='Mastercard'" class="fa fa-brands fa-cc-mastercard fa-2xl"></i>
         <i *ngIf="x.trans_title=='Transfer'"><fa-icon [icon]="faMoneyBillTransfer"></fa-icon></i>
+        *ngIf="i != patientBalanceList.Patient_section.length-1 && i != patientBalanceList.Patient_section.length-2"
+         -->
         <div>
-          <span>{{ x.trans_title }}</span>
-          <span>{{ x.trans_datails }}</span>
+          <span>{{ x.title }}</span>
+          <!-- <span>{{ x.trans_datails }}</span> -->
         </div>
       </div>
-      <span *ngIf="x.status=='withdraw'" style="color: red; font-weight: bold;">-$ {{ x.amount }}</span>
-      <span *ngIf="x.status=='deposit'" style="color: #28c76f; font-weight: bold;">+$ {{ x.amount }}</span>
+      <span style="font-weight: bold;">$ {{ x.value | number}} </span>
+      <!-- <span *ngIf="x.status=='withdraw'" style="color: red; font-weight: bold;">-$ {{ x.amount }}</span>
+      <span *ngIf="x.status=='deposit'" style="color: #28c76f; font-weight: bold;">+$ {{ x.amount }}</span> -->
     </div>
   </div>
 </div>
