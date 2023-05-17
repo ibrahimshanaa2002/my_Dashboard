@@ -97,7 +97,7 @@
   display: flex;
 width: 400%;
 height: 220%;
-    background-color: black;
+    background-color: #1C4E80;
     font-variant: all-small-caps;
     
     transition: opacity 1s;
@@ -146,10 +146,10 @@ position: absolute;
 .popup .table::after{
   content: "";
   width: 1px;
-  height: 91%;
+  height: 46%;
   position: absolute;
-  background-color: black;
-  top: 8%;
+  background-color: #ccc;
+  top: 29%;
   left: 50%;
 }
 .kpi-image .popup::after{
@@ -160,7 +160,7 @@ position: absolute;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent black transparent;;
+  border-color: transparent transparent #1C4E80 transparent;;
 }
 
 .value{
@@ -203,10 +203,14 @@ justify-content: space-around;
 }
 .table th {
  text-align: center;
- color: gray;
+ color: white;
  font-weight: 1000;
- text-decoration: underline;
+ /* text-decoration: underline; */
  font-size: large;
+ /* border:  #ccc 1px solid */
+}
+.table th:nth-child(2)::before{
+
 }
 .table td {
   color: gold;
