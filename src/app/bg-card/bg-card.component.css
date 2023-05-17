@@ -42,6 +42,10 @@
   font-weight: bold;
 }
 
+app-table {
+  margin-top: 5rem;
+  width: 100%;
+}
 
 /*@media (min-width: 576px) {*/
 /*  #container {*/

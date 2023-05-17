@@ -2,13 +2,13 @@
   <div class="dropdown" id="button">
     <button id="menuButton" type="button" data-bs-toggle="dropdown"> <fa-icon [icon]="faEllipsisH" size="1x"></fa-icon></button>
     <ul class="dropdown-menu">
-      <li><button type="button" class="dropdown-item">Show Data</button></li>
+      <li><button type="button" class="dropdown-item" (click)="show = !show">Show Data</button></li>
     </ul>
   </div>
   <div class="header">
     <h4 class="card-title"><ng-content select="[title]"></ng-content></h4>
   </div>
-  <div class="clock">
+  <div class="clock" [hidden]="show">
   <div class="card-body">
       <h5 style="margin-top: 0.1rem;font-weight: bold"><ng-content select="[label]"></ng-content></h5>
   </div>
@@ -16,4 +16,5 @@
       <app-dough [depUserData]="depUserData"></app-dough>
     </div>
   </div>
+  <app-table [userData]="depUserData" [hidden]="!show"></app-table>
 </div>
