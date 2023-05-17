@@ -2,38 +2,45 @@
   <!-- Sidebar -->
   <div id="sidebar" [@slideInOut]="menuState">
     <header>
-      <a href="#" (click)="toggleMenu()">Sprinters </a> <i class="fa fa-bars fa-2x" style="color: white" (click)="toggleMenu()"></i>
+      <a href="#" (click)="toggleMenu()">━━━━</a> <i class="fa fa-bars fa-xl" style="color: white; width: calc(45px + 21px);
+      text-align: center;"
+        (click)="toggleMenu()"></i>
     </header>
+    <div>
     <ul class="nav">
-      <li>
-        <a href="#">Dashboard</a>
-        <fa-icon [icon]="gauge"></fa-icon>
+        <li>
+          <a href="#">Dashboard</a>
+          <i class="fas fa-tachometer-alt"></i>
       </li>
       <li>
         <a href="#">Shortcuts</a>
-          <fa-icon [icon]="gauge"></fa-icon>
+        <i class="fas fa-keyboard"></i>
+
       </li>
       <li>
         <a href="#">Overview</a>
-          <fa-icon [icon]="gauge"></fa-icon>
+        <i class="far fa-eye"></i>
+
       </li>
       <li>
         <a href="#">Events</a>
-          <fa-icon [icon]="gauge"></fa-icon>
+        <i class="far fa-calendar-alt"></i>
+
       </li>
       <li>
         <a href="#">About</a>
-          <fa-icon [icon]="gauge"></fa-icon>
+        <i class="fas fa-info-circle"></i>
       </li>
       <li>
         <a href="#">Services</a>
-          <fa-icon [icon]="gauge"></fa-icon>
+        <i class="fas fa-cogs"></i>
       </li>
       <li>
         <a href="#">Contact</a>
-          <fa-icon [icon]="gauge"></fa-icon>
+        <i class="fas fa-envelope"></i>
+
       </li>
     </ul>
   </div>
+  </div>
 </div>
-
