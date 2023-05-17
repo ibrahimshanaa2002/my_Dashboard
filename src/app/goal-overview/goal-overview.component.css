@@ -33,7 +33,7 @@
 }
 .goal-overview-footer div{
     width: 100px;
-    padding-top: 10px;
+    padding-top: 5px;
     text-align: center;
 }
 .goal-overview-footer div:first-child{
@@ -85,7 +85,7 @@
     border: 6px solid transparent;
     border-bottom-color: rgba(0, 0, 0, 0.7);
     }
-/* tooltip */ 
+/* tooltip */
 @media  (max-width: 505px)  {
     .goal-overview{
         width: 100%;

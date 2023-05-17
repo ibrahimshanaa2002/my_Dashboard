@@ -34,36 +34,31 @@ app-md-card:nth-child(1)  {
 }
 
 .label {
-  text-align: center;
-  padding: 0.25rem 0;
-  margin: 0.25rem 0;
-  background-color: #0c0c0c;
-  border-radius: 15px;
   min-width: 9rem;
-  align-self: center;
-  color: #fff;
+  margin-left: -0.5rem;
 }
 
 .topDep, .average{
   padding: 0.25rem 0;
-  font-size: 10px;
+  font-size: 12px;
   width: fit-content;
+  margin-left: 0.3rem;
 }
 
 .topDep{
-  background-color: limegreen;
-  border-radius: 15px;
-  margin-bottom: 0.2rem;
+  padding-top: 0;
 }
 
-.average{
-  background-color: gold;
-  border-radius: 15px;
+.topDep  span:first-child, .average  span:first-child{
+  font-weight: bold;
+  color: black;
 }
 
-.topDep > div, .average > div{
-  margin-left: 0.5rem;
-  margin-right: 0.25rem;
+.label-subDiv{
+  border-left: 4px solid #efc026;
+  color: #48413f;
+  font-weight: lighter;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-device-width: 480px) {

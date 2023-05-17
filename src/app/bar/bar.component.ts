@@ -40,10 +40,15 @@ export class BarComponent implements  AfterViewInit {
   }
 
   prepareDataSets() {
-    // this.pageArr = new Map<number, BarDataSets[]>();
-    // this.dataSets = new Array<BarDataSets>();
+    this.pageArr = new Map<number, BarDataSets[]>();
+    this.dataSets = new Array<BarDataSets>();
+    let index = 0;
     this.userData.data.forEach(element =>{
       this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
+      element.value.forEach(el => {
+        if(el < 0) this.dataSets.at(index)!.yAxisID = "negativeAxis";
+      });
+      index++;
     });
     this.pageArr.set(this.page, this.dataSets);
     console.log(this.userData)
@@ -66,8 +71,13 @@ export class BarComponent implements  AfterViewInit {
       this.end = size;
       if(!this.pageArr.has(this.page)){
         this.dataSets = new Array<BarDataSets>();
+        let index = 0;
         this.userData.data.forEach(element =>{
           this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
+          element.value.forEach(el => {
+            if(el < 0) this.dataSets.at(index)!.yAxisID = "negativeAxis";
+          });
+          index++;
         });
         this.pageArr.set(this.page, this.dataSets);
         this.chart.destroy();
@@ -81,8 +91,13 @@ export class BarComponent implements  AfterViewInit {
     else{
     if(!this.pageArr.has(this.page)){
     this.dataSets = new Array<BarDataSets>();
+    let index = 0;
       this.userData.data.forEach(element =>{
       this.dataSets.push(new BarDataSets(element.label, element.value.slice(this.start,this.end)));
+        element.value.forEach(el => {
+          if(el < 0) this.dataSets.at(index)!.yAxisID = "negativeAxis";
+        });
+        index++;
     });
     this.pageArr.set(this.page, this.dataSets);
       this.chart.destroy();
@@ -137,7 +152,7 @@ export class BarComponent implements  AfterViewInit {
         scales: {
           x: {grid: {display: false}},
           y: {grid: {display: false}},
-          y1: {grid: {display: false}, position: 'right'},
+          negativeAxis: {grid: {display: false}, position: 'right'},
         },
         plugins: {
           legend: {

@@ -4,8 +4,10 @@
         <div title>Immediate Payments (IP)</div>
         <div class="card-body-info" *ngFor="let element of chartsInfo.at(0)" label>
           <div class="label">&nbsp;&nbsp;{{element.label}}&nbsp;&nbsp;</div>
-          <div class="topDep"><div>Top Dep.: {{element.topDep}}</div></div>
-          <div class="average"><div>Average: ${{element.average}}</div></div>
+          <div class="label-subDiv">
+          <div class="average"><span>Average: </span> <span>$ {{element.average}}</span></div>
+          <div class="topDep"><span>Top Dep.: </span> <span>{{element.topDep}}</span></div>
+          </div>
         </div>
 
       </app-md-card>
@@ -13,8 +15,10 @@
         <div title>APP Payments (APP)</div>
         <div class="card-body-info" *ngFor="let element of chartsInfo.at(1)" label>
           <div class="label">&nbsp;&nbsp;{{element.label}}&nbsp;&nbsp;</div>
-          <div class="topDep"><div>Top Dep.: {{element.topDep}}</div></div>
-          <div class="average"><div>Average: ${{element.average}}</div></div>
+          <div class="label-subDiv">
+            <div class="average"><span>Average: </span> <span>$ {{element.average}}</span></div>
+            <div class="topDep"><span>Top Dep.: </span> <span>{{element.topDep}}</span></div>
+          </div>
         </div>
       </app-md-card>
     </div>

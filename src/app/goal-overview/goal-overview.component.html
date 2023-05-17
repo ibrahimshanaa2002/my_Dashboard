@@ -2,11 +2,11 @@
   <div>
     <h3>Patient Skipped</h3>
     <div class="goal-overview-chart" style="height:8.5rem; width:8.5rem ">
-      <canvas  
-      id="DoughChart_EncountersBalanceSkipped" 
-      width="400" 
-      height="100" 
-      aria-label="Hello ARIA World" 
+      <canvas
+      id="DoughChart_EncountersBalanceSkipped"
+      width="400"
+      height="100"
+      aria-label="Hello ARIA World"
       role="img"
       >{{ chart }} </canvas>
     </div>
@@ -15,11 +15,11 @@
   <div class="goal-overview-footer">
     <div>
       <span>Other</span>
-      <span>{{  Encounters_Balance_skipped_Other | number}}</span>
+      <span>$ {{  Encounters_Balance_skipped_Other | number}}</span>
     </div>
     <div>
       <span>Bad Debt</span>
-      <span>{{ Encounters_Balance_skipped_Bad_Debt | number}}</span>
+      <span>$ {{ Encounters_Balance_skipped_Bad_Debt | number}}</span>
     </div>
   </div>
 </div>

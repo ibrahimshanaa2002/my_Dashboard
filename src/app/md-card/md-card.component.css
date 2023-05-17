@@ -33,7 +33,9 @@
 h5{
   font-size: 14px;
   font-weight: lighter;
-  /*display: flex;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #menuButton{
