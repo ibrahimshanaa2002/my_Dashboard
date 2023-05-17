@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {faGauge, faHome} from "@fortawesome/free-solid-svg-icons";
+
 import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
@@ -28,9 +28,8 @@ export class SidebarComponent implements OnInit{
   menuState:string = 'out';
   state: boolean = false;
 
-  gauge = faGauge;
-  faHome = faHome;
 
+  
   toggleMenu(){
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
     this.state = !this.state;

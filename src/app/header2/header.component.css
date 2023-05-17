@@ -3,12 +3,12 @@ nav {
     height: 4rem;
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(to bottom, #2D3047, #4E516A);
+   background-color: #1C4E80;
     position: fixed;
     z-index: 10;
 }
 
-.right-side{
+.right-side {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
@@ -26,9 +26,10 @@ nav {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 30%;
 }
-a#dropdownMenuLink{
+
+a#dropdownMenuLink {
     border: none;
-    background:none;
+    background: none;
 }
 
 .user-profile {
@@ -67,8 +68,8 @@ a#dropdownMenuLink{
     padding: 0 1rem;
 }
 
-.icons > i {
-  padding: 0 0.6rem;
+.icons>i {
+    padding: 0 0.6rem;
 }
 
 .search-box {
