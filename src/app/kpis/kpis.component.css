@@ -1,7 +1,6 @@
 .card {
   border: none;
-  width: 97%;
-  margin-left: 20px;
+  width: 100%;
 }
 
 .card-header {
@@ -25,10 +24,10 @@
   width: 100%;
   display: flex;
   /* padding: 10px; */
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 73px;
-  padding-right: 91px;
+  padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 73px;
+    padding-right: 91px;
 }
 
 .kpi-image img {
@@ -51,42 +50,39 @@
 }
 
 .card-header.d-flex.justify-content-between {
-  background-color: #202020;
-  ;
+  background: linear-gradient(to bottom, #6A5ACD, #BA55D3);;
 }
 
 .col-sm-6:nth-child(odd) .card-body {
   border: none;
 }
 
-.container-fluid {
-  padding: 0 1.3rem;
-  padding-top: 10px;
-
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  padding-left: 0;
+  padding-right: 0;
 }
 
+.card-header.d-flex.justify-content-between{
+  margin: 5px;
+  border-radius: 10px;
+}
 
-
-.row>div {
+.row > div{
   display: flex;
   justify-content: center;
 }
 
-@media (max-device-width: 991px) {
+@media (max-device-width: 991px){
   #kpi-cont {
     width: 100%;
   }
 
 }
-
-.kpi-image {
+.kpi-image{
   position: relative;
   padding: 5px;
-  display: flex;
-  align-items: center;
-
+  
 }
-
 .popup {
   visibility: hidden;
   opacity: 0;
@@ -94,18 +90,18 @@
   padding: 10px;
   /* background-color: #fff; */
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 21px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: visibility 0s, opacity 0.5s ease-in-out;
   z-index: 1;
   display: flex;
-  width: max-content;
-  height: 272%;
-  background-color: gray;
-  font-variant: all-small-caps;
-  opacity: 0;
-  transition: opacity 1s;
-
+width: 400%;
+height: 220%;
+    background-color: black;
+    font-variant: all-small-caps;
+    
+    transition: opacity 1s;
+    
 }
 
 /* .popup p {
@@ -114,56 +110,40 @@
 
 .kpi-image:hover .popup {
   visibility: visible;
-  opacity: 1;
+  opacity: 0.9;
 }
-
-div .padding {
-  padding: 56px;
-  padding-block: unset;
-}
-
 .vline {
-  border-left: 1px solid grey;
+  border-left: 1px solid #1321c3;
   height: 73%;
   position: absolute;
-  left: 51%;
+  left: 53%;
   transform: translateX(-50%);
   margin-top: 11px;
 }
-
 .horizontal-line {
-  border: none;
-  /* remove the default border */
-  border-top: 1px solid black;
-  /* add a solid black line on the top */
-  margin-top: 10px;
-  /* adjust the distance between the word "user" and the line as needed */
+  border: none; /* remove the default border */
+  border-top: 1px solid black; /* add a solid black line on the top */
+  margin-top: 10px; /* adjust the distance between the word "user" and the line as needed */
 }
-
 /* .vertical-line {
   height: 20px; 
   border-left: 1px solid black; 
   margin-left: 10px; 
 } */
-.vertical-line1 {
-  height: 50px;
-  /* adjust the height of the line as needed */
-  border-left: 1px solid transparent;
-  /* adjust the color and style of the line as needed */
-  margin-left: 10px;
-  /* adjust the distance between the word "user" and the line as needed */
-  padding: 5px;
-  position: absolute;
+.vertical-line1{
+  height: 50px; /* adjust the height of the line as needed */
+  border-left: 1px solid transparent; /* adjust the color and style of the line as needed */
+  margin-left: 10px; /* adjust the distance between the word "user" and the line as needed */
+padding: 5px;
+position: absolute;
 
 }
-
 .popup table {
   font-size: 14px;
   position: relative;
-
+  
 }
-
-.popup .table::after {
+.popup .table::after{
   content: "";
   width: 1px;
   height: 91%;
@@ -172,69 +152,78 @@ div .padding {
   top: 8%;
   left: 50%;
 }
-
-.kpi-image .popup::after {
+.kpi-image .popup::after{
   content: " ";
   position: absolute;
-  bottom: 100%;
-  /* At the top of the tooltip */
-  left: 50%;
+  bottom: 98%;  /* At the top of the tooltip */
+  left: 29%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent black transparent;
-  ;
+  border-color: transparent transparent black transparent;;
 }
 
-.first {
-  display: flex;
-  align-items: center;
-}
-
-.second {
-  display: flex;
-}
-
-.value {
+.value{
   font-weight: bolder;
   text-align: center;
   margin: auto;
+  /* color: white; */
+}
+.value p {
+  padding: 0%;
+}
+.vertical-line2{
+  height: 50px; /* adjust the height of the line as needed */
+  border-left: 1px solid black; /* adjust the color and style of the line as needed */
+  margin-left: 10px; /* adjust the distance between the word "user" and the line as needed */
+padding: 5px;
+}
+.padding{
+padding: 6px;
 }
 
-.vertical-line2 {
-  height: 50px;
-  /* adjust the height of the line as needed */
-  border-left: 1px solid black;
-  /* adjust the color and style of the line as needed */
-  margin-left: 10px;
-  /* adjust the distance between the word "user" and the line as needed */
-  padding: 5px;
-}
-
-.padding1 {
-  padding: 6px;
-}
-.padding {
-  padding: 6px;
-}
-
-.kpi {
-  display: contents;
-}
-
-.label {
+.kpi{
   display: flex;
-  justify-content: space-around;
 }
 
+.label  {
+display: flex;
+justify-content: space-around;
+}
 .label p {
-  font-family: "Arial", sans-serif;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: #ff00ff;
-}
-
-.table th {
+  color: #333333;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
   text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.table th {
+ text-align: center;
+ color: gray;
+ font-weight: 1000;
+ text-decoration: underline;
+ font-size: large;
+}
+.table td {
+  color: gold;
+  text-align: center;
+  font-weight: bold;
+}
+.table td p {
+  text-align: center;
+}
+p.value{
+  padding: 0px;
+  color: white;
+}
+.value p {
+  color: white;
+}
+.t1 td {
+color: gold;
+font-weight: bolder;
 }

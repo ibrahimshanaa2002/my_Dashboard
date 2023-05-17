@@ -13,7 +13,7 @@ export class KPISComponent {
     {
       icon: '../assets/img/growth.png',
       value: '$1,449.89',
-      subtitle: 'Total IP',
+      subtitle: 'Immediate payment',
       useracc: '1050$',
       userapp: '1000$',
       mpracc: '22',
@@ -22,11 +22,11 @@ export class KPISComponent {
     {
       icon: '../assets/img/user.png',
       value: '-$2,475.16',
-      subtitle: 'secured & executed',
+      subtitle: 'Auto Payment Plans',
       useracc: '1050$',
       userapp: '3000$',
-      mpracc: '322',
-      mprapp: '100'
+      mpracc: '322$',
+      mprapp: '100$'
     },
     {
       icon: '../assets/img/product-return.png',

@@ -4,140 +4,140 @@
       <h2 class="card-title">Statistics</h2>
       <h2 class="card-title Updated">Updated 2 min ago</h2>
     </div>
-    <div class="label">
+  <!-- <div class="label">
+    <p>first</p>
+  <p>second</p>
+      </div> -->
+      <div class="row">
+        <div class="">
+          <div class="card">
+            <div class="vline"></div>
+            <div id="kpi-cont" class="card-body ">
+             
+             <div class="kpi">
+              <div class="kpi-image">
+                <img [src]="kpis[0].icon" alt="{{ kpis[0].value }} icon" >
+                <div class="popup">
+
+                 <table class="table">
+                  <tr>
+                    <th>User</th>
+                    <div class="padding"></div>
+                    <th>MPR User</th>
+                  </tr>
+
+                  <tr>
+                    <td> IP on Account
+                      <p class="value"> {{ kpis[0].useracc}}</p>
+                    </td>
+                    <div class=""></div>
+                    <td>IP on Account
+                      <p class="value"> {{ kpis[0].mpracc}}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>IP on App
+                      <p class="value"> {{ kpis[0].userapp}}</p>
+                    </td>
+                    <div class=""></div>
+                    <td>IP on App
+                      <p class="value"> {{ kpis[0].mprapp}}</p>
+                    </td>
+                  </tr>
+                 </table>
+                </div>
+
+              </div>
+              <div class="kpi-text ">
+                <h3>{{ kpis[0].value }}</h3>
+                <p class="card-subtitle">{{ kpis[0].subtitle }}</p>
+
+              </div>
+             </div>
+             
+<div class="kpi">
+  <div class="kpi-image">
+    <img [src]="kpis[1].icon" alt="{{ kpis[1].value }} icon">
+  
+  <div class="popup">
+    <table class="table">
+      <tr>
+        <th>User</th>
+        <div class="padding"></div>
+        <th>MPR User</th>
+      </tr>
+      
+      <tr>
+        <td>App secured
+          <p class="value"> {{ kpis[1].useracc}}</p>
+        </td>
+        <div class="1"></div>
+        <td>App secured
+          <p class="value"> {{ kpis[1].mpracc}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>App executed
+          <p class="value"> {{ kpis[1].userapp}}</p>
+        </td>
+        <div class=""></div>
+        <td>App executed
+          <p class="value"> {{ kpis[1].mprapp}}</p>
+        </td>
+      </tr>
+     </table>
     </div>
-    <div class="row">
-      <div class="">
-        <div class="card">
-          <div class="vline"></div>
-          <div id="kpi-cont" class="card-body ">
+  </div>
 
-            <div class="kpi">
-              <div class="first">
-                <div class="kpi-image"> 
-                  <img [src]="kpis[0].icon" alt="{{ kpis[0].value }} icon">
-                  <div class="popup">
-
-                    <table class="table">
-                      <tr>
-                        <th>User</th>
-                        <div class="padding1"></div>
-                        <th>MPR User</th>
-                      </tr>
-
-                      <tr>
-                        <td>IP on Account
-                          <p class="value"> {{ kpis[0].useracc}}</p>
-                        </td>
-                        <div class=""></div>
-                        <td>IP on Account
-                          <p class="value"> {{ kpis[0].mpracc}}</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>IP on App
-                          <p class="value"> {{ kpis[0].userapp}}</p>
-                        </td>
-                        <div class=""></div>
-                        <td>IP on App
-                          <p class="value"> {{ kpis[0].mprapp}}</p>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-
-                </div>
-                <div class="kpi-text ">
-                  <h3>{{ kpis[0].value }}</h3>
-                  <p class="card-subtitle">{{ kpis[0].subtitle }}</p>
-
-                </div>
-                <div class="padding"></div>
-                <div class="kpi-image">
-                  <img [src]="kpis[1].icon" alt="{{ kpis[1].value }} icon">
-
-                  <div class="popup">
-                    <table class="table">
-                      <tr>
-                        <th>User</th>
-                        <div class="padding"></div>
-                        <th>MPR User</th>
-                      </tr>
-
-                      <tr>
-                        <td>App secured
-                          <p class="value"> {{ kpis[1].useracc}}</p>
-                        </td>
-                        <div class="1"></div>
-                        <td>App secured
-                          <p class="value"> {{ kpis[1].mpracc}}</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>App executed
-                          <p class="value"> {{ kpis[1].userapp}}</p>
-                        </td>
-                        <div class=""></div>
-                        <td>App executed
-                          <p class="value"> {{ kpis[1].mprapp}}</p>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-
-                <div class="kpi-text flex-grow-1 mx-3">
-                  <h3>{{ kpis[1].value }}</h3>
-                  <p class="card-subtitle">{{ kpis[1].subtitle }}</p>
-                </div>
-              </div>
-              <div>
-                <div class="kpi-image">
-                  <img [src]="kpis[2].icon" alt="{{ kpis[2].value }} icon">
-                  <div class="popup">
-                    <table>
-
-
-                      <tr>
-                        <td>% Total Secured / Encounters Balance
-                          <p class="value"> {{kpis[2].total1}}</p>
-                        </td>
-                        <!-- <div class="1"></div> -->
-                        
-
-                      </tr>
-                      <tr>
-                        <td>% Total Cash/Encounters Balance
-                          <p class="value"> {{kpis[2].total2}}
-                        </td>
-
-                      </tr>
-                    </table>
-                  </div>
-                  
-                  
-                  <div class="kpi-text flex-grow-1 mx-3">
-                    
-                    <h3>{{ kpis[2].value }}</h3>
-                    <p class="card-subtitle">{{ kpis[2].subtitle }}</p>
-                  </div>
-                  <div class="padding"></div>
-                  <div class="kpi-image">
-                    <img [src]="kpis[3].icon" alt="{{ kpis[3].value }} icon">
-                    
-                  </div>
-                  
-                  <div class="kpi-text flex-grow-1 mx-3">
-                    <h3>{{ kpis[3].value }}</h3>
-                    <p class="card-subtitle">{{ kpis[3].subtitle }}</p>
-
-                  </div>
-
+  <div class="kpi-text ">
+    <h3>{{ kpis[1].value }}</h3>
+    <p class="card-subtitle">{{ kpis[1].subtitle }}</p>
+  </div>
+</div>
+        <div class="kpi">
+          <div class="kpi-image">
+            <img [src]="kpis[2].icon" alt="{{ kpis[2].value }} icon">
+            <div class="popup">
+              <table  class="t1">
+               
                 
+                <tr>
+                  <td>% Total Secured / Encounters Balance
+                    <p class="value"> {{kpis[2].total1}}</p>
+                  </td>
+                  <!-- <div class="1"></div> -->
+                 
+                </tr>
+                <tr>
+                  <td>% Total Cash/Encounters Balance
+                    <p class="value"> {{kpis[2].total2}}
+                  </td>
+                 
+                </tr>
+               </table>
               </div>
+         
+          </div>
+          <div class="kpi-text ">
+            <h3>{{ kpis[2].value }}</h3>
+            <p class="card-subtitle">{{ kpis[2].subtitle }}</p>
+          </div>
+        </div>
+<div class="kpi">
+  <div class="kpi-image">
+    <img [src]="kpis[3].icon" alt="{{ kpis[3].value }} icon">
+  </div>
+  <div class="kpi-text ">
+    <h3>{{ kpis[3].value }}</h3>
+    <p class="card-subtitle">{{ kpis[3].subtitle }}</p>
+    
+  </div>
+</div>
+            
             </div>
-
           </div>
         </div>
       </div>
     </div>
+
+  </div>
