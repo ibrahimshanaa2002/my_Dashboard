@@ -90,16 +90,16 @@
   padding: 10px;
   /* background-color: #fff; */
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 21px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: visibility 0s, opacity 0.5s ease-in-out;
   z-index: 1;
   display: flex;
-width: max-content;
-height: 272%;
-    background-color: gray;
+width: 400%;
+height: 220%;
+    background-color: black;
     font-variant: all-small-caps;
-    opacity: 0;
+    
     transition: opacity 1s;
     
 }
@@ -110,7 +110,7 @@ height: 272%;
 
 .kpi-image:hover .popup {
   visibility: visible;
-  opacity: 1;
+  opacity: 0.9;
 }
 .vline {
   border-left: 1px solid #1321c3;
@@ -155,8 +155,8 @@ position: absolute;
 .kpi-image .popup::after{
   content: " ";
   position: absolute;
-  bottom: 100%;  /* At the top of the tooltip */
-  left: 50%;
+  bottom: 98%;  /* At the top of the tooltip */
+  left: 29%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
@@ -167,6 +167,10 @@ position: absolute;
   font-weight: bolder;
   text-align: center;
   margin: auto;
+  /* color: white; */
+}
+.value p {
+  padding: 0%;
 }
 .vertical-line2{
   height: 50px; /* adjust the height of the line as needed */
@@ -187,12 +191,39 @@ display: flex;
 justify-content: space-around;
 }
 .label p {
-  font-family: "Arial", sans-serif;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: #ff00ff;
+  color: #333333;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 .table th {
  text-align: center;
+ color: gray;
+ font-weight: 1000;
+ text-decoration: underline;
+ font-size: large;
+}
+.table td {
+  color: gold;
+  text-align: center;
+  font-weight: bold;
+}
+.table td p {
+  text-align: center;
+}
+p.value{
+  padding: 0px;
+  color: white;
+}
+.value p {
+  color: white;
+}
+.t1 td {
+color: gold;
+font-weight: bolder;
 }
