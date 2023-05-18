@@ -55,7 +55,7 @@ app-md-card:nth-child(1)  {
 }
 
 .label-subDiv{
-  border-left: 4px solid #efc026;
+  border-left: 3px solid #0091D5;
   color: #48413f;
   font-weight: lighter;
   margin-bottom: 0.5rem;

@@ -1,8 +1,9 @@
 #container{
   display: block;
   flex-direction: row;
-  width: 22rem;
+  width: 28rem;
   height: 15rem;
+  margin-left: -6px;
   padding-right: 0;
 }
 

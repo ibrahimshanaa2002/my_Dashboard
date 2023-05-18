@@ -50,7 +50,7 @@
 }
 
 .card-header.d-flex.justify-content-between {
-  background: linear-gradient(to bottom, #6A5ACD, #BA55D3);;
+  background-color:  #7E909A;
 }
 
 .col-sm-6:nth-child(odd) .card-body {
@@ -87,6 +87,7 @@
   visibility: hidden;
   opacity: 0;
   position: absolute;
+  justify-content: center;
   padding: 10px;
   /* background-color: #fff; */
   border: 1px solid #ccc;
@@ -97,7 +98,7 @@
   display: flex;
 width: 400%;
 height: 220%;
-    background-color: #1C4E80;
+    background-color: black;
     font-variant: all-small-caps;
     
     transition: opacity 1s;
@@ -146,10 +147,10 @@ position: absolute;
 .popup .table::after{
   content: "";
   width: 1px;
-  height: 46%;
+  height: 91%;
   position: absolute;
-  background-color: #ccc;
-  top: 29%;
+  background-color: black;
+  top: 8%;
   left: 50%;
 }
 .kpi-image .popup::after{
@@ -160,7 +161,7 @@ position: absolute;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #1C4E80 transparent;;
+  border-color: transparent transparent black transparent;;
 }
 
 .value{
@@ -193,27 +194,21 @@ justify-content: space-around;
 .label p {
   font-size: 24px;
   font-weight: bold;
-  color: #333333;
+  color:white;
   background-color: #f2f2f2;
   padding: 10px;
   border-radius: 5px;
   text-align: center;
   text-transform: uppercase;
-  text-decoration: underline;
 }
 .table th {
  text-align: center;
  color: white;
  font-weight: 1000;
- /* text-decoration: underline; */
  font-size: large;
- /* border:  #ccc 1px solid */
-}
-.table th:nth-child(2)::before{
-
 }
 .table td {
-  color: gold;
+  color:  #EA6A47;
   text-align: center;
   font-weight: bold;
 }
@@ -228,6 +223,9 @@ p.value{
   color: white;
 }
 .t1 td {
-color: gold;
-font-weight: bolder;
+  color:  #EA6A47;
+  font-weight: bold;
+}
+.t1{
+  text-align: center;
 }

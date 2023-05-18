@@ -44,14 +44,15 @@ export class GoalOverviewComponent{
           {
             data: this.patientSkippedValue(),
             backgroundColor: [
-              'limegreen',
-              'lightgreen',
-              'lightgrey',
-              '#5d8aa8',
-              '#9966cc',
-              '#e9d66b',
-              '#318ce7',
-              '#0095b6'
+              '#1C4E80',
+              'EA6A47',
+              '#EA6A47',
+              '#A5D8DD',
+              '#0091D5',
+              // '#9966cc',
+              // '#e9d66b',
+              // '#318ce7',
+              // '#0095b6'
             ],
             // hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
             borderWidth: 0,
