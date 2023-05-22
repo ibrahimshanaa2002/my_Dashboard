@@ -1,9 +1,9 @@
 #container{
   display: block;
   flex-direction: row;
-  width: 28rem;
+  width: 25rem;
   height: 15rem;
-  margin-left: -6px;
+  margin-left: -7px;
   padding-right: 0;
 }
 

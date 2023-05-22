@@ -13,8 +13,9 @@
 
 .dough-containers {
   padding-top: 1rem;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 24.5rem;
+    padding-left: 3.7rem;
+  width: 0;
   display: flex;
   flex-direction: column;
 }

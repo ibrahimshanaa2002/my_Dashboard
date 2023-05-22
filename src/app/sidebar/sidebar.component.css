@@ -40,22 +40,22 @@
   margin-left: 10px;
 }
 
-#sidebar header a:hover{
+#sidebar header a:hover {
   color: #fff;
 }
 
-#sidebar .nav a{
+#sidebar .nav a {
   background: none;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  text-transform: uppercase;
-  padding: 16px 20px 16px 17px;
+  display: flex;
+  justify-content: flex-start;
   width: calc(100% - 45px - 18px);
   text-transform: uppercase;
 }
 
-#sidebar .nav a:hover{
+#sidebar .nav a:hover {
   background: none;
   color: #ECEFF1;
 }
@@ -65,18 +65,55 @@ ul {
   flex-direction: column;
 }
 
-ul li i{
+ul li i {
   /* padding-top: 16px; */
   padding-right: 12px;
-  color: white;
-  justify-content: space-between;
+    justify-content: space-between;
   font-size: 21px;
   width: calc(45px + 6px);
   text-align: center;
 }
+.sidebarbutton{
+  padding-right: 12px;
+    color: white;
+    justify-content: space-between;
+    font-size: 21px;
+    width: calc(50px + 6px);
+    text-align: center;
+}
+.nav button {
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
 
-ul li{
+.nav button.active {
+  color: #EA6A47;
+  transform: scale(1.2);
+}
+
+button {
+  color: white;
+  font-size: 21px;
+  border: none;
+  background-color: transparent;
+  padding-right: 20px;
+}
+
+ul li {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+}
+
+li.ng-tns-c15-0 {
+  display: flex;
+  align-items: center;
+  padding: 19px 0px 18px 0px;
+  justify-content: space-between;
+}
+.sidebarbutton {
+  transition: ease-out 0.3s; 
+  color: white;
+}
+
+.sidebarbutton.active {
+  color: #EA6A47;
 }

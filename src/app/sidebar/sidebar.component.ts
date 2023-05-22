@@ -20,6 +20,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   ]
 })
 export class SidebarComponent implements OnInit{
+  isActive: boolean;
   ngOnInit(): void {
       this.toggleMenu();
   }
@@ -35,5 +36,15 @@ export class SidebarComponent implements OnInit{
     this.state = !this.state;
     this.eventEmitter.emit(this.state);
   }
+  menuItems = [
+    { label: 'Dashboard', icon: 'fas fa-chart-line', href: '/dashboard' },
+    { label: 'Dashboard', icon: 'fas fa-chart-pie', href: '/shortcuts' },
+    { label: 'Dashboard', icon: 'fas fa-coins	', href: '/overview' }
+  ];
+  activeItemIndex: number = -1;
 
+  toggleButtonActiveState(index: number) {
+    this.activeItemIndex = index === this.activeItemIndex ? -1 : index;
+  }
+  
 }

@@ -8,7 +8,10 @@
 #cont {
   flex: auto;
   position: relative;
+  padding-left: 24px;
+  padding-right: 18px;
   width: 0rem;
+  padding-top: 15px;
 }
 
 #sidebar {
