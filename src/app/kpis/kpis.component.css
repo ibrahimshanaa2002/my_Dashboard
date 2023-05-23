@@ -97,7 +97,7 @@
   display: flex;
 width: 400%;
 height: 220%;
-    background-color: #1C4E80;
+    background-color: black;
     font-variant: all-small-caps;
     
     transition: opacity 1s;
@@ -158,9 +158,9 @@ position: absolute;
   bottom: 98%;  /* At the top of the tooltip */
   left: 29%;
   margin-left: -5px;
-  border-width: 5px;
+  border-width: 8px;
   border-style: solid;
-  border-color: transparent transparent #1C4E80 transparent;;
+  border-color: transparent transparent black transparent;;
 }
 
 .value{
@@ -230,4 +230,5 @@ p.value{
 .t1 td {
 color: gold;
 font-weight: bolder;
+
 }
