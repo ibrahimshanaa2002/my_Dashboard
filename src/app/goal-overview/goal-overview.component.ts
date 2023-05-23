@@ -34,7 +34,7 @@ export class GoalOverviewComponent{
   }
   public chart: any;
   protected chart_ID: string = 'DoughChart_EncountersBalanceSkipped';
-  
+
   createChart(){
     this.chart = new Chart(this.chart_ID, {
       type: 'doughnut',
@@ -44,14 +44,15 @@ export class GoalOverviewComponent{
           {
             data: this.patientSkippedValue(),
             backgroundColor: [
-              'limegreen',
-              'lightgreen',
-              'lightgrey',
-              '#5d8aa8',
-              '#9966cc',
-              '#e9d66b',
-              '#318ce7',
-              '#0095b6'
+              '#1C4E80',
+              'EA6A47',
+              '#EA6A47',
+              '#A5D8DD',
+              '#0091D5',
+              // '#9966cc',
+              // '#e9d66b',
+              // '#318ce7',
+              // '#0095b6'
             ],
             // hoverBackgroundColor: ['darkgreen', 'green', 'darkgrey'],
             borderWidth: 0,
@@ -90,11 +91,11 @@ export class GoalOverviewComponent{
                 let tooltipP= document.createElement('p'); //title
                 let tooltipSpan= document.createElement('span'); //body
                 tooltipEl.appendChild(tooltipP);
-                tooltipEl.appendChild(tooltipSpan); 
+                tooltipEl.appendChild(tooltipSpan);
 
                 titleLines.forEach(title => {
                   const text = document.createTextNode(title);
-                  tooltipP.appendChild(text); 
+                  tooltipP.appendChild(text);
                 });
                 bodyLines.forEach((body, i) => {
                   const text = document.createTextNode(body[i]);
@@ -108,7 +109,7 @@ export class GoalOverviewComponent{
                 // Add new children
                 tooltipEl?.appendChild(tooltipP);
                 tooltipEl?.appendChild(tooltipSpan);
-                // console.log(tooltipEl);  
+                // console.log(tooltipEl);
               }
 
               const {offsetLeft: positionX, offsetTop: positionY} = chart.canvas;
@@ -131,7 +132,7 @@ export class GoalOverviewComponent{
   }
   ngOnInit(): void {
     this.createChart();
-  } 
+  }
 }
 
 

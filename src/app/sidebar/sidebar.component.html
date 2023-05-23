@@ -1,46 +1,19 @@
 <div id="viewport">
-  <!-- Sidebar -->
   <div id="sidebar" [@slideInOut]="menuState">
     <header>
-      <p (click)="toggleMenu()">━━━━</p> <i class="fa fa-bars fa-xl" style="color: white; width: calc(45px + 21px);
+      <a href="#" (click)="toggleMenu()">━━━━</a> <i class="fa fa-bars fa-xl" style="color: white; width: calc(45px + 21px);
       text-align: center;"
         (click)="toggleMenu()"></i>
     </header>
     <div>
-    <ul class="nav">
-        <li>
-          <a href="#">Dashboard</a>
-          <i class="fas fa-tachometer-alt"></i>
-      </li>
-      <li>
-        <a href="#">Shortcuts</a>
-        <i class="fas fa-keyboard"></i>
-
-      </li>
-      <li>
-        <a href="#">Overview</a>
-        <i class="far fa-eye"></i>
-
-      </li>
-      <li>
-        <a href="#">Events</a>
-        <i class="far fa-calendar-alt"></i>
-
-      </li>
-      <li>
-        <a href="#">About</a>
-        <i class="fas fa-info-circle"></i>
-      </li>
-      <li>
-        <a href="#">Services</a>
-        <i class="fas fa-cogs"></i>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-        <i class="fas fa-envelope"></i>
-
-      </li>
-    </ul>
-  </div>
+      <ul class="nav">
+        <li *ngFor="let menuItem of menuItems; let i = index">
+          <a [href]="menuItem.href">{{ menuItem.label }}</a>
+          <button class="sidebarbutton" [class.active]="i === activeItemIndex" (click)="toggleButtonActiveState(i)" >
+            <i class="{{ menuItem.icon }}"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -3,6 +3,12 @@
   width: 100%;
 }
 
+h2.card-title {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .card-header {
   display: flex;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -13,9 +19,9 @@
 }
 
 .card-title.Updated {
-  font-size: 16px;
-  font-weight: normal;
-  color: whitesmoke;
+  font-size: 18px;
+  color: grey;
+  font-weight: 500;
 }
 
 .card-body {
@@ -25,9 +31,9 @@
   display: flex;
   /* padding: 10px; */
   padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 73px;
-    padding-right: 91px;
+  padding-bottom: 10px;
+  padding-left: 73px;
+  padding-right: 91px;
 }
 
 .kpi-image img {
@@ -50,43 +56,54 @@
 }
 
 .card-header.d-flex.justify-content-between {
-  background: linear-gradient(to bottom, #6A5ACD, #BA55D3);;
+  background-color: white;
+  border: none;
+  color: black;
 }
 
 .col-sm-6:nth-child(odd) .card-body {
   border: none;
 }
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
   padding-left: 0;
   padding-right: 0;
 }
 
-.card-header.d-flex.justify-content-between{
+.card-header.d-flex.justify-content-between {
   margin: 5px;
   border-radius: 10px;
 }
 
-.row > div{
+.row>div {
   display: flex;
   justify-content: center;
 }
 
-@media (max-device-width: 991px){
+@media (max-device-width: 991px) {
   #kpi-cont {
     width: 100%;
   }
 
 }
-.kpi-image{
+
+.kpi-image {
   position: relative;
   padding: 5px;
-  
+
 }
+
 .popup {
   visibility: hidden;
   opacity: 0;
   position: absolute;
+  justify-content: center;
   padding: 10px;
   /* background-color: #fff; */
   border: 1px solid #ccc;
@@ -95,13 +112,13 @@
   transition: visibility 0s, opacity 0.5s ease-in-out;
   z-index: 1;
   display: flex;
-width: 400%;
-height: 220%;
-    background-color: #1C4E80;
-    font-variant: all-small-caps;
-    
-    transition: opacity 1s;
-    
+  width: 400%;
+  height: 220%;
+  background-color: black;
+  font-variant: all-small-caps;
+
+  transition: opacity 1s;
+
 }
 
 /* .popup p {
@@ -112,6 +129,7 @@ height: 220%;
   visibility: visible;
   opacity: 0.9;
 }
+
 .vline {
   border-left: 1px solid #1321c3;
   height: 73%;
@@ -120,114 +138,138 @@ height: 220%;
   transform: translateX(-50%);
   margin-top: 11px;
 }
+
 .horizontal-line {
-  border: none; /* remove the default border */
-  border-top: 1px solid black; /* add a solid black line on the top */
-  margin-top: 10px; /* adjust the distance between the word "user" and the line as needed */
+  border: none;
+  /* remove the default border */
+  border-top: 1px solid black;
+  /* add a solid black line on the top */
+  margin-top: 10px;
+  /* adjust the distance between the word "user" and the line as needed */
 }
+
 /* .vertical-line {
-  height: 20px; 
-  border-left: 1px solid black; 
-  margin-left: 10px; 
+  height: 20px;
+  border-left: 1px solid black;
+  margin-left: 10px;
 } */
-.vertical-line1{
-  height: 50px; /* adjust the height of the line as needed */
-  border-left: 1px solid transparent; /* adjust the color and style of the line as needed */
-  margin-left: 10px; /* adjust the distance between the word "user" and the line as needed */
-padding: 5px;
-position: absolute;
+.vertical-line1 {
+  height: 50px;
+  /* adjust the height of the line as needed */
+  border-left: 1px solid transparent;
+  /* adjust the color and style of the line as needed */
+  margin-left: 10px;
+  /* adjust the distance between the word "user" and the line as needed */
+  padding: 5px;
+  position: absolute;
 
 }
+
 .popup table {
   font-size: 14px;
   position: relative;
-  
+
 }
-.popup .table::after{
+
+.popup .table::after {
   content: "";
   width: 1px;
-  height: 46%;
+  height: 91%;
   position: absolute;
-  background-color: #ccc;
-  top: 29%;
+  background-color: black;
+  top: 8%;
   left: 50%;
 }
-.kpi-image .popup::after{
+
+.kpi-image .popup::after {
   content: " ";
   position: absolute;
-  bottom: 98%;  /* At the top of the tooltip */
+  bottom: 98%;
+  /* At the top of the tooltip */
   left: 29%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #1C4E80 transparent;;
+  border-color: transparent transparent black transparent;
+  ;
 }
 
-.value{
+.value {
   font-weight: bolder;
   text-align: center;
   margin: auto;
   /* color: white; */
 }
+
 .value p {
   padding: 0%;
 }
-.vertical-line2{
-  height: 50px; /* adjust the height of the line as needed */
-  border-left: 1px solid black; /* adjust the color and style of the line as needed */
-  margin-left: 10px; /* adjust the distance between the word "user" and the line as needed */
-padding: 5px;
-}
-.padding{
-padding: 6px;
+
+.vertical-line2 {
+  height: 50px;
+  /* adjust the height of the line as needed */
+  border-left: 1px solid black;
+  /* adjust the color and style of the line as needed */
+  margin-left: 10px;
+  /* adjust the distance between the word "user" and the line as needed */
+  padding: 5px;
 }
 
-.kpi{
+.padding {
+  padding: 6px;
+}
+
+.kpi {
   display: flex;
 }
 
-.label  {
-display: flex;
-justify-content: space-around;
+.label {
+  display: flex;
+  justify-content: space-around;
 }
+
 .label p {
   font-size: 24px;
   font-weight: bold;
-  color: #333333;
+  color: white;
   background-color: #f2f2f2;
   padding: 10px;
   border-radius: 5px;
   text-align: center;
   text-transform: uppercase;
-  text-decoration: underline;
 }
-.table th {
- text-align: center;
- color: white;
- font-weight: 1000;
- /* text-decoration: underline; */
- font-size: large;
- /* border:  #ccc 1px solid */
-}
-.table th:nth-child(2)::before{
 
+.table th {
+  text-align: center;
+  color: white;
+  font-weight: 1000;
+  font-size: large;
 }
+
 .table td {
-  color: gold;
+  color: #EA6A47;
   text-align: center;
   font-weight: bold;
 }
+
 .table td p {
   text-align: center;
 }
-p.value{
+
+p.value {
   padding: 0px;
   color: white;
 }
+
 .value p {
   color: white;
 }
+
 .t1 td {
-color: gold;
-font-weight: bolder;
+  color: #EA6A47;
+  font-weight: bold;
+}
+
+.t1 {
+  text-align: center;
 }
