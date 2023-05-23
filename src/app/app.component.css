@@ -1,6 +1,5 @@
 #show {
   display: flex;
-  gap: 8px;
   position: relative;
   top: 3.9rem;
 }
@@ -8,21 +7,24 @@
 #cont {
   flex: auto;
   position: relative;
-  width: 0rem;
+  padding-bottom: 0.5rem;
 }
 
 #sidebar {
+  display: block;
   transition: ease-in-out;
   transition-duration: 0.4s;
+  flex: 2.5%;
 }
 
 /* mohammad */
 .bgt{
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: 9px;
   flex-wrap: nowrap;
-  padding: 0 1.3rem;
+  padding-right: 0.5rem;
+
 }
 
 @media  (max-width: 480px)  {

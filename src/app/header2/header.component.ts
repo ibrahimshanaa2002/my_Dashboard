@@ -6,12 +6,12 @@ import { Header } from '../model/HeaderModel';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  Headers: Header[] = [
+  Header: Header =
     {
       companyname: 'VestaCare',
       userprofile: '../assets/img/user.png',
       username: 'Ibrahim Shanaa',
       usercareer: 'WebDeveloper',
-    },
-  ];
+    }
+  ;
 }

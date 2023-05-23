@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {UserData} from "../model/userData.interface";
-import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
+import {ChartData} from "../model/ChartData.interface";
+import {ExportExcel} from "../shared-utility/ExportExcel";
 
 @Component({
   selector: 'app-bg-card',
@@ -8,8 +8,21 @@ import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./bg-card.component.css']
 })
 export class BgCardComponent {
-  @Input() userData: UserData;
-  show: boolean = true;
-  faEllipsisH = faEllipsisH;
+  @Input() chartData: ChartData;
+  show: boolean = false;
+  table: any;
 
+  showDataIcon(){
+    this.show = !this.show
+  }
+
+  x= [{
+    userId: 25,
+  id: 25,
+  title: 35,
+  body: [24,25,26,54]
+  }];
+  exportFile(){
+    new ExportExcel(this.table);
+  }
 }

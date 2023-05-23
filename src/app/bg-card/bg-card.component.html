@@ -1,30 +1,11 @@
 <div id="container" class="card container">
-  <div class="dropdown" id="button">
-    <button id="menuButton" type="button" data-bs-toggle="dropdown"> <fa-icon [icon]="faEllipsisH" size="1x" ></fa-icon></button>
-            <ul class="dropdown-menu">
-              <li><button type="button" class="dropdown-item" (click)="show = !show">Show Data</button></li>
-            </ul>
-        </div>
+  <div class="buttons">
+    <button type="button"(click)="showDataIcon()"><i class="fa fa-eye" [ngStyle]="{'color' : show ? 'limegreen' : 'black'}"></i> </button>
+    <button type="button" (click)="exportFile()"><i class="fa fa-cloud-download"></i> </button>
+  </div>
   <div class="card-body">
-<!--    <div class="right">-->
-    <h4 class="card-title">{{ userData.title }}</h4>
-        <app-bar [userData]="userData" [hidden]="!show"></app-bar>
-        <app-table [userData]="userData" [hidden]="show"></app-table>
-<!--    </div>-->
-<!--    <div class="left">-->
-<!--      <div class="left-container">-->
-<!--      <div class="desc">-->
-<!--      <div class="dropdown" id="button">-->
-<!--        <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">User</button>-->
-<!--        <ul class="dropdown-menu">-->
-<!--          <li><a class="dropdown-item" href="#">MPR User</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--      <h4>$25,282</h4>-->
-<!--      <p>Budget: 56,800</p>-->
-<!--      </div>-->
-<!--      <div class="chart">-->
-<!--       <app-barLineChart></app-barLineChart>-->
-<!--      </div>-->
+    <h4 class="card-title">{{ chartData.title }}</h4>
+        <app-bar [chartData]="chartData" [hidden]="show"></app-bar>
+        <app-table [chartData]="chartData" (table)="table = $event" [hidden]="!show"></app-table>
     </div>
 </div>

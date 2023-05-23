@@ -1,6 +1,7 @@
 import {AfterContentInit, Component, Input, OnInit} from '@angular/core';
-import {UserData} from "../model/userData.interface";
+import {ChartData} from "../model/ChartData.interface";
 import {DoughnutInfo} from "../model/doughnutInfo.interface";
+import {PrepareCardData} from "./PrepareCardData";
 
 
 @Component({
@@ -9,48 +10,19 @@ import {DoughnutInfo} from "../model/doughnutInfo.interface";
   styleUrls: ['./cards-container.component.css']
 })
 export class CardsContainerComponent implements OnInit{
-  @Input() userData: UserData;
-  @Input() depUserData1: UserData;
-  @Input() depUserData2: UserData;
-  @Input() reverseDirection: boolean;
-  chartInfo: DoughnutInfo[] = new Array<DoughnutInfo>();
-  chartsInfo: Array<DoughnutInfo[]> = new Array<DoughnutInfo[]>();
-  average: number;
+  @Input() chartData: ChartData;
+  @Input() depDataChart1: ChartData;
+  @Input() depDataChart2: ChartData;
+  @Input() depDataChart3: ChartData;
+  @Input() depDataChart4: ChartData;
+  prepareCardData: PrepareCardData;
   constructor() {
   }
-
-  prepareChartInfo(category: UserData){
-    this.chartInfo = new Array<DoughnutInfo>();
-    let numOfLabels = 0;
-    category.data.forEach(elem =>{
-      if(numOfLabels == 2)
-        return;
-      let total: number = 0;
-      let counter: number = 0;
-      let max: number = 0;
-      let index: number = 0;
-      let average;
-      elem.value.forEach(value => {
-        total+= value;
-        counter++;
-        if (value > max){
-          max = value;
-          index = counter;
-        }
-      });
-      average = parseFloat((total/counter).toFixed(2));
-      this.chartInfo.push(new DoughnutInfo(elem.label, total,average , category.names.at(index)!));
-      numOfLabels++;
-    });
-    this.chartsInfo.push(this.chartInfo);
-  };
-
   ngOnInit(): void {
-    if (this.reverseDirection){
-      const element = document.getElementById('cards-cont') as HTMLElement;
-      element.style.flexDirection = 'row-reverse';
-    }
-    this.prepareChartInfo(this.depUserData1);
-    this.prepareChartInfo(this.depUserData2);
+    this.prepareCardData = new PrepareCardData();
+    this.prepareCardData.prepareMdCardInfo(this.depDataChart1);
+    this.prepareCardData.prepareMdCardInfo(this.depDataChart2);
+    this.prepareCardData.prepareMdCardInfo(this.depDataChart3);
+    this.prepareCardData.prepareMdCardInfo(this.depDataChart4);
   }
 }

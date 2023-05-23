@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand px-2" *ngFor="let header of Headers">
+<nav class="navbar navbar-expand px-2">
     <div class="side-nav-button p-2 me-3 text-light offcanvas-collapse " data-bs-toggle="collapse"
         data-bs-target="#side-nav-content">
     </div>
     <div>
-        <a class="navbar-brand" href="#" style="color: white;">{{header.companyname}}</a>
+        <a class="navbar-brand" href="#" style="color: white;">{{Header.companyname}}</a>
     </div>
     <div class="search-box mx-auto d-flex">
         <input class=" search form-control me-2" type="search" placeholder="search">
@@ -11,13 +11,13 @@
     </div>
     <div class="right-side">
         <div class="user-profile d-flex">
-            <img [src]="header.userprofile" alt="User Profile Picture">
+            <img [src]="Header.userprofile" alt="User Profile Picture">
             <div class="user-info">
 
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle username btn-sm" style="color: white;" href="#"
                         role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{header.username}}
+                        {{Header.username}}
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -27,7 +27,7 @@
                         <li><a class="dropdown-item" href="#">SignUp</a></li>
                     </ul>
                 </div>
-                <div class="job-title">{{header.usercareer}}</div>
+                <div class="job-title">{{Header.usercareer}}</div>
             </div>
         </div>
         <div class="icons" style="color: white;">

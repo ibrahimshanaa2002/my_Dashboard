@@ -1,8 +1,9 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Chart, ChartMeta, elements} from "chart.js";
+import {BubbleDataPoint, Chart, ChartMeta, ChartTypeRegistry, elements, Point} from "chart.js";
 import { browserStatesList } from "../model/browser-states";
 import {patientOutreached} from "../model/patients-outreached";
 import {UUID} from "uuid-generator-ts";
+import {UUIDUtility} from "../shared-utility/UUIDUtility";
 @Component({
   selector: 'app-browser-states',
   templateUrl: './browser-states.component.html',
@@ -10,7 +11,12 @@ import {UUID} from "uuid-generator-ts";
 })
 export class BrowserStatesComponent implements OnInit{
   patientOutreachedList= patientOutreached[0];
+  chart_ID: string[] = new Array();
 
+  ngOnInit(): void {
+    this.patientOutreachedList.Patient_section.forEach(patient=>{this.chart_ID.push(UUIDUtility.generateUUID());});
+  }
+  
   patientOutreachedValue() {
     let total= 0;
     for (let i = 0; i < this.patientOutreachedList.Patient_section.length-1; i++) {
@@ -21,10 +27,8 @@ export class BrowserStatesComponent implements OnInit{
     return total;
   }
 
-  public newChart: any;
-  createChart(id:number, perecnt:number){
-    let chart_ID: string = new UUID().toString();
-    this.newChart = new Chart(`PatientOutreachedChart${id}`, {
+  createChart(id:number, perecnt:number) : any {
+    let newChart = new Chart(this.chart_ID[id], {
       type: 'doughnut',
       data: {
         datasets: [
@@ -56,12 +60,8 @@ export class BrowserStatesComponent implements OnInit{
 
       },
     });
-
-    // return this.newChart;
+     return newChart;
   }
 
-  ngOnInit(): void {
-    // this.createChart(id, number);
-  }
 }
 

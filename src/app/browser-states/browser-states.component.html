@@ -5,18 +5,13 @@
   <div>
     <div class="bs-row" *ngFor="let x of patientOutreachedList.Patient_section; let indexOfelement=index;">
       <div>
-        <!-- <i *ngIf="x.name=='Google Chrome'" class="fa fa-brands fa-chrome fa-2x"></i>
-        <i *ngIf="x.name=='Mozila Firefox'" class="fa fa-brands fa-firefox fa-2x"></i>
-        <i *ngIf="x.name=='Apple Safari'" class="fa fa-brands fa-safari fa-2x"></i>
-        <i *ngIf="x.name=='Opera'" class="fa fa-brands fa-opera fa-2x"></i>
-        <i *ngIf="x.name=='MS Edge' " class="fa fa-brands fa-edge fa-2x"></i> -->
         <span>{{ x.title }}</span>
       </div>
       <div>
         <span>{{ x.value }}</span>
         <div class="chart-container bs-row-chart" style="position: relative;">
           <canvas
-          id="PatientOutreachedChart{{ indexOfelement }}"
+          [id]="chart_ID[indexOfelement]"
           aria-label="Hello ARIA World"
           role="img"
           >{{ createChart( indexOfelement, x.value) }} </canvas>

@@ -1,50 +1,23 @@
 .container {
   padding: 0;
-}
-
-.card-body{
-  width: 62rem;
-  height: 30.9rem;
-  display: flex;
-}
-
-.left{
-   text-align: center;
-}
-
-.card-title {
-  margin-left: 2rem;
-  margin-top: 0.3rem;
-  position: absolute
-}
-
-/*.right {*/
-/*  border-right: 1px solid silver;*/
-/*  padding-right: 1rem;*/
-/*}*/
-
-#menuButton{
-  position: absolute;
-  /*padding: 0 5px;*/
-  background-color: transparent;
-  border: none;
-  justify-content: center;
-  right: 0;
-  /*top: 16px;*/
-  border-right: none;
-  border-top: none;
-  border-bottom-left-radius: 5px;
-}
-
-.left h4{
-  padding-top: 2em;
-  padding-bottom: 0;
-  font-weight: bold;
+  min-width: 100%;
 }
 
 app-table {
   margin-top: 5rem;
   width: 100%;
+}
+
+.buttons {
+  display: flex;
+  width: fit-content;
+  align-self: self-end;
+  position: absolute;
+}
+
+.buttons button {
+  border: transparent;
+  background-color: transparent;
 }
 
 /*@media (min-width: 576px) {*/
