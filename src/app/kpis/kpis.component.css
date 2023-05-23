@@ -209,9 +209,7 @@ justify-content: space-around;
  font-size: large;
  /* border:  #ccc 1px solid */
 }
-.table th:nth-child(2)::before{
 
-}
 .table td {
   color: gold;
   text-align: center;
