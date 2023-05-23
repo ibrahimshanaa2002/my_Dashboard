@@ -1,9 +1,9 @@
 #container{
   display: block;
   flex-direction: row;
-  width: 22rem;
-  height: 15rem;
-  padding-right: 0;
+  /*width: 22rem;*/
+  /*height: 15rem;*/
+  padding: 0 0.8rem;
 }
 
 #comp-container {
@@ -20,6 +20,7 @@
 
 .card-body {
   padding: 0;
+  display: flex;
 }
 
 .clock{
@@ -38,17 +39,16 @@ h5{
   justify-content: space-around;
 }
 
-#menuButton{
-  position: absolute;
-  /*padding: 0 5px;*/
-  background-color: transparent;
-  border: none;
-  justify-content: center;
+.buttons {
+  display: flex;
+  width: fit-content;
   right: 0;
-  /*top: 16px;*/
-  border-right: none;
-  border-top: none;
-  border-bottom-left-radius: 5px;
+  position: absolute;
+}
+
+.buttons button {
+  border: transparent;
+  background-color: transparent;
 }
 
 

@@ -1,15 +1,15 @@
 <div class="table-responsive  ">
-<table class="table table-hover table-striped table-bordered table-sm ">
+<table class="table table-hover table-striped table-bordered table-sm " id="tbl">
     <thead class="bg-dark text-white ">
       <tr>
         <th>Names</th>
-        <th *ngFor="let user of userData.data">{{user.label}}</th>
+        <th *ngFor="let user of chartData.data">{{user.label}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let name of userData.names;let indexOfElement = index">
+      <tr *ngFor="let name of chartData.names;let indexOfElement = index">
         <td>{{name}}</td>
-        <td *ngFor="let user of userData.data">{{user.value.at(indexOfElement) }} </td>
+        <td *ngFor="let user of chartData.data">{{user.value.at(indexOfElement) }} </td>
       </tr>
     </tbody>
   </table>

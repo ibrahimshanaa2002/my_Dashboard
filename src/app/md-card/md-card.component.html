@@ -1,9 +1,7 @@
 <div id="container" class="card container">
-  <div class="dropdown" id="button">
-    <button id="menuButton" type="button" data-bs-toggle="dropdown"> <fa-icon [icon]="faEllipsisH" size="1x"></fa-icon></button>
-    <ul class="dropdown-menu">
-      <li><button type="button" class="dropdown-item" (click)="show = !show">Show Data</button></li>
-    </ul>
+  <div class="buttons">
+    <button type="button"(click)="showDataIcon()"><i class="fa fa-eye" [ngStyle]="{'color' : show ? 'limegreen' : 'black'}"></i> </button>
+    <button type="button" (click)="exportFile()"><i class="fa fa-cloud-download"></i> </button>
   </div>
   <div class="header">
     <h4 class="card-title"><ng-content select="[title]"></ng-content></h4>
@@ -13,8 +11,9 @@
       <h5 style="margin-top: 0.1rem;font-weight: bold"><ng-content select="[label]"></ng-content></h5>
   </div>
     <div id="comp-container">
-      <app-dough [depUserData]="depUserData"></app-dough>
+      <app-dough [depDataChart]="depDataChart"></app-dough>
     </div>
   </div>
-  <app-table [userData]="depUserData" [hidden]="!show"></app-table>
+  <app-table [chartData]="depDataChart" (table)="table = $event" [hidden]="!show"></app-table>
 </div>
+

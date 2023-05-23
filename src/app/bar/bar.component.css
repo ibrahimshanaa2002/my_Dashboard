@@ -6,8 +6,13 @@
 }
 
 .chart-container {
-  width: 57rem;
+  width: 49%;
+  height: 20rem;
   position: relative;
+}
+
+try {
+  width: inherit;
 }
 
 button {
@@ -34,14 +39,14 @@ i {
 
 /*}*/
 
-@media (max-device-width: 768px) {
-  .chart-container {
-    width: 24rem;
-    height: 15rem;
-  }
+/*@media (max-device-width: 768px) {*/
+/*  .chart-container {*/
+/*    width: 24rem;*/
+/*    height: 15rem;*/
+/*  }*/
 
-  #bar-chart {
-    width: 24rem !important;
+/*  #bar-chart {*/
+/*    width: 24rem !important;*/
 
-  }
-}
+/*  }*/
+/*}*/

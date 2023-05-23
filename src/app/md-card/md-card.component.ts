@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {UserData} from "../model/userData.interface";
-import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
+import {ChartData} from "../model/ChartData.interface";
+import {ExportExcel} from "../shared-utility/ExportExcel";
 
 @Component({
   selector: 'app-md-card',
@@ -8,11 +8,16 @@ import {faEllipsisH} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./md-card.component.css']
 })
 export class MdCardComponent {
-  @Input() depUserData: UserData;
-  faEllipsisH = faEllipsisH;
+  @Input() depDataChart: ChartData;
   show: boolean = false;
+  table: any;
 
-  constructor() {
+  showDataIcon(){
+    this.show = !this.show
+  }
+
+  exportFile(){
+    new ExportExcel(this.table);
   }
 
 
