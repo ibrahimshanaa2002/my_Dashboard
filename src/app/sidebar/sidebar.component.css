@@ -29,6 +29,7 @@
   display: flex;
   /* justify-content: space-evenly; */
   align-items: center;
+  padding-bottom: 14px;
 }
 
 #sidebar header a {
@@ -40,22 +41,22 @@
   margin-left: 10px;
 }
 
-#sidebar header a:hover{
+#sidebar header a:hover {
   color: #fff;
 }
 
-#sidebar .nav a{
+#sidebar .nav a {
   background: none;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   width: calc(100% - 45px - 18px);
   text-transform: uppercase;
 }
 
-#sidebar .nav a:hover{
+#sidebar .nav a:hover {
   background: none;
   color: #ECEFF1;
 }
@@ -63,24 +64,27 @@
 ul {
   display: flex;
   flex-direction: column;
+
 }
 
-ul li i{
+ul li i {
   /* padding-top: 16px; */
   padding-right: 12px;
-    justify-content: space-between;
+  justify-content: space-between;
   font-size: 21px;
   width: calc(45px + 6px);
   text-align: center;
 }
-.sidebarbutton{
+
+.sidebarbutton {
   padding-right: 12px;
-    color: white;
-    justify-content: space-between;
-    font-size: 21px;
-    width: calc(50px + 6px);
-    text-align: center;
+  color: white;
+  justify-content: space-between;
+  font-size: 21px;
+  width: calc(50px + 6px);
+  text-align: center;
 }
+
 .nav button {
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -101,6 +105,8 @@ button {
 ul li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
 }
 
 li.ng-tns-c15-0 {
@@ -109,6 +115,7 @@ li.ng-tns-c15-0 {
   padding: 19px 0px 18px 0px;
   justify-content: space-between;
 }
+
 .sidebarbutton {
   transition: ease-out 0.3s;
   color: white;

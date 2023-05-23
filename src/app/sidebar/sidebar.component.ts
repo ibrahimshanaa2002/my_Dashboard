@@ -1,6 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import { animate, state, style, transition, trigger } from "@angular/animations";
 
 @Component({
   selector: 'app-sidebar',
@@ -19,17 +19,17 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     ]),
   ]
 })
-export class SidebarComponent implements OnInit{
+export class SidebarComponent implements OnInit {
   isActive: boolean;
   ngOnInit(): void {
-      this.toggleMenu();
+    this.toggleMenu();
   }
-  menuState:string = 'out';
+  menuState: string = 'out';
   state: boolean = false;
 
 
 
-  toggleMenu(){
+  toggleMenu() {
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
     this.state = !this.state;
   }
@@ -38,10 +38,18 @@ export class SidebarComponent implements OnInit{
     { label: 'Dashboard', icon: 'fas fa-chart-pie', href: '/shortcuts' },
     { label: 'Dashboard', icon: 'fas fa-coins	', href: '/overview' }
   ];
-  activeItemIndex: number = -1;
+
+  activeItemIndex = 0;
+  menuItemClicked = false;
 
   toggleButtonActiveState(index: number) {
-    this.activeItemIndex = index === this.activeItemIndex ? -1 : index;
+    if (this.activeItemIndex === index) {
+      if (!this.menuItemClicked) {
+        this.menuItemClicked = true;
+      }
+    } else {
+      this.menuItemClicked = false;
+    }
+    this.activeItemIndex = index;
   }
-
 }
