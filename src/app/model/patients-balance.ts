@@ -1,8 +1,8 @@
-import * as percs_gold from "./percs-gold.interface";
+import {IPERCSGold} from "./percs-gold.interface";
 
-const patientBalanceList: Array<percs_gold.Patient> = [
+export const patientBalanceList: Array<IPERCSGold> = [
     {
-        title: "Encounters Balance (at time of broadcast)",
+        title: "Encounters Balance",
         value:  151736.73,
     },
     {
@@ -22,7 +22,7 @@ const patientBalanceList: Array<percs_gold.Patient> = [
         value: 0,
     },
     {
-        title: "Amount Secured (Cash + AutoPay Plans Secured + Patient Payment Collections)",
+        title: "Amount Secured",
         value:  1419.25,
     },
     {
@@ -33,10 +33,4 @@ const patientBalanceList: Array<percs_gold.Patient> = [
         title: "% Total Cash/Encounters Balance",
         value: 0.55,
     },
-];
-export const patientBalance: Array<percs_gold.IPERCSGold> = [
-    {
-        date: "01-11-0000",
-        Patient_section: patientBalanceList
-    }
 ];
