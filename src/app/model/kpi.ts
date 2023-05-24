@@ -3,7 +3,7 @@
 // kpiList = new Array<Ikpi>;
 // let kpi = new Ikpi("../assets/img/growth.png",1449.89,'Immediate payment');
 // kpi.mpracc = 54;
-// kpiList.push(kpi); 
+// kpiList.push(kpi);
 
 // kpiList = [
 // {
@@ -30,7 +30,7 @@
 //     subtitle: 'Total',
 //     total1: 0.94,
 //     total2: 0.55,
-    
+
 
 //   },
 //   {
@@ -52,8 +52,8 @@ export const kpiData:Ikpi[]=[
         total1: 44,
         total2:55,
         mprapp:66,
-        
-    
+
+
     },
     { icon:'../assets/img/user.png',
         value:-2475.16,
@@ -61,23 +61,23 @@ export const kpiData:Ikpi[]=[
         useracc: 1050,
         userapp: 3000,
         mpracc: 322,
-        
+
         total1: 0,
         total2:0,
         mprapp:100,
-        
-    
+
+
     },
     { icon:"../assets/img/growth.png" ,
         value:1.49,
-        subtitle:'Total',
+        subtitle:'% Amount Secured',
         useracc: 11,
         userapp: 22,
         mpracc: 333,
         total1: 44,
         total2:55,
         mprapp:66,
-       
+
     },
     { icon:"../assets/img/growth.png" ,
         value:3.23,
@@ -88,7 +88,7 @@ export const kpiData:Ikpi[]=[
         total1: 44,
         total2:55,
         mprapp:66,
-        
-    
+
+
     }
 ];

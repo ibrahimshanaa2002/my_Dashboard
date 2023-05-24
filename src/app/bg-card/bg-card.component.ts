@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ChartData} from "../model/ChartData.interface";
 import {ExportExcel} from "../shared-utility/ExportExcel";
+import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-bg-card',

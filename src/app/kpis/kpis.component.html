@@ -4,20 +4,20 @@
       <h2 class="card-title">USER / MPR USER / PERCS GOLD DASHBOARD</h2>
     </div>
   <div class="label">
-    <p>MPR USer</p>
-  <p>PERC gold</p>
+    <p>IP / APP</p>
+  <p>PERCS gold</p>
       </div>
       <div class="row">
         <div class="">
           <div class="card">
             <div class="vline"></div>
             <div id="kpi-cont" class="card-body ">
-             
+
               <div class="kpi" *ngFor="let kpi of kpis; let i=index">
                 <div class="kpi-image">
                   <img [src]="kpi.icon" alt="{{ kpi.value | currency }} icon">
                   <div class="popup" *ngIf="i <2 " >
-                   
+
                     <!-- Popup content -->
                     <table class="table">
                       <tr>
@@ -47,20 +47,20 @@
                   </div>
                   <div class="popup" *ngIf="i ==2 ">
                     <table  class="t1">
-               
-                
+
+
                       <tr>
                         <td>% Total Secured / Encounters Balance
                           <p class="value"> {{kpis[2].total1}} %</p>
                         </td>
-                       
-                       
+
+
                       </tr>
                       <tr>
-                        <td>% Total Cash/Encounters Balance
+                        <td>% Total Cash / Encounters Balance
                           <p class="value"> {{kpis[2].total2}}%</p>
                         </td>
-                       
+
                       </tr>
                      </table>
 
@@ -77,6 +77,6 @@
           </div>
         </div>
       </div>
-     </div> 
+     </div>
 
-              
+

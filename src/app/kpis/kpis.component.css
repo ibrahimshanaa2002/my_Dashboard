@@ -1,13 +1,20 @@
 .card {
   border: none;
-  width: 100%;
+  /*width: 100%;*/
   margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid silver;
+}
+
+.row .card {
+  width: inherit;
+  border: none;
 }
 
 
 h2.card-title {
   color: #333;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
   margin-left: 30%;
 }
@@ -19,6 +26,7 @@ h2.card-title {
   font-weight: bold;
   color: white;
   justify-content: space-evenly;
+  padding-bottom: 0;
 }
 
 .card-title.Updated {
@@ -82,6 +90,7 @@ h2.card-title {
 .card-header.d-flex.justify-content-between {
   margin: 5px;
   border-radius: 10px;
+  margin-bottom: 0;
 }
 
 .row>div {
@@ -119,9 +128,9 @@ width: 400%;
 height: 220%;
     background-color: black;
     font-variant: all-small-caps;
-    
+
     transition: opacity 1s;
-    
+
 }
 
 /* .popup p {
@@ -137,7 +146,7 @@ height: 220%;
   border-left: 1px solid #1321c3;
   height: 73%;
   position: absolute;
-  left: 53%;
+  left: 51%;
   transform: translateX(-50%);
   margin-top: 11px;
 }
@@ -231,7 +240,7 @@ height: 220%;
 }
 
 .label p {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: transparent navy;
   /* background-color: #1321c3; */
@@ -239,6 +248,7 @@ height: 220%;
   border-radius: 5px;
   text-align: center;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .table th {

@@ -82,4 +82,6 @@ export class AppComponent implements  OnInit{
       seperateChartLabel: seperateChartLabel
     }
   }
+
+
 }
