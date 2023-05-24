@@ -32,4 +32,8 @@ export class PrepareCardData {
     this.chartsInfo.push(chartInfo);
   };
 
+  prepareTableData(){
+
+  }
+
 }

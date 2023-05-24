@@ -24,14 +24,17 @@ export class SidebarComponent implements OnInit{
   ngOnInit(): void {
       this.toggleMenu();
   }
+
+  @Output('toggle') eventEmitter = new EventEmitter<boolean>();
   menuState:string = 'out';
   state: boolean = false;
 
 
-
+  
   toggleMenu(){
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
     this.state = !this.state;
+    this.eventEmitter.emit(this.state);
   }
   menuItems = [
     { label: 'Dashboard', icon: 'fas fa-chart-line', href: '/dashboard' },
@@ -43,5 +46,5 @@ export class SidebarComponent implements OnInit{
   toggleButtonActiveState(index: number) {
     this.activeItemIndex = index === this.activeItemIndex ? -1 : index;
   }
-
+  
 }

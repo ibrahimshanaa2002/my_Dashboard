@@ -6,13 +6,14 @@
 }
 
 .chart-container {
-  width: 49%;
+  width: 47.6%;
   height: 20rem;
   position: relative;
 }
 
-try {
-  width: inherit;
+.try {
+  width: 100%;
+  display: flex;
 }
 
 button {
@@ -22,9 +23,14 @@ button {
   border: none;
 }
 
-button:nth-child(1) {
+.try button:nth-child(1) {
   position: relative;;
   right: 0.7rem;
+}
+
+.try button:last-child{
+  position: relative;;
+  left: 0.7rem;
 }
 
 i {
