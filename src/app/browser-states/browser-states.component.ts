@@ -1,8 +1,6 @@
 import {Component, OnInit, Input, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import {BubbleDataPoint, Chart, ChartMeta, ChartTypeRegistry, elements, Point} from "chart.js";
-import { browserStatesList } from "../model/browser-states";
+import {Chart} from "chart.js";
 import {patientOutreachedList} from "../model/patients-outreached";
-import {UUID} from "uuid-generator-ts";
 import {UUIDUtility} from "../shared-utility/UUIDUtility";
 @Component({
   selector: 'app-browser-states',
@@ -60,7 +58,7 @@ export class BrowserStatesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.patientOutreachedList.forEach(patient=>{this.chart_ID.push(UUIDUtility.generateUUID());});
   }
-  
+
   patientOutreachedTotalValue() {
     let total= 0;
     for (let i = 0; i < this.patientOutreachedList.length-1; i++) {
