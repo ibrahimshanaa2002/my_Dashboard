@@ -1,12 +1,15 @@
 .card {
   border: none;
   width: 100%;
+  margin-top: 0.5rem;
 }
+
 
 h2.card-title {
   color: #333;
   font-size: 20px;
   font-weight: bold;
+  margin-left: 30%;
 }
 
 .card-header {
@@ -232,7 +235,7 @@ height: 220%;
   font-weight: bold;
   color: transparent navy;
   /* background-color: #1321c3; */
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 5px;
   text-align: center;
   text-transform: uppercase;
