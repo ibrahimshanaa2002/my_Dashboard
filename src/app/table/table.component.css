@@ -5,6 +5,7 @@ table {
 
 .table-responsive {
   margin-left: 1.4rem;
+ max-height: 19.4rem;
 }
 
 th {

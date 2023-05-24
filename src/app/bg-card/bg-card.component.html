@@ -1,11 +1,13 @@
-<div id="container" class="card container">
+<div class="header">
+  <h4>{{ chartData.title + "  (" + chartData.subTitle + ")" }}</h4>
   <div class="buttons">
     <button type="button"(click)="showDataIcon()"><i class="fa fa-eye" [ngStyle]="{'color' : show ? 'limegreen' : 'black'}"></i> </button>
     <button type="button" (click)="exportFile()"><i class="fa fa-cloud-download"></i> </button>
   </div>
+</div>
+<div class="card container">
   <div class="card-body">
-    <h4 class="card-title">{{ chartData.title }}</h4>
         <app-bar [chartData]="chartData" [hidden]="show"></app-bar>
-        <app-table [chartData]="chartData" (table)="table = $event" [hidden]="!show"></app-table>
+        <app-table [chartData]="chartData" (table)="table = $event" [hidden]="!show"  [ID]="ID"></app-table>
     </div>
 </div>

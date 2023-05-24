@@ -1,27 +1,19 @@
 import * as XLSX from 'xlsx';
-import {Data} from "../model/data.interface";
 export class ExportExcel{
 
-  private JsonDataObject: any;
+  private dataObject: any;
+  private fileName: string;
 
-  constructor(JsonDataObject: any) {
-    this.JsonDataObject = JsonDataObject;
+  constructor(dataObject: any, fileName: string) {
+    this.dataObject = dataObject;
+    this.fileName = fileName;
     this.exportExcel();
   }
 
   private exportExcel(): void {
-    // const fileToExport = this.JsonDataObject.map((item:any) => {
-    //   return {
-    //     "Names": item,
-    //     "IP on Account $": item,
-    //     "Title": item,
-    //     "Body": item
-    //   }
-    // });
-
     this.exportToExcel(
-      this.JsonDataObject,
-      'yourExcelFile-' + new Date().getTime() + '.xlsx'
+      this.dataObject,
+      this.fileName + "  -  " + new Date().toDateString() + '.xlsx'
     );
   }
 

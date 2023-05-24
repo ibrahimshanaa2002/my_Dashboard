@@ -1,5 +1,6 @@
 import {ChartData} from "../model/ChartData.interface";
 import {DoughnutInfo} from "../model/doughnutInfo.interface";
+import {Data} from "../model/data.interface";
 
 export class PrepareCardData {
   depDataArr: ChartData[] = new Array<ChartData>();
@@ -32,8 +33,21 @@ export class PrepareCardData {
     this.chartsInfo.push(chartInfo);
   };
 
-  prepareTableData(){
-
+  prepareTableData(): ChartData{
+    let names: string[];
+    let data: Data[] = new Array<Data>();
+    names = this.depDataArr.at(0)!.names;
+    this.depDataArr.forEach(element => {
+          element.data.forEach(subElement => {
+            data.push(subElement);
+          });
+        });
+    return {
+      names: names,
+      subTitle: this.depDataArr.at(0)!.subTitle,
+      data: data,
+      title: "",
+      seperateChartLabel: new Set<string>()
+    }
   }
-
 }

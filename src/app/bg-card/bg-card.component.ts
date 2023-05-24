@@ -11,18 +11,13 @@ export class BgCardComponent {
   @Input() chartData: ChartData;
   show: boolean = false;
   table: any;
+  ID: string = 'tbl1';
 
   showDataIcon(){
     this.show = !this.show
   }
 
-  x= [{
-    userId: 25,
-  id: 25,
-  title: 35,
-  body: [24,25,26,54]
-  }];
   exportFile(){
-    new ExportExcel(this.table);
+    new ExportExcel(this.table, this.chartData.title);
   }
 }

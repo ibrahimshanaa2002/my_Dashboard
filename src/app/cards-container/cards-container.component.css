@@ -4,16 +4,51 @@
 }
 
 .chart-container {
-  padding-top: 0.5rem;
   padding-right: 0.5rem;
 }
 
+.down-cont {
+  display: flex;
+  flex-direction: column;
+}
+
 .dough-containers {
-  padding: 0.5rem 0;
+  padding-bottom: 0.5rem;
   padding-right: 0.5rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.buttons {
+  position: relative;
+  right: 1rem;
+}
+
+.header h4 {
+  position: relative;
+  left: 1rem;
+}
+
+.card {
+  width: 100%;
+  height: fit-content;
+}
+
+app-table {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.buttons button {
+  border: transparent;
+  background-color: transparent;
 }
 
 .card-body-info {

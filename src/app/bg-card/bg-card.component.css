@@ -8,11 +8,20 @@ app-table {
   width: 100%;
 }
 
-.buttons {
+.header {
   display: flex;
-  width: fit-content;
-  align-self: self-end;
-  position: absolute;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.buttons {
+  position: relative;
+  right: 1rem;
+}
+
+.header h4 {
+  position: relative;
+  left: 1rem;
 }
 
 .buttons button {
