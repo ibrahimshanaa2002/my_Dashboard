@@ -1,6 +1,6 @@
-import * as percs_gold from "./percs-gold.interface";
+import {IPERCSGold} from "./percs-gold.interface";
 
-const patientOutreachedList: Array<percs_gold.Patient> = [
+export const patientOutreachedList: Array<IPERCSGold> = [
 
     {
         title: "Patients Outreached",
@@ -63,9 +63,4 @@ const patientOutreachedList: Array<percs_gold.Patient> = [
         value: 427,
     },
 ];
-export const patientOutreached: Array<percs_gold.IPERCSGold> = [
-    {
-        date: "01-11-0000",
-        Patient_section: patientOutreachedList
-    }
-];
+

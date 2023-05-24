@@ -75,7 +75,7 @@ div.browser-state.card{
         width: 100%;
     }
     .browser-state.card > div{
-        text-align: center;
+        text-align: left;
     }
 }
 @media  (min-width: 506px) and (max-width: 768px)  {

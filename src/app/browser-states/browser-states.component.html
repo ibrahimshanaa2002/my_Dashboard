@@ -1,9 +1,9 @@
 <div class="browser-state card">
   <div>
-    <h3>Patient Outreached</h3>
+    <h3>{{ componentName }}</h3>
   </div>
   <div>
-    <div class="bs-row" *ngFor="let x of patientOutreachedList.Patient_section; let indexOfelement=index;">
+    <div class="bs-row" *ngFor="let x of patientOutreachedList; let i=index;">
       <div>
         <span>{{ x.title }}</span>
       </div>
@@ -11,10 +11,11 @@
         <span>{{ x.value }}</span>
         <div class="chart-container bs-row-chart" style="position: relative;">
           <canvas
-          [id]="chart_ID[indexOfelement]"
+          [id]="chart_ID[i]"
           aria-label="Hello ARIA World"
           role="img"
-          >{{ createChart( indexOfelement, x.value) }} </canvas>
+          #chartCanvas
+          ></canvas>
         </div>
       </div>
     </div>

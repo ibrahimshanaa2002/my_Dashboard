@@ -72,31 +72,8 @@ a#dropdownMenuLink {
     padding: 0 0.6rem;
 }
 
-.search-box {
-    position: relative;
-    display: inline-block;
-}
-
-.search-box input[type="text"] {
-    padding-right: 35px;
-}
-
-.search {
-    border-radius: 35px;
-    width: 30rem;
-}
-
-.search-box button[type="submit"] {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.fa-search {
-    color: #666;
-
+.navbar-brand {
+    width: 171px;
+    margin-left: 26px;
+    height: auto;
 }

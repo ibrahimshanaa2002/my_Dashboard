@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { transactionsList } from "../model/transactions";
 import {faBank, faMoneyBillTransfer, faWallet} from "@fortawesome/free-solid-svg-icons";
-import {patientBalance} from "../model/patients-balance";
+import {patientBalanceList} from "../model/patients-balance";
 
 
 @Component({
@@ -10,6 +10,7 @@ import {patientBalance} from "../model/patients-balance";
   styleUrls: ['./transactions.component.css']
 })
 export class TransactionsComponent {
-  patientBalanceList= patientBalance[0].Patient_section.slice(0, -2);
+  componentName= "Patient Balance";
+  patientBalanceList= patientBalanceList.slice(0, -2);
 
 }

@@ -2,16 +2,18 @@
   <div id="sidebar" [@slideInOut]="menuState">
     <header>
       <a href="#" (click)="toggleMenu()">━━━━</a> <i class="fa fa-bars fa-xl" style="color: white; width: calc(45px + 21px);
-      text-align: center;"
-        (click)="toggleMenu()"></i>
+      text-align: center;" (click)="toggleMenu()"></i>
     </header>
     <div>
       <ul class="nav">
         <li *ngFor="let menuItem of menuItems; let i = index">
           <a [href]="menuItem.href">{{ menuItem.label }}</a>
-          <button class="sidebarbutton" [class.active]="i === activeItemIndex" (click)="toggleButtonActiveState(i)" >
+          <button class="sidebarbutton" [class.active]="i === activeItemIndex || (i === 0 && activeItemIndex === -1)"
+            (click)="toggleButtonActiveState(i)">
             <i class="{{ menuItem.icon }}"></i>
           </button>
+
+
         </li>
       </ul>
     </div>
