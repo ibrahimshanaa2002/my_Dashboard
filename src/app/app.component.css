@@ -22,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   gap: 9px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding-right: 0.5rem;
 
 }
@@ -32,7 +32,6 @@
     flex-direction: column;
     gap: 20px;
   }
-
   #sidebar {
     display: none;
   }
@@ -53,13 +52,20 @@
     flex-wrap: wrap;
   }
 }
-
-@media  (min-width: 769px){
+@media (min-width: 768px) and (max-width: 990px){
   app-browser-states,
   app-transactions,
   app-goal-overview{
     flex-grow: 1;
     width: calc(100% / 3);
+  }
+}
+@media  (min-width: 990px){
+  app-browser-states,
+  app-transactions,
+  app-goal-overview{
+    flex-grow: 1;
+    width: calc(100% / 4);
   }
 }
 /* mohammad */

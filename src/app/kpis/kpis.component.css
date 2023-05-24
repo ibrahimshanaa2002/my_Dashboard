@@ -1,6 +1,10 @@
 .card {
-  border: none;
+  border: 1px solid silver;
   width: 100%;
+}
+
+.row .card {
+  border: none;
 }
 
 h2.card-title {
@@ -78,6 +82,8 @@ h2.card-title {
 
 .card-header.d-flex.justify-content-between {
   margin: 5px;
+  margin-bottom: 0;
+  padding-bottom: 0;
   border-radius: 10px;
 }
 
@@ -306,3 +312,13 @@ font-weight: bolder;
   text-align: center;
 }
 >>>>>>> 27cb9a32bc679276311264c468720d1088f46b9b
+
+.container-fluid {
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.container-fluid {
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+}

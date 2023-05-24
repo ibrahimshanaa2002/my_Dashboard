@@ -1,7 +1,7 @@
 .goal-overview.card{
     height: 335px;
 }
-.goal-overview h3{
+.goal-overview h4{
     padding: 20px 20px 0px;
 }
 .goal-overview >div:first-child{

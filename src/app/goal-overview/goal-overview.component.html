@@ -1,6 +1,6 @@
 <div class="goal-overview card">
   <div>
-    <h3>Patient Skipped</h3>
+    <h4>{{ componentName }}</h4>
     <div class="goal-overview-chart" style="height:8.5rem; width:8.5rem ">
       <canvas
       id="DoughChart_EncountersBalanceSkipped"
@@ -11,15 +11,15 @@
       >{{ chart }} </canvas>
     </div>
   </div>
-  <h6 style="text-align: center;">Encounters Balance skipped</h6>
+  <h6 style="text-align: center;">{{ footerTitle }}</h6>
   <div class="goal-overview-footer">
     <div>
-      <span>Other</span>
-      <span>$ {{  Encounters_Balance_skipped_Other | number}}</span>
+      <span>{{ leftSideFooterTitle }}</span>
+      <span> {{  Encounters_Balance_skipped_Other | currency}}</span>
     </div>
     <div>
-      <span>Bad Debt</span>
-      <span>$ {{ Encounters_Balance_skipped_Bad_Debt | number}}</span>
+      <span>{{ RightSideFooterTitle }}</span>
+      <span> {{ Encounters_Balance_skipped_Bad_Debt | currency}}</span>
     </div>
   </div>
 </div>

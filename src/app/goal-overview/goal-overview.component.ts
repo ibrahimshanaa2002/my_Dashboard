@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Chart, ChartMeta, elements} from "chart.js";
-import {patientSkipped} from "../model/patients-skipped";
+import {patientSkippedList} from "../model/patients-skipped";
 
 
 @Component({
@@ -10,26 +10,28 @@ import {patientSkipped} from "../model/patients-skipped";
   encapsulation: ViewEncapsulation.None
 })
 export class GoalOverviewComponent{
-  patientSkippedsList= patientSkipped[0];
+  componentName= "Patient Skipped";
+  footerTitle= "Encounters Balance skipped";
+  leftSideFooterTitle= "Other";
+  RightSideFooterTitle= "Bad Debt";
+  patientSkippedsList= patientSkippedList;
 
-  Encounters_Balance_skipped_Other= this.patientSkippedsList.Patient_section[5].value;
-  Encounters_Balance_skipped_Bad_Debt= this.patientSkippedsList.Patient_section[6].value;
+  Encounters_Balance_skipped_Other= this.patientSkippedsList[5].value;
+  Encounters_Balance_skipped_Bad_Debt= this.patientSkippedsList[6].value;
 
   patientSkippedTitle() {
     var element: any[] = [] ;
-    for (let i = 0; i < this.patientSkippedsList.Patient_section.length-2; i++) {
-      element.push( this.patientSkippedsList.Patient_section[i].title);
-      var title= this.patientSkippedsList.Patient_section[i].title;
-      // var title= this.patientSkippedsList.Patient_section[i].title.split(' ');
+    for (let i = 0; i < this.patientSkippedsList.length-2; i++) {
+      element.push( this.patientSkippedsList[i].title);
+      var title= this.patientSkippedsList[i].title;
       element.push(title);
     }
-    // console.log(element);
     return element;
   }
   patientSkippedValue() {
     var element: number[] = [] ;
-    for (let i = 0; i < this.patientSkippedsList.Patient_section.length-2; i++)
-      element.push(this.patientSkippedsList.Patient_section[i].value);
+    for (let i = 0; i < this.patientSkippedsList.length-2; i++)
+      element.push(this.patientSkippedsList[i].value);
     return element;
   }
   public chart: any;
@@ -119,14 +121,12 @@ export class GoalOverviewComponent{
               tooltipEl.style.left = positionX + tooltip.caretX + 'px';
               tooltipEl.style.top = positionY + tooltip.caretY + 'px';
 
-              // console.log("positionX: "+positionX+" - "+"positionY: "+positionY+ " - "+"tooltip.caretX: "+tooltip.caretX+ " - "+"tooltip.caretY: "+tooltip.caretY);
             },
             displayColors: false,
           }
         },
 
       },
-      // plugins: [this.doughnutText]
     });
 
   }

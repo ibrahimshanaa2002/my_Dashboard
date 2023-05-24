@@ -1,39 +1,30 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {BubbleDataPoint, Chart, ChartMeta, ChartTypeRegistry, elements, Point} from "chart.js";
-import { browserStatesList } from "../model/browser-states";
-import {patientOutreached} from "../model/patients-outreached";
-import {UUID} from "uuid-generator-ts";
+import {Component, OnInit, Input, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import {Chart} from "chart.js";
+import {patientOutreachedList} from "../model/patients-outreached";
 import {UUIDUtility} from "../shared-utility/UUIDUtility";
 @Component({
   selector: 'app-browser-states',
   templateUrl: './browser-states.component.html',
   styleUrls: ['./browser-states.component.css']
 })
-export class BrowserStatesComponent implements OnInit{
-  patientOutreachedList= patientOutreached[0];
-  chart_ID: string[] = new Array();
-
-  ngOnInit(): void {
-    this.patientOutreachedList.Patient_section.forEach(patient=>{this.chart_ID.push(UUIDUtility.generateUUID());});
+export class BrowserStatesComponent implements OnInit, AfterViewInit {
+  componentName= "Patient Outreached";
+  patientOutreachedList= patientOutreachedList;
+   @ViewChildren('chartCanvas') chartCanvases: QueryList<ElementRef>;
+   ngAfterViewInit() {
+    this.chartCanvases.forEach((canvas, i) => {
+      const chartId = this.chart_ID[i];
+      const chartData = this.patientOutreachedList[i].value;
+      this.createChart(canvas.nativeElement, chartId, chartData);
+  });
   }
-  
-  patientOutreachedValue() {
-    let total= 0;
-    for (let i = 0; i < this.patientOutreachedList.Patient_section.length-1; i++) {
-      let temp= this.patientOutreachedList.Patient_section[i].value;
-      if (temp > total)
-        total=  temp;
-    }
-    return total;
-  }
-
-  createChart(id:number, perecnt:number) : any {
-    let newChart = new Chart(this.chart_ID[id], {
+  createChart(canvas: HTMLCanvasElement, chartId: string, chartData: any) {
+    let newChart = new Chart(chartId, {
       type: 'doughnut',
       data: {
         datasets: [
           {
-            data: [perecnt, this.patientOutreachedValue() - perecnt],
+            data: [chartData, this.patientOutreachedTotalValue() - chartData],
             backgroundColor: ['#3182f0','#eeecf3'],
             borderWidth: 0,
           }
@@ -60,7 +51,22 @@ export class BrowserStatesComponent implements OnInit{
 
       },
     });
-     return newChart;
+   return newChart;
+  }
+  chart_ID: string[] = new Array();
+
+  ngOnInit(): void {
+    this.patientOutreachedList.forEach(patient=>{this.chart_ID.push(UUIDUtility.generateUUID());});
+  }
+
+  patientOutreachedTotalValue() {
+    let total= 0;
+    for (let i = 0; i < this.patientOutreachedList.length-1; i++) {
+      let temp= this.patientOutreachedList[i].value;
+      if (temp > total)
+        total=  temp;
+    }
+    return total;
   }
 
 }

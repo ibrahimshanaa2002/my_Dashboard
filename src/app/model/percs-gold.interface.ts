@@ -1,10 +1,5 @@
 export interface IPERCSGold {
-    date: string;
-    Patient_section: Patient[];
-    
+  title: string;
+  value: number;
 }
 
-export interface Patient {
-  title: string;
-  value: number
-}
