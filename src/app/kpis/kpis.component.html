@@ -5,7 +5,7 @@
     </div>
   <div class="label">
     <p>first</p>
-  <p>second</p>
+  <p>PERC gold</p>
       </div>
       <div class="row">
         <div class="">
@@ -15,8 +15,8 @@
              
               <div class="kpi" *ngFor="let kpi of kpis; let i=index">
                 <div class="kpi-image">
-                  <img [src]="kpi.icon" alt="{{ kpi.value }} icon">
-                  <div class="popup" *ngIf="i !== 3" >
+                  <img [src]="kpi.icon" alt="{{ kpi.value | currency }} icon">
+                  <div class="popup" *ngIf="i <2 " >
                    
                     <!-- Popup content -->
                     <table class="table">
@@ -45,9 +45,31 @@
                       </tr>
                     </table>
                   </div>
+                  <div class="popup" *ngIf="i ==2 ">
+                    <table  class="t1">
+               
+                
+                      <tr>
+                        <td>% Total Secured / Encounters Balance
+                          <p class="value"> {{kpis[2].total1}} %</p>
+                        </td>
+                       
+                       
+                      </tr>
+                      <tr>
+                        <td>% Total Cash/Encounters Balance
+                          <p class="value"> {{kpis[2].total2}}%</p>
+                        </td>
+                       
+                      </tr>
+                     </table>
+
+                  </div>
                 </div>
                 <div class="kpi-text">
-                  <h3>{{ kpi.value }}</h3>
+
+                  <h3 *ngIf="i <2 ">{{ kpi.value | currency }}</h3>
+                  <h3 *ngIf="i >=2 ">%{{ kpi.value }}</h3>
                   <p class="card-subtitle">{{ kpi.subtitle }}</p>
                 </div>
               </div>

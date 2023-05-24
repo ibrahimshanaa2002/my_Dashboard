@@ -7,7 +7,7 @@
   height: 100vh;
   background-color: #1C4E80;
   z-index: 1;
-  border-top: 4px solid white;
+  /* border-top: 4px solid white; */
 }
 
 /* Toggle Styles */

@@ -1,10 +1,6 @@
 .card {
-  border: 1px solid silver;
-  width: 100%;
-}
-
-.row .card {
   border: none;
+  width: 100%;
 }
 
 h2.card-title {
@@ -82,8 +78,6 @@ h2.card-title {
 
 .card-header.d-flex.justify-content-between {
   margin: 5px;
-  margin-bottom: 0;
-  padding-bottom: 0;
   border-radius: 10px;
 }
 
@@ -118,7 +112,6 @@ h2.card-title {
   transition: visibility 0s, opacity 0.5s ease-in-out;
   z-index: 1;
   display: flex;
-<<<<<<< HEAD
 width: 400%;
 height: 220%;
     background-color: black;
@@ -126,15 +119,6 @@ height: 220%;
     
     transition: opacity 1s;
     
-=======
-  width: 400%;
-  height: 220%;
-  background-color: black;
-  font-variant: all-small-caps;
-
-  transition: opacity 1s;
-
->>>>>>> 27cb9a32bc679276311264c468720d1088f46b9b
 }
 
 /* .popup p {
@@ -206,12 +190,7 @@ height: 220%;
   margin-left: -5px;
   border-width: 8px;
   border-style: solid;
-<<<<<<< HEAD
   border-color: transparent transparent black transparent;;
-=======
-  border-color: transparent transparent black transparent;
-  ;
->>>>>>> 27cb9a32bc679276311264c468720d1088f46b9b
 }
 
 .value {
@@ -251,24 +230,13 @@ height: 220%;
 .label p {
   font-size: 24px;
   font-weight: bold;
-  color: white;
-  background-color: #f2f2f2;
+  color: transparent navy;
+  /* background-color: #1321c3; */
   padding: 10px;
   border-radius: 5px;
   text-align: center;
   text-transform: uppercase;
 }
-<<<<<<< HEAD
-.table th {
- text-align: center;
- color: white;
- font-weight: 1000;
- /* text-decoration: underline; */
- font-size: large;
- /* border:  #ccc 1px solid */
-}
-
-=======
 
 .table th {
   text-align: center;
@@ -277,7 +245,6 @@ height: 220%;
   font-size: large;
 }
 
->>>>>>> 27cb9a32bc679276311264c468720d1088f46b9b
 .table td {
   color: #EA6A47;
   text-align: center;
@@ -298,27 +265,10 @@ p.value {
 }
 
 .t1 td {
-<<<<<<< HEAD
-color: gold;
-font-weight: bolder;
-
-}
-=======
   color: #EA6A47;
   font-weight: bold;
 }
 
 .t1 {
   text-align: center;
-}
->>>>>>> 27cb9a32bc679276311264c468720d1088f46b9b
-
-.container-fluid {
-  padding-right: 0.5rem;
-  padding-top: 0.5rem;
-}
-
-.container-fluid {
-  padding-right: 0.5rem;
-  padding-top: 0.5rem;
 }

@@ -69,8 +69,8 @@ export const kpiData:Ikpi[]=[
     
     },
     { icon:"../assets/img/growth.png" ,
-        value:1449.89,
-        subtitle:'Immediate payment',
+        value:1.49,
+        subtitle:'Total',
         useracc: 11,
         userapp: 22,
         mpracc: 333,
@@ -80,8 +80,8 @@ export const kpiData:Ikpi[]=[
        
     },
     { icon:"../assets/img/growth.png" ,
-        value:1449.89,
-        subtitle:'Immediate payment',
+        value:3.23,
+        subtitle:'Response rate',
         useracc: 11,
         userapp: 22,
         mpracc: 333,
