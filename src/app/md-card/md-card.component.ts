@@ -9,16 +9,12 @@ import {ExportExcel} from "../shared-utility/ExportExcel";
 })
 export class MdCardComponent {
   @Input() depDataChart: ChartData;
-  show: boolean = false;
+  // show: boolean = false;
   table: any;
 
-  showDataIcon(){
-    this.show = !this.show
-  }
-
-  exportFile(){
-    new ExportExcel(this.table);
-  }
+  // showDataIcon(){
+  //   this.show = !this.show
+  // }
 
 
 }

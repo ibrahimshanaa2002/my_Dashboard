@@ -2,6 +2,7 @@
   display: flex;
   position: relative;
   top: 3.9rem;
+  width: 99.8%;
 }
 
 #cont {
@@ -14,7 +15,7 @@
   display: block;
   transition: ease-in-out;
   transition-duration: 0.4s;
-  flex: 2.5%;
+  width: 4rem;
 }
 
 /* mohammad */

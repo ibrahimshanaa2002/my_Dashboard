@@ -47,31 +47,36 @@ export class AppComponent implements  OnInit{
     seperateChartLabel.add("APP Secured ($) [MPR]");
     seperateChartLabel.add("APP Secured ($)");
     this.chartData = {
-      title: "Users Data Chart",
+      title: "Users / MPR Users",
+      subTitle: "Names",
       names: names,
       data: userData,
       seperateChartLabel: seperateChartLabel
     }
     this.depDataChart1 = {
       title: "IP On Account",
+      subTitle: "Departments",
       names: departments,
       data: depDataChart1,
       seperateChartLabel: seperateChartLabel
     }
     this.depDataChart2 = {
       title: "IP On APP",
+      subTitle: "Departments",
       names: departments,
       data: depDataChart2,
       seperateChartLabel: seperateChartLabel
     }
     this.depDataChart3 = {
       title: "Secured APP",
+      subTitle: "Departments",
       names: departments,
       data: depDataChart3,
       seperateChartLabel: seperateChartLabel
     }
     this.depDataChart4 = {
       title: "Executed APP",
+      subTitle: "Departments",
       names: departments,
       data: depDataChart4,
       seperateChartLabel: seperateChartLabel

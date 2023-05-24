@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import {Component, OnInit, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import {Chart} from "chart.js";
 import {patientOutreachedList} from "../model/patients-outreached";
 import {UUIDUtility} from "../shared-utility/UUIDUtility";

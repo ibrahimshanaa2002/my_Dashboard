@@ -2,8 +2,16 @@
     <div class="chart-container">
       <app-bg-card [chartData]="chartData"></app-bg-card>
     </div>
-  <div class="dough-containers">
-    <app-md-card *ngFor="let depData of prepareCardData.depDataArr, let i = index" [depDataChart]="depData">
+  <div class="down-cont">
+    <div class="header">
+    <h4>{{ chartData.title + "  (" + depDataChart1.subTitle + ")" }}</h4>
+    <div class="buttons">
+      <button type="button"(click)="showDataIcon()"><i class="fa fa-eye" [ngStyle]="{'color' : show ? 'limegreen' : 'black'}"></i> </button>
+      <button type="button" (click)="exportFile()"><i class="fa fa-cloud-download"></i> </button>
+    </div>
+    </div>
+    <div class="dough-containers">
+    <app-md-card *ngFor="let depData of prepareCardData.depDataArr, let i = index" [depDataChart]="depData" [hidden]="show">
       <div title>{{ depData.title }}</div>
       <div class="card-body-info" *ngFor="let element of prepareCardData.chartsInfo.at(i)" label>
         <div class="label">&nbsp;&nbsp;{{element.label}}&nbsp;&nbsp;</div>
@@ -13,5 +21,7 @@
         </div>
       </div>
     </app-md-card>
+    <app-table class="card" [chartData]="tableData" [hidden]="!show" (table)="table = $event" [ID]="ID"></app-table>
+    </div>
   </div>
 </div>

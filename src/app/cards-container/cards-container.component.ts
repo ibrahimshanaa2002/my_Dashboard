@@ -1,7 +1,7 @@
-import {AfterContentInit, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ChartData} from "../model/ChartData.interface";
-import {DoughnutInfo} from "../model/doughnutInfo.interface";
 import {PrepareCardData} from "./PrepareCardData";
+import {ExportExcel} from "../shared-utility/ExportExcel";
 
 
 @Component({
@@ -16,6 +16,10 @@ export class CardsContainerComponent implements OnInit{
   @Input() depDataChart3: ChartData;
   @Input() depDataChart4: ChartData;
   prepareCardData: PrepareCardData;
+  tableData: ChartData;
+  show: boolean = false;
+  table: any;
+  ID: string = 'tbl2';
   constructor() {
   }
   ngOnInit(): void {
@@ -24,5 +28,14 @@ export class CardsContainerComponent implements OnInit{
     this.prepareCardData.prepareMdCardInfo(this.depDataChart2);
     this.prepareCardData.prepareMdCardInfo(this.depDataChart3);
     this.prepareCardData.prepareMdCardInfo(this.depDataChart4);
+    this.tableData = this.prepareCardData.prepareTableData();
+  }
+
+  showDataIcon(){
+    this.show = !this.show
+  }
+
+  exportFile(){
+    new ExportExcel(this.table, this.chartData.title);
   }
 }

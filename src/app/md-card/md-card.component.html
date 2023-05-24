@@ -1,12 +1,12 @@
 <div id="container" class="card container">
-  <div class="buttons">
-    <button type="button"(click)="showDataIcon()"><i class="fa fa-eye" [ngStyle]="{'color' : show ? 'limegreen' : 'black'}"></i> </button>
-    <button type="button" (click)="exportFile()"><i class="fa fa-cloud-download"></i> </button>
-  </div>
+<!--  <div class="buttons">-->
+<!--    <button type="button"(click)="showDataIcon()"><i class="fa fa-eye" [ngStyle]="{'color' : show ? 'limegreen' : 'black'}"></i> </button>-->
+<!--    <button type="button" (click)="exportFile()"><i class="fa fa-cloud-download"></i> </button>-->
+<!--  </div>-->
   <div class="header">
     <h4 class="card-title"><ng-content select="[title]"></ng-content></h4>
   </div>
-  <div class="clock" [hidden]="show">
+  <div class="clock">
   <div class="card-body">
       <h5 style="margin-top: 0.1rem;font-weight: bold"><ng-content select="[label]"></ng-content></h5>
   </div>
