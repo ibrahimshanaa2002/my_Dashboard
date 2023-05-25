@@ -1,15 +1,33 @@
 <nav class="navbar navbar-expand px-2">
-    <div>
-        <img class="navbar-brand" href="#" src="../assets/img/vestacare-logo.png" alt="Logo" >    </div>
+    <div style="display: flex;">
+        <img class="navbar-brand" href="#" src="../assets/img/vestacare-logo.png" alt="Logo" >
+        <div class="calendar-select" >
+                <label for="standard-select">
+                    <i class="fa fa-solid fa-calendar-days fa-lg"></i>
+                </label>
+                <select 
+                    id="standard-select" 
+                    (change)="onOptionChange($event)"
+                    #mySelect
+                    >
+                    <option value="Yesterday" selected>Yesterday</option>
+                    <option value="Last Weak">Last Weak</option>
+                    <option value="Custom">Custom</option>
+            </select>
+            <div class="calendar-custom">
+                
+            </div>
+        </div>
+    </div> 
     <div class="right-side">
         <div class="user-profile d-flex">
-            <img [src]="Header.userprofile" alt="User Profile Picture">
+            <img [src]="userprofile" alt="User Profile Picture">
             <div class="user-info">
 
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle username btn-sm" style="color: white;" href="#"
                         role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{Header.username}}
+                        {{ username }}
                     </a>
 
                     <ul class="dropdown-menu animated fadeIn" aria-labelledby="dropdownMenuLink" >
@@ -19,7 +37,7 @@
                         <li><a class="dropdown-item" href="#">SignUp</a></li>
                     </ul>
                 </div>
-                <div class="job-title">{{Header.usercareer}}</div>
+                <div class="job-title">{{ usercareer }}</div>
             </div>
         </div>
         <div class="icons" style="color: white;">
